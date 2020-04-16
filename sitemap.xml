@@ -50,4 +50,18 @@
     
   </url>
   
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2020-04-16T05:14:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-04-16T05:14:53.000Z</lastmod>
+    
+  </url>
+  
 </urlset>
