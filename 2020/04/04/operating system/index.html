@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Hello World | Hexo</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <title>操作系统 | Hexo</title>
+  <meta name="description" content="operating system线程和进程 拥有资源。进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。  调度。线程是独立调度的基本单位。在同一个进程中，线程的切换不会引起进程的切换，从一个进程中的线程切换到另一个进程中的线程，会引起进程切换。  系统开销方面。创建或撤销进程时，系统都要为之分配或回收资源，如内存空间，I／O设备等，所付出的开销远大于创建或撤销进程时的开销">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/04/15/hello-world/index.html">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://yoursite.com/2020/04/04/operating%20system/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="operating system线程和进程 拥有资源。进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。  调度。线程是独立调度的基本单位。在同一个进程中，线程的切换不会引起进程的切换，从一个进程中的线程切换到另一个进程中的线程，会引起进程切换。  系统开销方面。创建或撤销进程时，系统都要为之分配或回收资源，如内存空间，I／O设备等，所付出的开销远大于创建或撤销进程时的开销">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-16T05:11:12.000Z">
-<meta property="article:modified_time" content="2020-04-16T20:17:45.000Z">
+<meta property="article:published_time" content="2020-04-05T06:19:31.000Z">
+<meta property="article:modified_time" content="2020-04-16T20:36:17.000Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="入门">
+<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/15/hello-world/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/04/operating%20system/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -322,21 +322,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#operating-system"><span class="toc-number">1.</span> <span class="toc-text">operating system</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程和进程"><span class="toc-number">1.1.</span> <span class="toc-text">线程和进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-number">1.2.</span> <span class="toc-text">进程调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-批处理系统"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 批处理系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-先来先服务算法-first-come-first-served（FCFS）"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 先来先服务算法 first-come first-served（FCFS）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-短进程优先算法shortest-job-first（SJF）"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 短进程优先算法shortest job first（SJF）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-最短剩余时间优先-shortest-remaining-time-next（SRTN）"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 最短剩余时间优先 shortest remaining time next（SRTN）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-交互式系统"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 交互式系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1时间片轮转算法"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1时间片轮转算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-优先级调度"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 优先级调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-多级反馈队列"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">3.3 多级反馈队列</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux中几种IO模型（select，poll，epoll）"><span class="toc-number">1.3.</span> <span class="toc-text">Linux中几种IO模型（select，poll，epoll）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-阻塞和非阻塞IO"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 阻塞和非阻塞IO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-多路复用IO"><span class="toc-number">1.3.2.</span> <span class="toc-text">3. 多路复用IO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页，分段，段页的区别"><span class="toc-number">1.4.</span> <span class="toc-text">分页，分段，段页的区别</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-operating system" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      操作系统
     </h1>
   
 
@@ -344,20 +344,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/15/hello-world/" class="article-date">
-	  <time datetime="2020-04-16T05:11:12.000Z" itemprop="datePublished">2020-04-15</time>
+	<a href="/2020/04/04/operating%20system/" class="article-date">
+	  <time datetime="2020-04-05T06:19:31.000Z" itemprop="datePublished">2020-04-04</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a>
+	<a class="article-tag-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a>
   </span>
 
 
@@ -370,26 +370,39 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/15/hello-world/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/04/operating%20system/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h1 id="operating-system"><a href="#operating-system" class="headerlink" title="operating system"></a>operating system</h1><h2 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h2><ol>
+<li><p>拥有资源。进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。</p>
+</li>
+<li><p>调度。线程是独立调度的基本单位。在同一个进程中，线程的切换不会引起进程的切换，从一个进程中的线程切换到另一个进程中的线程，会引起进程切换。</p>
+</li>
+<li><p>系统开销方面。创建或撤销进程时，系统都要为之分配或回收资源，如内存空间，I／O设备等，所付出的开销远大于创建或撤销进程时的开销。类似的，在进程切换时，涉及到当前执行进程CPU环境的保存及新调度进程CPU环境的设置，而线程切换时只需要保存和设置少量寄存器内容，开销很小</p>
+</li>
+</ol>
+<ul>
+<li>线程间可以通过直接读取统一进程中的数据进行通信，但是进程通信需要借助IPC</li>
+</ul>
+<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><h3 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1. 批处理系统"></a>1. 批处理系统</h3><p>批处理系统没有太多的用户操作，调度算法的目标是保证吞吐量和周转时间。（从提交到中止的时间）。</p>
+<h4 id="1-1-先来先服务算法-first-come-first-served（FCFS）"><a href="#1-1-先来先服务算法-first-come-first-served（FCFS）" class="headerlink" title="1.1 先来先服务算法 first-come first-served（FCFS）"></a>1.1 先来先服务算法 first-come first-served（FCFS）</h4><p>依据进程进入就绪状态的先后顺序排列。</p>
+<p>有利于长作业，不利于短作业。因为短作业必须一直等待前面的长作业执行完毕才能执行，而长作业需要执行很长时间，造成了短作业等待时间过长。</p>
+<h4 id="1-2-短进程优先算法shortest-job-first（SJF）"><a href="#1-2-短进程优先算法shortest-job-first（SJF）" class="headerlink" title="1.2 短进程优先算法shortest job first（SJF）"></a>1.2 短进程优先算法shortest job first（SJF）</h4><p>按估计运行时间最短的顺序进行调度。</p>
+<p>长作业一直等待短作业执行完毕，如果一直有短作业来，长作业有可能饿死。</p>
+<h4 id="1-3-最短剩余时间优先-shortest-remaining-time-next（SRTN）"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-next（SRTN）" class="headerlink" title="1.3 最短剩余时间优先 shortest remaining time next（SRTN）"></a>1.3 最短剩余时间优先 shortest remaining time next（SRTN）</h4><p>按剩余时间的顺序进行调度。当一个新的作业到达时，其整个运行时间与当前进程的剩余时间做比较。如果新的进程需要的时间更少，则挂起当前进程，运行新的进程。</p>
+<h3 id="2-交互式系统"><a href="#2-交互式系统" class="headerlink" title="2. 交互式系统"></a>2. 交互式系统</h3><h4 id="2-1时间片轮转算法"><a href="#2-1时间片轮转算法" class="headerlink" title="2.1时间片轮转算法"></a>2.1时间片轮转算法</h4><p>将所有就绪进程按照FCFS规则的原则排成一个队列，每次调度时，把CPU时间分配给队首进程，该进程可以执行一个时间片，当时间片用完时，由计时器发出时钟中断，调度程序中止该进程的执行，并将它送往就绪队列的末尾，同时把CPU时间分配给队首进程。</p>
+<h4 id="2-2-优先级调度"><a href="#2-2-优先级调度" class="headerlink" title="2.2 优先级调度"></a>2.2 优先级调度</h4><p>为每个进程分配一个优先级，按照优先级进行调度。为了防止低优先级的进程永远等不到调度，可以随着时间的推移增加等待进程的优先级。</p>
+<h4 id="3-3-多级反馈队列"><a href="#3-3-多级反馈队列" class="headerlink" title="3.3 多级反馈队列"></a>3.3 多级反馈队列</h4><p>设置多个队列，每个队列优先权不同，时间片大小不同。最上面的队列优先级最高，时间片最小。进程在第一个队列没执行完，就会被移到下一个队列。</p>
+<h2 id="Linux中几种IO模型（select，poll，epoll）"><a href="#Linux中几种IO模型（select，poll，epoll）" class="headerlink" title="Linux中几种IO模型（select，poll，epoll）"></a>Linux中几种IO模型（select，poll，epoll）</h2><h3 id="1-阻塞和非阻塞IO"><a href="#1-阻塞和非阻塞IO" class="headerlink" title="1. 阻塞和非阻塞IO"></a>1. 阻塞和非阻塞IO</h3><p>调用阻塞IO会一直阻塞对应的进程直到操作完成。</p>
+<p>非阻塞IO会在内核还在准备数据的情况下离开返回。</p>
+<p>###2. 同步和异步IO</p>
+<p>同步IO在执行IO操作时进程会被阻塞。</p>
+<p>异步IO发起IO操作后，就直接返回再也不理睬，直到内核发送一个信号，告诉进程IO完成。</p>
+<h3 id="3-多路复用IO"><a href="#3-多路复用IO" class="headerlink" title="3. 多路复用IO"></a>3. 多路复用IO</h3><p>select, poll,epoll这个function不断的轮询所负责的所有socket，当某个socket有数据到达了，就通知用户进程。</p>
+<h2 id="分页，分段，段页的区别"><a href="#分页，分段，段页的区别" class="headerlink" title="分页，分段，段页的区别"></a>分页，分段，段页的区别</h2>
       
     </div>
     <div class="article-footer">
@@ -398,7 +411,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/15/hello-world/" title="Hello World" target="_blank" rel="external">http://yoursite.com/2020/04/15/hello-world/</a>
+      <a href="http://yoursite.com/2020/04/04/operating%20system/" title="操作系统" target="_blank" rel="external">http://yoursite.com/2020/04/04/operating%20system/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -444,10 +457,10 @@
   
   <ul class="pager pull-left">
     
-    
-    <li class="next">
-      <a href="/2020/04/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    <li class="prev">
+      <a href="/2020/04/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
+    
     
     
     <li class="toggle-toc">
