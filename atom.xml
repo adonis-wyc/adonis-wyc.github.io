@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-17T05:55:08.000Z</updated>
+  <updated>2020-04-18T03:33:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,166 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决哈希冲突常用方法分析</title>
+    <link href="http://yoursite.com/2020/04/17/hash-conflict-solution/"/>
+    <id>http://yoursite.com/2020/04/17/hash-conflict-solution/</id>
+    <published>2020-04-18T02:12:44.000Z</published>
+    <updated>2020-04-18T03:33:45.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;解决哈希冲突的方法&quot;&gt;&lt;a href=&quot;#解决哈希冲突的方法&quot; class=&quot;headerlink&quot; title=&quot;解决哈希冲突的方法&quot;&gt;&lt;/a&gt;解决哈希冲突的方法&lt;/h1&gt;&lt;p&gt;解决哈希冲突的方法一般有：开放定址法、链地址法、再哈希法，建立公共溢出区等方法。&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bucket sort</title>
+    <link href="http://yoursite.com/2020/04/17/bucket-sort/"/>
+    <id>http://yoursite.com/2020/04/17/bucket-sort/</id>
+    <published>2020-04-18T00:36:02.000Z</published>
+    <updated>2020-04-18T01:44:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;桶排序之计数排序：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;得到无序数组的取值范围&lt;/li&gt;
+&lt;li&gt;根据取值范围创建对应数量的桶&lt;/li&gt;
+&lt;li&gt;遍历数组，把每个元素放到对应的“桶”中&lt;/li&gt;
+&lt;li&gt;按照顺序遍历桶中的每个元素，依次放到数组中，即可完成数组的排序&lt;/li&gt;
+&lt;/u
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>希尔排序（shell_sort）</title>
+    <link href="http://yoursite.com/2020/04/17/shell-sort/"/>
+    <id>http://yoursite.com/2020/04/17/shell-sort/</id>
+    <published>2020-04-17T17:50:37.000Z</published>
+    <updated>2020-04-18T00:08:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：按一定的增量对数据进行分组，然后对每组进行插入排序，不断减小增量直至增量为1，进行插入排序后整个数据为有序。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/04/17/shell-sort/01.png&quot; alt=&quot;01&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>insertion_sort</title>
+    <link href="http://yoursite.com/2020/04/17/insertion-sort/"/>
+    <id>http://yoursite.com/2020/04/17/insertion-sort/</id>
+    <published>2020-04-17T17:27:25.000Z</published>
+    <updated>2020-04-17T17:50:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：每次选择一个元素，将这个元素与之前所有元素比较放在正确的位置上。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>冒泡排序（bubble_sort）</title>
+    <link href="http://yoursite.com/2020/04/17/bubble-sort/"/>
+    <id>http://yoursite.com/2020/04/17/bubble-sort/</id>
+    <published>2020-04-17T17:13:34.000Z</published>
+    <updated>2020-04-17T17:51:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：每次选择两个元素，按照需求进行交换（需要升序排列的话，把较大的元素放在靠后一些的位置），循环n次，这样小的元素会不断的冒泡到前面来，大的元素移动到后面去。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;tab
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>归并排序（merge sort）</title>
+    <link href="http://yoursite.com/2020/04/17/merge-sort/"/>
+    <id>http://yoursite.com/2020/04/17/merge-sort/</id>
+    <published>2020-04-17T16:41:32.000Z</published>
+    <updated>2020-04-17T17:10:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：如果只有一个元素的情况下直接返回，将数组分成长度尽可能相等的两部分，对左右两部分分别归并排序，然后有序的合并在一起。&lt;/p&gt;
+&lt;img src=&quot;/2020/04/17/merge-sort/1.png&quot; alt=&quot;1&quot; style=
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>快速排序（quick select）</title>
     <link href="http://yoursite.com/2020/04/16/quick_select/"/>
     <id>http://yoursite.com/2020/04/16/quick_select/</id>
     <published>2020-04-17T05:33:41.000Z</published>
-    <updated>2020-04-17T05:55:08.000Z</updated>
+    <updated>2020-04-17T05:57:25.000Z</updated>
     
     <summary type="html">
     
@@ -37,7 +192,7 @@
       <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="-排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   

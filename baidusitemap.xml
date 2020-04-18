@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/04/17/hash-conflict-solution/</loc>
+    <lastmod>2020-04-18</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/17/bucket-sort/</loc>
+    <lastmod>2020-04-18</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/17/shell-sort/</loc>
+    <lastmod>2020-04-18</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/17/bubble-sort/</loc>
+    <lastmod>2020-04-17</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/17/insertion-sort/</loc>
+    <lastmod>2020-04-17</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/17/merge-sort/</loc>
+    <lastmod>2020-04-17</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/04/16/quick_select/</loc>
     <lastmod>2020-04-17</lastmod>
   </url>  <url>
