@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/04/21/top-k-frequent/</loc>
+    <lastmod>2020-04-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/21/Huffman/</loc>
+    <lastmod>2020-04-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/19/AVL-vs-RBT/</loc>
+    <lastmod>2020-04-20</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/04/17/hash-conflict-solution/</loc>
     <lastmod>2020-04-18</lastmod>
   </url>  <url>

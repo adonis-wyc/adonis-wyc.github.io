@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-18T03:33:45.000Z</updated>
+  <updated>2020-04-22T03:34:10.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>top k frequent</title>
+    <link href="http://yoursite.com/2020/04/21/top-k-frequent/"/>
+    <id>http://yoursite.com/2020/04/21/top-k-frequent/</id>
+    <published>2020-04-22T03:14:16.000Z</published>
+    <updated>2020-04-22T03:34:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;寻找数据流中出现最频繁的k个元素（find top k frequent items in a data stream）,这个问题也叫heavy hitter。&lt;/p&gt;
+&lt;h2 id=&quot;方案一：HashMap-Heap&quot;&gt;&lt;a href=&quot;#方案一：HashMap-Heap
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Huffman</title>
+    <link href="http://yoursite.com/2020/04/21/Huffman/"/>
+    <id>http://yoursite.com/2020/04/21/Huffman/</id>
+    <published>2020-04-22T01:37:35.000Z</published>
+    <updated>2020-04-22T02:56:44.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;霍夫曼编码&quot;&gt;&lt;a href=&quot;#霍夫曼编码&quot; class=&quot;headerlink&quot; title=&quot;霍夫曼编码&quot;&gt;&lt;/a&gt;霍夫曼编码&lt;/h1&gt;&lt;p&gt;霍夫曼编码的目的是根据使用频率最大化节省字符编码的存储空间，同时可以避免二义性（因为前缀都是内节点，不携带关键数据）
+      
+    
+    </summary>
+    
+    
+      <category term="-计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="-数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>平衡二叉树 vs 红黑树</title>
+    <link href="http://yoursite.com/2020/04/19/AVL-vs-RBT/"/>
+    <id>http://yoursite.com/2020/04/19/AVL-vs-RBT/</id>
+    <published>2020-04-19T17:15:47.000Z</published>
+    <updated>2020-04-20T00:10:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;AVL树&quot;&gt;&lt;a href=&quot;#AVL树&quot; class=&quot;headerlink&quot; title=&quot;AVL树&quot;&gt;&lt;/a&gt;AVL树&lt;/h1&gt;&lt;p&gt;AVL树是一种平衡二叉树，有两个性质：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左右子树高度差小于一&lt;/li&gt;
+&lt;li&gt;每一个子树均为平衡
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>解决哈希冲突常用方法分析</title>

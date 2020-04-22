@@ -17,29 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>堆排序 | Hexo</title>
-  <meta property="og:type" content="article">
-<meta property="og:title" content="堆排序">
-<meta property="og:url" content="http://yoursite.com/2020/04/16/heap_sort/index.html">
+  <title>平衡二叉树 vs 红黑树 | Hexo</title>
+  <meta name="description" content="AVL树AVL树是一种平衡二叉树，有两个性质：  左右子树高度差小于一 每一个子树均为平衡二叉树  AVL树查找，插入和删除操作具体方式 查找，插入和删除操作的时间复杂度均为Olog(n), 当执行插入或删除操作时，会造成AVL树的不平衡，通过左旋和右旋来恢复平衡。 红黑树也是一种平衡二叉树，有五个性质：  每个节点要么是红色，要么是黑色 根节点是黑色 每个叶子节点（NIL）是黑色 每个红色节点的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平衡二叉树 vs 红黑树">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/AVL-vs-RBT/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="AVL树AVL树是一种平衡二叉树，有两个性质：  左右子树高度差小于一 每一个子树均为平衡二叉树  AVL树查找，插入和删除操作具体方式 查找，插入和删除操作的时间复杂度均为Olog(n), 当执行插入或删除操作时，会造成AVL树的不平衡，通过左旋和右旋来恢复平衡。 红黑树也是一种平衡二叉树，有五个性质：  每个节点要么是红色，要么是黑色 根节点是黑色 每个叶子节点（NIL）是黑色 每个红色节点的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/heap_sort/heap.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heap.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort2.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort3.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort4.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort5.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort6.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/16/heap_sort/heapsort7.png">
-<meta property="article:published_time" content="2020-04-17T02:51:24.000Z">
-<meta property="article:modified_time" content="2020-04-17T04:47:32.000Z">
+<meta property="article:published_time" content="2020-04-19T17:15:47.000Z">
+<meta property="article:modified_time" content="2020-04-20T00:10:46.000Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="排序">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/heap_sort/heap.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/16/heap_sort/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/04/19/AVL-vs-RBT/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -360,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AVL树"><span class="toc-number">1.</span> <span class="toc-text">AVL树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#红黑树"><span class="toc-number">2.</span> <span class="toc-text">红黑树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AVL树和红黑树的区别"><span class="toc-number">3.</span> <span class="toc-text">AVL树和红黑树的区别</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-heap_sort" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-AVL-vs-RBT" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      堆排序
+      平衡二叉树 vs 红黑树
     </h1>
   
 
@@ -382,8 +374,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/16/heap_sort/" class="article-date">
-	  <time datetime="2020-04-17T02:51:24.000Z" itemprop="datePublished">2020-04-16</time>
+	<a href="/2020/04/19/AVL-vs-RBT/" class="article-date">
+	  <time datetime="2020-04-19T17:15:47.000Z" itemprop="datePublished">2020-04-19</time>
 	</a>
 </span>
         
@@ -395,7 +387,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a>
+	<a class="article-tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
   </span>
 
 
@@ -408,41 +400,34 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/16/heap_sort/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/19/AVL-vs-RBT/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <!-- <img src="/heap_sort/heap.png" width = "300" height = "200" alt="git" align=center /> -->
-<a id="more"></a>
-
-
-<p><strong>步骤一</strong>：将无序数列构建成最大堆（一般升序采用最大堆，降序采用最小堆）\</p>
-<img src="/2020/04/16/heap_sort/heap.png" style="zoom:50%;">
-
-<p>从最后一个非叶子节点（length/2 - 1）开始，从右至左，从下到上，依次进行调整：</p>
-<img src="/2020/04/16/heap_sort/heapsort1.png" style="zoom:50%;">
-
-<img src="/2020/04/16/heap_sort/heapsort2.png" style="zoom:50%;">
-
-<img src="/2020/04/16/heap_sort/heapsort3.png" style="zoom:50%;">
-
-<p>此时将无序序列构建成一个最大堆。</p>
-<p><strong>步骤二</strong>：将堆顶元素与末尾元素进行交换，使末尾元素最大。继续调整堆，重复这个过程，直到遍历到第一个元素。</p>
-<img src="/2020/04/16/heap_sort/heapsort4.png" style="zoom:100%;">
-
-<img src="/2020/04/16/heap_sort/heapsort5.png" style="zoom:100%;">
-
-
-
-<img src="/2020/04/16/heap_sort/heapsort6.png" style="zoom:100%;">
-
-<img src="/2020/04/16/heap_sort/heapsort7.png" style="zoom:100%;">
-
-<p><strong>代码实现</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        heapify(nums, nums.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">            nums[i] = nums[<span class="number">0</span>];</span><br><span class="line">            nums[<span class="number">0</span>] = tmp;</span><br><span class="line">            siftdown(nums, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = (end + <span class="number">1</span>)/<span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            siftdown(nums, i, end);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftdown</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">2</span> * k + <span class="number">1</span> &lt;= end)&#123;</span><br><span class="line">            <span class="keyword">int</span> maxSon = <span class="number">2</span> * k + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="number">2</span> * k + <span class="number">2</span> &lt;= end &amp;&amp; nums[<span class="number">2</span>*k + <span class="number">2</span>] &gt; nums[maxSon])&#123;</span><br><span class="line">                maxSon = <span class="number">2</span> * k + <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(nums[k] &gt; nums[maxSon])&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> tmp = nums[k];</span><br><span class="line">            nums[k] = nums[maxSon];</span><br><span class="line">            nums[maxSon] = tmp;</span><br><span class="line">            k = maxSon;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h1><p>AVL树是一种平衡二叉树，有两个性质：</p>
+<ul>
+<li>左右子树高度差小于一</li>
+<li>每一个子树均为平衡二叉树</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/34899732" target="_blank" rel="noopener">AVL树查找，插入和删除操作具体方式</a></p>
+<p>查找，插入和删除操作的时间复杂度均为Olog(n), 当执行插入或删除操作时，会造成AVL树的不平衡，通过左旋和右旋来恢复平衡。</p>
+<h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><p>也是一种平衡二叉树，有五个性质：</p>
+<ul>
+<li>每个节点要么是红色，要么是黑色</li>
+<li>根节点是黑色</li>
+<li>每个叶子节点（NIL）是黑色</li>
+<li>每个红色节点的两个子节点一定都是黑色</li>
+<li>任意一个节点到每个可达到的叶子节点的路径都包含数量相同的黑色节点</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/e136ec79235c" target="_blank" rel="noopener">红黑树查找，插入和删除操作具体方式</a></p>
+<p>查找，插入和删除操作的时间复杂度均为Olog(n),当执行插入或删除操作时，会造成红黑树的不平衡，通过变色，左旋，右旋来恢复平衡。</p>
+<h1 id="AVL树和红黑树的区别"><a href="#AVL树和红黑树的区别" class="headerlink" title="AVL树和红黑树的区别"></a>AVL树和红黑树的区别</h1><ul>
+<li>AVL树是严格平衡，红黑树不追求完美平衡，所以二者在查找，插入，删除节点时的效率不同</li>
+<li>插入节点导致失衡的情况来说，AVL树和红黑树都是最多两次旋转来恢复平衡。但是就删除节点来说，AVL需要维护被删除节点到根节点这条路径上所有节点的平衡，旋转量级为O(logn), 而红黑树最多只需要旋转3次恢复平衡，旋转量级为O(1)。就查找来讲，AVL树遵循严格平衡，查找效率更高，不过红黑树最多多出一层的查找时间。</li>
+<li>AVL树针对读取操作时间较快，维护平衡较慢，空间开销大；红黑树读取略慢，维护平衡较快，内容极多时空间开销略优于AVL树。在实际应用中，如果搜索次数远远大于插入和删除，那么选择AVL，如果搜索，插入和删除次数几乎差不多，应该选择红黑树。</li>
+</ul>
 
       
     </div>
@@ -452,7 +437,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/16/heap_sort/" title="堆排序" target="_blank" rel="external">http://yoursite.com/2020/04/16/heap_sort/</a>
+      <a href="http://yoursite.com/2020/04/19/AVL-vs-RBT/" title="平衡二叉树 vs 红黑树" target="_blank" rel="external">http://yoursite.com/2020/04/19/AVL-vs-RBT/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -499,12 +484,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/04/16/quick_select/" title="快速排序（quick select）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/04/21/Huffman/" title="Huffman"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/04/15/hello-world/" title="Hello World"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/04/17/hash-conflict-solution/" title="解决哈希冲突常用方法分析"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
