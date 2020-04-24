@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-23T18:31:23.000Z</updated>
+  <updated>2020-04-24T05:47:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,26 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>database ACID</title>
+    <link href="http://yoursite.com/2020/04/23/database-ACID/"/>
+    <id>http://yoursite.com/2020/04/23/database-ACID/</id>
+    <published>2020-04-24T05:47:20.000Z</published>
+    <updated>2020-04-24T05:47:20.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>数据库引擎</title>
     <link href="http://yoursite.com/2020/04/23/database-engine/"/>
     <id>http://yoursite.com/2020/04/23/database-engine/</id>
     <published>2020-04-23T17:09:11.000Z</published>
-    <updated>2020-04-23T18:31:23.000Z</updated>
+    <updated>2020-04-23T18:33:23.000Z</updated>
     
     <summary type="html">
     
@@ -34,6 +49,10 @@
     </summary>
     
     
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="-数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -42,7 +61,7 @@
     <link href="http://yoursite.com/2020/04/21/database-index-type/"/>
     <id>http://yoursite.com/2020/04/21/database-index-type/</id>
     <published>2020-04-22T03:39:59.000Z</published>
-    <updated>2020-04-23T05:23:16.000Z</updated>
+    <updated>2020-04-24T03:42:24.000Z</updated>
     
     <summary type="html">
     
