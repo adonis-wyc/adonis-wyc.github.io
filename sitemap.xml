@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/23/database-engine/</loc>
+    
+    <lastmod>2020-04-23T18:31:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/21/database-index-type/</loc>
+    
+    <lastmod>2020-04-23T05:23:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/21/top-k-frequent/</loc>
     
     <lastmod>2020-04-22T03:34:10.000Z</lastmod>
