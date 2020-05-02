@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-24T16:52:14.000Z</updated>
+  <updated>2020-05-02T04:50:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,83 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java fundamentation</title>
+    <link href="http://yoursite.com/2020/05/01/Java-fundamentation/"/>
+    <id>http://yoursite.com/2020/05/01/Java-fundamentation/</id>
+    <published>2020-05-02T00:33:24.000Z</published>
+    <updated>2020-05-02T04:50:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JAVA基础&quot;&gt;&lt;a href=&quot;#JAVA基础&quot; class=&quot;headerlink&quot; title=&quot;JAVA基础&quot;&gt;&lt;/a&gt;JAVA基础&lt;/h1&gt;&lt;h2 id=&quot;HashMap面试指南&quot;&gt;&lt;a href=&quot;#HashMap面试指南&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cluster index VS non cluster index</title>
+    <link href="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/"/>
+    <id>http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/</id>
+    <published>2020-05-02T00:20:00.000Z</published>
+    <updated>2020-05-02T00:31:55.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;聚集索引和非聚集索引的区别&quot;&gt;&lt;a href=&quot;#聚集索引和非聚集索引的区别&quot; class=&quot;headerlink&quot; title=&quot;聚集索引和非聚集索引的区别&quot;&gt;&lt;/a&gt;聚集索引和非聚集索引的区别&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;聚集索引表记录的排列顺序与索引的排列顺序
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何对一条SQL语句进行调优</title>
+    <link href="http://yoursite.com/2020/05/01/optimize-sql/"/>
+    <id>http://yoursite.com/2020/05/01/optimize-sql/</id>
+    <published>2020-05-01T17:10:38.000Z</published>
+    <updated>2020-05-01T23:27:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;如何对一条SQL语句进行调优&quot;&gt;&lt;a href=&quot;#如何对一条SQL语句进行调优&quot; class=&quot;headerlink&quot; title=&quot;如何对一条SQL语句进行调优&quot;&gt;&lt;/a&gt;如何对一条SQL语句进行调优&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;尽量选择字段长度较小的列&lt;/li
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>四种隔离级别</title>
+    <link href="http://yoursite.com/2020/04/24/Isolation-Level/"/>
+    <id>http://yoursite.com/2020/04/24/Isolation-Level/</id>
+    <published>2020-04-24T16:57:08.000Z</published>
+    <updated>2020-04-24T16:57:49.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>数据库的四大特性</title>
@@ -407,30 +484,6 @@
     
     
       <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统</title>
-    <link href="http://yoursite.com/2020/04/04/operating%20system/"/>
-    <id>http://yoursite.com/2020/04/04/operating%20system/</id>
-    <published>2020-04-05T06:19:31.000Z</published>
-    <updated>2020-04-16T20:36:17.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;operating-system&quot;&gt;&lt;a href=&quot;#operating-system&quot; class=&quot;headerlink&quot; title=&quot;operating system&quot;&gt;&lt;/a&gt;operating system&lt;/h1&gt;&lt;h2 id=&quot;线程和进程&quot;&gt;&lt;a
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

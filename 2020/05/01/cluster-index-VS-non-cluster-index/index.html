@@ -17,24 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>数据库的四大特性 | Hexo</title>
-  <meta name="description" content="数据库的四大特性事务事务指的是满足ACID特性的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。  ACID1. 原子性（Atomicity）事务要么全部提交成功，要么全部失败回滚。 2. 一致性（Consistency）在事务开始前和事务结束后，数据库的完整性约束没有被破坏。 3. 隔离型（Isolation）一个事务所做修改在提交之前，对其他事务是不可见的。 4">
+  <title>cluster index VS non cluster index | Hexo</title>
+  <meta name="description" content="聚集索引和非聚集索引的区别 聚集索引表记录的排列顺序与索引的排列顺序一致，聚集索引一般是表中的主键索引，如果表中没有指定主键，则会选择第一个不允许为null的唯一索引，如果还是没有的话，就采用Innodb存储引擎为每行数据内置的6字节ROWID作为聚集索引。 非聚集索引索引项顺序存储，但是索引项对应的内容却是随机存储的，可以通过非聚集索引查到记录所对应的主键值，再使用主键的值通过聚集索引查找到需要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库的四大特性">
-<meta property="og:url" content="http://yoursite.com/2020/04/23/database-ACID/index.html">
+<meta property="og:title" content="cluster index VS non cluster index">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库的四大特性事务事务指的是满足ACID特性的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。  ACID1. 原子性（Atomicity）事务要么全部提交成功，要么全部失败回滚。 2. 一致性（Consistency）在事务开始前和事务结束后，数据库的完整性约束没有被破坏。 3. 隔离型（Isolation）一个事务所做修改在提交之前，对其他事务是不可见的。 4">
+<meta property="og:description" content="聚集索引和非聚集索引的区别 聚集索引表记录的排列顺序与索引的排列顺序一致，聚集索引一般是表中的主键索引，如果表中没有指定主键，则会选择第一个不允许为null的唯一索引，如果还是没有的话，就采用Innodb存储引擎为每行数据内置的6字节ROWID作为聚集索引。 非聚集索引索引项顺序存储，但是索引项对应的内容却是随机存储的，可以通过非聚集索引查到记录所对应的主键值，再使用主键的值通过聚集索引查找到需要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/04/23/database-ACID/1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/23/database-ACID/2.png">
-<meta property="article:published_time" content="2020-04-24T05:47:20.000Z">
-<meta property="article:modified_time" content="2020-04-24T16:52:14.000Z">
+<meta property="og:image" content="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/1.png">
+<meta property="article:published_time" content="2020-05-02T00:20:00.000Z">
+<meta property="article:modified_time" content="2020-05-02T00:31:55.000Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/23/database-ACID/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/23/database-ACID/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -44,8 +42,6 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -351,25 +347,16 @@
 
   
   
-<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <nav id="toc" class="article-toc">
-      <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库的四大特性"><span class="toc-number">1.</span> <span class="toc-text">数据库的四大特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">1.1.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACID"><span class="toc-number">1.2.</span> <span class="toc-text">ACID</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-原子性（Atomicity）"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 原子性（Atomicity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-一致性（Consistency）"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 一致性（Consistency）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-隔离型（Isolation）"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 隔离型（Isolation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-持久性（Durability）"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 持久性（Durability）</span></a></li></ol></li></ol></li></ol>
-    </nav>
-  </div>
-</aside>
-
 <main class="main" role="main">
   <div class="content">
-  <article id="post-database-ACID" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-cluster-index-VS-non-cluster-index" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      数据库的四大特性
+      cluster index VS non cluster index
     </h1>
   
 
@@ -377,22 +364,12 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/23/database-ACID/" class="article-date">
-	  <time datetime="2020-04-24T05:47:20.000Z" itemprop="datePublished">2020-04-23</time>
+	<a href="/2020/05/01/cluster-index-VS-non-cluster-index/" class="article-date">
+	  <time datetime="2020-05-02T00:20:00.000Z" itemprop="datePublished">2020-05-01</time>
 	</a>
 </span>
         
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-  </span>
-
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>
-  </span>
-
 
         
 	<span class="article-read hidden-xs">
@@ -403,26 +380,17 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/23/database-ACID/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/05/01/cluster-index-VS-non-cluster-index/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="数据库的四大特性"><a href="#数据库的四大特性" class="headerlink" title="数据库的四大特性"></a>数据库的四大特性</h1><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>事务指的是满足ACID特性的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。</p>
-<p><img src="/2020/04/23/database-ACID/1.png" alt="1"></p>
-<h2 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h2><h3 id="1-原子性（Atomicity）"><a href="#1-原子性（Atomicity）" class="headerlink" title="1. 原子性（Atomicity）"></a>1. 原子性（Atomicity）</h3><p>事务要么全部提交成功，要么全部失败回滚。</p>
-<h3 id="2-一致性（Consistency）"><a href="#2-一致性（Consistency）" class="headerlink" title="2. 一致性（Consistency）"></a>2. 一致性（Consistency）</h3><p>在事务开始前和事务结束后，数据库的完整性约束没有被破坏。</p>
-<h3 id="3-隔离型（Isolation）"><a href="#3-隔离型（Isolation）" class="headerlink" title="3. 隔离型（Isolation）"></a>3. 隔离型（Isolation）</h3><p>一个事务所做修改在提交之前，对其他事务是不可见的。</p>
-<h3 id="4-持久性（Durability）"><a href="#4-持久性（Durability）" class="headerlink" title="4. 持久性（Durability）"></a>4. 持久性（Durability）</h3><p>一旦事务提交，其所做的修改会永远保存到数据库中，即使系统发生崩溃，事务执行的结果也不能丢失。</p>
-<p>事务的ACID特性概念简单，但不是很好理解，主要是因为这几个特性不是平级关系：</p>
-<ul>
-<li>只有满足一致性，事务的执行结果才是正确的。</li>
-<li>在无并发的情况下，事务串行执行，隔离性一定能够满足，此时只需要满足原子性，就一定能满足一致性。</li>
-<li>在并发情况下，事务不仅要满足原子性，还要满足隔离性，才能满足一致性。</li>
-<li>事务满足持久化是为了能应对数据库崩溃的情况。</li>
+        <h1 id="聚集索引和非聚集索引的区别"><a href="#聚集索引和非聚集索引的区别" class="headerlink" title="聚集索引和非聚集索引的区别"></a>聚集索引和非聚集索引的区别</h1><ul>
+<li>聚集索引表记录的排列顺序与索引的排列顺序一致，聚集索引一般是表中的主键索引，如果表中没有指定主键，则会选择第一个不允许为null的唯一索引，如果还是没有的话，就采用Innodb存储引擎为每行数据内置的6字节ROWID作为聚集索引。</li>
+<li>非聚集索引索引项顺序存储，但是索引项对应的内容却是随机存储的，可以通过非聚集索引查到记录所对应的主键值，再使用主键的值通过聚集索引查找到需要的数据。</li>
 </ul>
-<p><img src="/2020/04/23/database-ACID/2.png" alt="2"></p>
+<p><img src="/2020/05/01/cluster-index-VS-non-cluster-index/1.png" alt="1"></p>
 
       
     </div>
@@ -432,7 +400,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/23/database-ACID/" title="数据库的四大特性" target="_blank" rel="external">http://yoursite.com/2020/04/23/database-ACID/</a>
+      <a href="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/" title="cluster index VS non cluster index" target="_blank" rel="external">http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -479,23 +447,14 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/04/24/Isolation-Level/" title="四种隔离级别"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/05/01/Java-fundamentation/" title="Java fundamentation"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/04/23/database-engine/" title="数据库引擎"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/05/01/optimize-sql/" title="如何对一条SQL语句进行调优"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
-    
-    <li class="toggle-toc">
-      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
-        <span>[&nbsp;</span><span>文章目录</span>
-        <i class="text-collapsed icon icon-anchor"></i>
-        <i class="text-in icon icon-close"></i>
-        <span>]</span>
-      </a>
-    </li>
     
   </ul>
   
