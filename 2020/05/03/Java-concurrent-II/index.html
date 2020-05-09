@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Java concurrent II | Hexo</title>
+  <meta name="description" content="Java并发进阶常见面试题总结1. synchronized关键字1.1 说一说自己对于synchronized关键字的理解synshronized关键字解决的是多个线程访问资源的同步性，synchronized关键字可以保证被它修饰的方法或者代码块在任意时刻只有一个线程在执行。 synchronized关键字加到static静态方法和synchronized（class）代码块上都是给Class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java concurrent II">
+<meta property="og:url" content="http://yoursite.com/2020/05/03/Java-concurrent-II/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java并发进阶常见面试题总结1. synchronized关键字1.1 说一说自己对于synchronized关键字的理解synshronized关键字解决的是多个线程访问资源的同步性，synchronized关键字可以保证被它修饰的方法或者代码块在任意时刻只有一个线程在执行。 synchronized关键字加到static静态方法和synchronized（class）代码块上都是给Class">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-03T19:32:32.000Z">
+<meta property="article:modified_time" content="2020-05-08T20:03:28.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/05/03/Java-concurrent-II/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="images/wu.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/wu.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">王禹臣</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Seattle, United States</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">-计算机</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">14</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">-数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">-数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">-数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13px;">-数据结构</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/08/Java-String-Class/" class="title">Java String Class</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-08T23:02:11.000Z" itemprop="datePublished">2020-05-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/08/Java-Lock/" class="title">Java Lock</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-08T21:20:29.000Z" itemprop="datePublished">2020-05-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/08/Java-Parents-delegate/" class="title">Java Parents delegate</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-08T16:47:41.000Z" itemprop="datePublished">2020-05-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/07/Java-reflection/" class="title">Java reflection</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-08T00:03:15.000Z" itemprop="datePublished">2020-05-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/06/garbage-collection/" class="title">garbage collection</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-06T18:09:52.000Z" itemprop="datePublished">2020-05-06</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Java-concurrent-II" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java concurrent II
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/05/03/Java-concurrent-II/" class="article-date">
+	  <time datetime="2020-05-03T19:32:32.000Z" itemprop="datePublished">2020-05-03</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/05/03/Java-concurrent-II/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="Java并发进阶常见面试题总结"><a href="#Java并发进阶常见面试题总结" class="headerlink" title="Java并发进阶常见面试题总结"></a>Java并发进阶常见面试题总结</h1><h1 id="1-synchronized关键字"><a href="#1-synchronized关键字" class="headerlink" title="1. synchronized关键字"></a>1. synchronized关键字</h1><h3 id="1-1-说一说自己对于synchronized关键字的理解"><a href="#1-1-说一说自己对于synchronized关键字的理解" class="headerlink" title="1.1 说一说自己对于synchronized关键字的理解"></a>1.1 说一说自己对于synchronized关键字的理解</h3><p>synshronized关键字解决的是多个线程访问资源的同步性，synchronized关键字可以保证被它修饰的方法或者代码块在任意时刻只有一个线程在执行。</p>
+<p>synchronized关键字加到static静态方法和synchronized（class）代码块上都是给Class 类上锁。synchronized关键字加到实例方法上是给对象实例上锁。</p>
+<p>###1.2 synchronized关键字的底层原理</p>
+<ol>
+<li>synchronized同步语句块的实现使用的是monitorenter和monitorexit指令，其中monitorenter指令指向同步代码块的开始位置，monitorexit指令指向同步代码块结束的位置。</li>
+<li>syschronized修饰的方法是用ACC_SYNCHRONIZED标识，该标识指明了该方法是一个同步方法。</li>
+</ol>
+<h3 id="1-3-谈谈synchronized和ReentrantLock的区别"><a href="#1-3-谈谈synchronized和ReentrantLock的区别" class="headerlink" title="1.3 谈谈synchronized和ReentrantLock的区别"></a>1.3 谈谈synchronized和ReentrantLock的区别</h3><ol>
+<li>两者都是可重入锁。“可重入锁”的概念是：自己可以再次获取自己的内部锁。</li>
+<li>sysnchronized是依赖于JVM实现的，并没有直接暴露给我们。ReentrantLock是JDK层面实现的，需要lock（）和unlock（）方法配合try／finally语句块来完成。</li>
+<li>ReentrantLock比synchronized增加了一些高级功能。主要有三点：（1）等待可中断；（2）实现公平锁（3）可实现选择性通知（锁可以绑定多个条件）</li>
+</ol>
+<ul>
+<li>ReentrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制。</li>
+<li>ReentranLock可以制定是公平锁还是非公平锁。而synchronized只能是非公平锁。所谓公平锁就是先等待的线程先获得锁。</li>
+<li>synchronized关键字与wait（）和notify／notifyAll（）方法相结合实现等待／通知机制。ReentrantLock通过Condition接口与newCondition（）方法实现等待／通知机制。具体实现方法是线程对象注册在指定的Condition中，从而可以有选择性的进行线程通知，在调度上更加灵活。</li>
+</ul>
+<h2 id="2-volatile关键字"><a href="#2-volatile关键字" class="headerlink" title="2. volatile关键字"></a>2. volatile关键字</h2><p>被volatile修饰的共享变量，具有以下两点特性：</p>
+<ol>
+<li>保证了不同线程对该变量操作的内存可见性。当一个变量被volatile修饰时，那么对它的修改会立刻刷新到主内存，当其他线程需要读取该变量时，会从主存中读取新值。而普通变量则不能保证这一点。</li>
+<li>禁止指令重新排序。</li>
+</ol>
+<h2 id="3-可重入锁和非可重入锁的区别"><a href="#3-可重入锁和非可重入锁的区别" class="headerlink" title="3. 可重入锁和非可重入锁的区别"></a>3. 可重入锁和非可重入锁的区别</h2><h3 id="不可重入锁："><a href="#不可重入锁：" class="headerlink" title="不可重入锁："></a>不可重入锁：</h3><p>当前线程执行某个方法已经获取了该锁，那么在方法中尝试再次获取锁时，就会获取不到被阻塞。</p>
+<h3 id="可重入锁："><a href="#可重入锁：" class="headerlink" title="可重入锁："></a>可重入锁：</h3><p>当前线程获取对象锁之后，该线程可以再次获取本对象上的锁，而其他线程是不可以的。可重入锁的意义在于防止死锁。</p>
+<h2 id="4-线程池"><a href="#4-线程池" class="headerlink" title="4. 线程池"></a>4. 线程池</h2><p>线程池就是通过创建一定数量的线程，让他们时刻就绪等待新任务的到达，任务执行结束之后再重新回来继续待命。</p>
+<h4 id="4-1-线程池的好处"><a href="#4-1-线程池的好处" class="headerlink" title="4.1 线程池的好处"></a>4.1 线程池的好处</h4><ol>
+<li>降低资源消耗：通过重复利用已经创建的线程降低线程创建和销毁造成的消耗。</li>
+<li>提高响应速度：当任务到达时，任务可以不需要等待线程创建就能立即执行。</li>
+<li>提高线程的可管理性：无限制的创建线程会消耗系统资源，还会降低系统稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ol>
+<h4 id="4-2-ThreadPoolExecutor构造函数重要参数分析"><a href="#4-2-ThreadPoolExecutor构造函数重要参数分析" class="headerlink" title="4.2 ThreadPoolExecutor构造函数重要参数分析"></a>4.2 ThreadPoolExecutor构造函数重要参数分析</h4><ul>
+<li><p>corePoolSize：定义了最小可以同时运行的线程数量。</p>
+</li>
+<li><p>maximumPoolSize：队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。</p>
+</li>
+<li><p>workQueue：当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。</p>
+</li>
+<li><p>keepAliveTime：当线程池中的线程数量大于corePoolSize的时候，如果这时候没有新的任务提交，核心线程外的线程不会立即销毁，而是等待，知道等待时间超过了keepAliveTime才会被回收。</p>
+</li>
+<li><p>unit：KeepAliveTime参数的时间单位。</p>
+</li>
+<li><p>threadFactory：executor创建线程的时候会用到。</p>
+</li>
+<li><p>handler：饱和策略。</p>
+</li>
+</ul>
+<h4 id="4-3-ThreadPoolExecutor饱和策略："><a href="#4-3-ThreadPoolExecutor饱和策略：" class="headerlink" title="4.3 ThreadPoolExecutor饱和策略："></a>4.3 ThreadPoolExecutor饱和策略：</h4><p>如果同时运行的线程数量达到最大线程数并且队列已经被放满了任务时，ThreadPoolExecutor定义了一些策略：</p>
+<ul>
+<li>ThreadPoolExecutor.AbortPolicy: 抛出RejectedExecutionException来拒绝新任务的处理。</li>
+<li>ThreadPoolExecutor.CallerRunsPolicy:调用执行自己的线程运行任务。</li>
+<li>TreadPoolExecutor.DiscardPolicy: 不处理新任务，直接丢掉。</li>
+<li>ThreadPoolExecutor.DiscardOldestPolicy ：此策略将丢弃最早的未处理的任务请求。</li>
+</ul>
+<h4 id="4-4-Java中有哪些常用的线程池"><a href="#4-4-Java中有哪些常用的线程池" class="headerlink" title="4.4 Java中有哪些常用的线程池"></a>4.4 Java中有哪些常用的线程池</h4><p>Java通过Executors提供四种线程池，分别为：</p>
+<ul>
+<li>newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</li>
+<li>newFixedThreadPool创建一个定长线程池，可控制线程的最大并发数，超出的线程会在队列中等待。</li>
+<li>newScheduledThreadPool创建一个定长线程池，支持定时及周期性任务执行。</li>
+<li>newSingleThreadExecutor创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序执行。</li>
+</ul>
+<h2 id="Java中多线程怎么通信"><a href="#Java中多线程怎么通信" class="headerlink" title="Java中多线程怎么通信"></a>Java中多线程怎么通信</h2><ol>
+<li><p>共享变量：线程间可以通过在共享对象的变量里设置信号值来发送信号。比如线程A在一个synchronized的语句块中设置一个boolean的成员变量hasDataToProcess为true，线程B在synChronized语句块中读取hasDataToProcess，如果是true就执行代码，否则就等待。这样就实现了线程A对线程B的通知。</p>
+</li>
+<li><p>wait/notify()/notifyAll()机制：</p>
+<p>一个线程可以对任何一个对象调用wait方法，这样这个线程就会变成wait状态，inactive，等待其他线程在同一个对象上调用notify（）方法，来唤醒这个线程。值得注意的是，在调用wait和notify方法之前，必须要先获得这个对象的锁。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/05/03/Java-concurrent-II/" title="Java concurrent II" target="_blank" rel="external">http://yoursite.com/2020/05/03/Java-concurrent-II/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/wu.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">王禹臣</span><small class="ml-1x">Developer</small></a></h3>
+        <div>Exploring world.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/05/06/garbage-collection/" title="garbage collection"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/05/03/concurrent/" title="JAVA并发基础"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

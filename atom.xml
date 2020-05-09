@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-02T04:50:46.000Z</updated>
+  <updated>2020-05-08T23:51:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,236 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java String Class</title>
+    <link href="http://yoursite.com/2020/05/08/Java-String-Class/"/>
+    <id>http://yoursite.com/2020/05/08/Java-String-Class/</id>
+    <published>2020-05-08T23:02:11.000Z</published>
+    <updated>2020-05-08T23:51:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;String，StringBuffer，StringBuilder的区别&quot;&gt;&lt;a href=&quot;#String，StringBuffer，StringBuilder的区别&quot; class=&quot;headerlink&quot; title=&quot;String，StringBuffer，
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Lock</title>
+    <link href="http://yoursite.com/2020/05/08/Java-Lock/"/>
+    <id>http://yoursite.com/2020/05/08/Java-Lock/</id>
+    <published>2020-05-08T21:20:29.000Z</published>
+    <updated>2020-05-08T23:01:57.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;何为悲观锁，何为乐观锁&quot;&gt;&lt;a href=&quot;#何为悲观锁，何为乐观锁&quot; class=&quot;headerlink&quot; title=&quot;何为悲观锁，何为乐观锁&quot;&gt;&lt;/a&gt;何为悲观锁，何为乐观锁&lt;/h1&gt;&lt;h2 id=&quot;悲观锁&quot;&gt;&lt;a href=&quot;#悲观锁&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Parents delegate</title>
+    <link href="http://yoursite.com/2020/05/08/Java-Parents-delegate/"/>
+    <id>http://yoursite.com/2020/05/08/Java-Parents-delegate/</id>
+    <published>2020-05-08T16:47:41.000Z</published>
+    <updated>2020-05-08T17:29:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java类加载器&quot;&gt;&lt;a href=&quot;#Java类加载器&quot; class=&quot;headerlink&quot; title=&quot;Java类加载器&quot;&gt;&lt;/a&gt;Java类加载器&lt;/h1&gt;&lt;h2 id=&quot;主要的类加载器&quot;&gt;&lt;a href=&quot;#主要的类加载器&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java reflection</title>
+    <link href="http://yoursite.com/2020/05/07/Java-reflection/"/>
+    <id>http://yoursite.com/2020/05/07/Java-reflection/</id>
+    <published>2020-05-08T00:03:15.000Z</published>
+    <updated>2020-05-08T05:48:07.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java基础之反射&quot;&gt;&lt;a href=&quot;#Java基础之反射&quot; class=&quot;headerlink&quot; title=&quot;Java基础之反射&quot;&gt;&lt;/a&gt;Java基础之反射&lt;/h1&gt;&lt;h2 id=&quot;反射的应用&quot;&gt;&lt;a href=&quot;#反射的应用&quot; class=&quot;header
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>garbage collection</title>
+    <link href="http://yoursite.com/2020/05/06/garbage-collection/"/>
+    <id>http://yoursite.com/2020/05/06/garbage-collection/</id>
+    <published>2020-05-06T18:09:52.000Z</published>
+    <updated>2020-05-07T05:09:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;垃圾回收算法&quot;&gt;&lt;a href=&quot;#垃圾回收算法&quot; class=&quot;headerlink&quot; title=&quot;垃圾回收算法&quot;&gt;&lt;/a&gt;垃圾回收算法&lt;/h1&gt;&lt;h2 id=&quot;1-标记-清除算法&quot;&gt;&lt;a href=&quot;#1-标记-清除算法&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java concurrent II</title>
+    <link href="http://yoursite.com/2020/05/03/Java-concurrent-II/"/>
+    <id>http://yoursite.com/2020/05/03/Java-concurrent-II/</id>
+    <published>2020-05-03T19:32:32.000Z</published>
+    <updated>2020-05-08T20:03:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java并发进阶常见面试题总结&quot;&gt;&lt;a href=&quot;#Java并发进阶常见面试题总结&quot; class=&quot;headerlink&quot; title=&quot;Java并发进阶常见面试题总结&quot;&gt;&lt;/a&gt;Java并发进阶常见面试题总结&lt;/h1&gt;&lt;h1 id=&quot;1-synchronize
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA并发基础</title>
+    <link href="http://yoursite.com/2020/05/03/concurrent/"/>
+    <id>http://yoursite.com/2020/05/03/concurrent/</id>
+    <published>2020-05-03T17:48:05.000Z</published>
+    <updated>2020-05-03T19:26:07.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;说说并发和并行的区别&quot;&gt;&lt;a href=&quot;#说说并发和并行的区别&quot; class=&quot;headerlink&quot; title=&quot;说说并发和并行的区别&quot;&gt;&lt;/a&gt;说说并发和并行的区别&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;并发：同一时间段内，多个任务都在执行（单位时间内不一定同时执行）
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java类加载过程</title>
+    <link href="http://yoursite.com/2020/05/02/Java-class-load-process/"/>
+    <id>http://yoursite.com/2020/05/02/Java-class-load-process/</id>
+    <published>2020-05-03T06:36:28.000Z</published>
+    <updated>2020-05-07T23:56:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java类加载过程&quot;&gt;&lt;a href=&quot;#Java类加载过程&quot; class=&quot;headerlink&quot; title=&quot;Java类加载过程&quot;&gt;&lt;/a&gt;Java类加载过程&lt;/h1&gt;&lt;p&gt;虚拟机加载Class类型的文件主要分为三步：加载，连接，初始化。连接过程又可分为三步
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java_memory_area</title>
+    <link href="http://yoursite.com/2020/05/02/Java-memory-area/"/>
+    <id>http://yoursite.com/2020/05/02/Java-memory-area/</id>
+    <published>2020-05-03T05:32:44.000Z</published>
+    <updated>2020-05-03T06:35:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java内存区域详解&quot;&gt;&lt;a href=&quot;#Java内存区域详解&quot; class=&quot;headerlink&quot; title=&quot;Java内存区域详解&quot;&gt;&lt;/a&gt;Java内存区域详解&lt;/h1&gt;&lt;h2 id=&quot;运行时的数据区域&quot;&gt;&lt;a href=&quot;#运行时的数据区域&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA集合框架</title>
+    <link href="http://yoursite.com/2020/05/02/Java-Collection/"/>
+    <id>http://yoursite.com/2020/05/02/Java-Collection/</id>
+    <published>2020-05-03T01:12:18.000Z</published>
+    <updated>2020-05-03T04:34:19.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#常见集合框架&lt;/p&gt;
+&lt;p&gt;Java中常见的集合框架有List，Set，Map：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;List：存储一组不唯一，有序的对象。如ArrayList，LinkedList。&lt;/li&gt;
+&lt;li&gt;Set：不允许重复的集合，HashSet无序，TreeSet有
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>线程安全的集合对象</title>
+    <link href="http://yoursite.com/2020/05/02/thread-safe-collection/"/>
+    <id>http://yoursite.com/2020/05/02/thread-safe-collection/</id>
+    <published>2020-05-02T18:28:02.000Z</published>
+    <updated>2020-05-02T23:36:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;线程安全&quot;&gt;&lt;a href=&quot;#线程安全&quot; class=&quot;headerlink&quot; title=&quot;线程安全&quot;&gt;&lt;/a&gt;线程安全&lt;/h1&gt;&lt;p&gt;线程安全就是多线程访问时，采用加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问，直到该线程读取完，其
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java fundamentation</title>
     <link href="http://yoursite.com/2020/05/01/Java-fundamentation/"/>
     <id>http://yoursite.com/2020/05/01/Java-fundamentation/</id>
     <published>2020-05-02T00:33:24.000Z</published>
-    <updated>2020-05-02T04:50:46.000Z</updated>
+    <updated>2020-05-03T04:34:12.000Z</updated>
     
     <summary type="html">
     
@@ -208,282 +433,6 @@
     
     
       <category term="-数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>平衡二叉树 vs 红黑树</title>
-    <link href="http://yoursite.com/2020/04/19/AVL-vs-RBT/"/>
-    <id>http://yoursite.com/2020/04/19/AVL-vs-RBT/</id>
-    <published>2020-04-19T17:15:47.000Z</published>
-    <updated>2020-04-20T00:10:46.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;AVL树&quot;&gt;&lt;a href=&quot;#AVL树&quot; class=&quot;headerlink&quot; title=&quot;AVL树&quot;&gt;&lt;/a&gt;AVL树&lt;/h1&gt;&lt;p&gt;AVL树是一种平衡二叉树，有两个性质：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;左右子树高度差小于一&lt;/li&gt;
-&lt;li&gt;每一个子树均为平衡
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决哈希冲突常用方法分析</title>
-    <link href="http://yoursite.com/2020/04/17/hash-conflict-solution/"/>
-    <id>http://yoursite.com/2020/04/17/hash-conflict-solution/</id>
-    <published>2020-04-18T02:12:44.000Z</published>
-    <updated>2020-04-18T03:33:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;解决哈希冲突的方法&quot;&gt;&lt;a href=&quot;#解决哈希冲突的方法&quot; class=&quot;headerlink&quot; title=&quot;解决哈希冲突的方法&quot;&gt;&lt;/a&gt;解决哈希冲突的方法&lt;/h1&gt;&lt;p&gt;解决哈希冲突的方法一般有：开放定址法、链地址法、再哈希法，建立公共溢出区等方法。&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bucket sort</title>
-    <link href="http://yoursite.com/2020/04/17/bucket-sort/"/>
-    <id>http://yoursite.com/2020/04/17/bucket-sort/</id>
-    <published>2020-04-18T00:36:02.000Z</published>
-    <updated>2020-04-18T01:44:59.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;桶排序之计数排序：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;得到无序数组的取值范围&lt;/li&gt;
-&lt;li&gt;根据取值范围创建对应数量的桶&lt;/li&gt;
-&lt;li&gt;遍历数组，把每个元素放到对应的“桶”中&lt;/li&gt;
-&lt;li&gt;按照顺序遍历桶中的每个元素，依次放到数组中，即可完成数组的排序&lt;/li&gt;
-&lt;/u
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>希尔排序（shell_sort）</title>
-    <link href="http://yoursite.com/2020/04/17/shell-sort/"/>
-    <id>http://yoursite.com/2020/04/17/shell-sort/</id>
-    <published>2020-04-17T17:50:37.000Z</published>
-    <updated>2020-04-18T00:08:59.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：按一定的增量对数据进行分组，然后对每组进行插入排序，不断减小增量直至增量为1，进行插入排序后整个数据为有序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2020/04/17/shell-sort/01.png&quot; alt=&quot;01&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>insertion_sort</title>
-    <link href="http://yoursite.com/2020/04/17/insertion-sort/"/>
-    <id>http://yoursite.com/2020/04/17/insertion-sort/</id>
-    <published>2020-04-17T17:27:25.000Z</published>
-    <updated>2020-04-17T17:50:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：每次选择一个元素，将这个元素与之前所有元素比较放在正确的位置上。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;l
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>冒泡排序（bubble_sort）</title>
-    <link href="http://yoursite.com/2020/04/17/bubble-sort/"/>
-    <id>http://yoursite.com/2020/04/17/bubble-sort/</id>
-    <published>2020-04-17T17:13:34.000Z</published>
-    <updated>2020-04-17T17:51:37.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：每次选择两个元素，按照需求进行交换（需要升序排列的话，把较大的元素放在靠后一些的位置），循环n次，这样小的元素会不断的冒泡到前面来，大的元素移动到后面去。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;tab
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>归并排序（merge sort）</title>
-    <link href="http://yoursite.com/2020/04/17/merge-sort/"/>
-    <id>http://yoursite.com/2020/04/17/merge-sort/</id>
-    <published>2020-04-17T16:41:32.000Z</published>
-    <updated>2020-04-17T17:10:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：如果只有一个元素的情况下直接返回，将数组分成长度尽可能相等的两部分，对左右两部分分别归并排序，然后有序的合并在一起。&lt;/p&gt;
-&lt;img src=&quot;/2020/04/17/merge-sort/1.png&quot; alt=&quot;1&quot; style=
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序（quick select）</title>
-    <link href="http://yoursite.com/2020/04/16/quick_select/"/>
-    <id>http://yoursite.com/2020/04/16/quick_select/</id>
-    <published>2020-04-17T05:33:41.000Z</published>
-    <updated>2020-04-17T05:57:25.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：选取中间元素，把整个数组分成两部分，小于该元素的放在左边，大于该元素的放在右边，分别对左右两边的子数组重复上述操作，直至所有元素有序。&lt;/p&gt;
-&lt;img src=&quot;/2020/04/16/quick_select/01.jpeg&quot; s
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>堆排序</title>
-    <link href="http://yoursite.com/2020/04/16/heap_sort/"/>
-    <id>http://yoursite.com/2020/04/16/heap_sort/</id>
-    <published>2020-04-17T02:51:24.000Z</published>
-    <updated>2020-04-17T04:47:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;!-- &lt;img src=&quot;/heap_sort/heap.png&quot; width = &quot;300&quot; height = &quot;200&quot; alt=&quot;git&quot; align=center /&gt; --&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/04/15/hello-world/"/>
-    <id>http://yoursite.com/2020/04/15/hello-world/</id>
-    <published>2020-04-16T05:11:12.000Z</published>
-    <updated>2020-04-16T20:17:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-      <category term="介绍" scheme="http://yoursite.com/categories/%E4%BB%8B%E7%BB%8D/"/>
-    
-    
-      <category term="入门" scheme="http://yoursite.com/tags/%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络</title>
-    <link href="http://yoursite.com/2020/04/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2020/04/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
-    <published>2020-04-11T18:49:16.000Z</published>
-    <updated>2020-04-16T22:47:23.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;计算机网络&quot;&gt;&lt;a href=&quot;#计算机网络&quot; class=&quot;headerlink&quot; title=&quot;计算机网络&quot;&gt;&lt;/a&gt;计算机网络&lt;/h1&gt;&lt;h2 id=&quot;从URL输入到页面展现到底发生了什么？&quot;&gt;&lt;a href=&quot;#从URL输入到页面展现到底发生了什么？&quot; c
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   

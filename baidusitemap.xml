@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/05/08/Java-String-Class/</loc>
+    <lastmod>2020-05-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/08/Java-Lock/</loc>
+    <lastmod>2020-05-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/03/Java-concurrent-II/</loc>
+    <lastmod>2020-05-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/08/Java-Parents-delegate/</loc>
+    <lastmod>2020-05-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/07/Java-reflection/</loc>
+    <lastmod>2020-05-08</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/02/Java-class-load-process/</loc>
+    <lastmod>2020-05-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/06/garbage-collection/</loc>
+    <lastmod>2020-05-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/03/concurrent/</loc>
+    <lastmod>2020-05-03</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/02/Java-memory-area/</loc>
+    <lastmod>2020-05-03</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/02/Java-Collection/</loc>
+    <lastmod>2020-05-03</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/05/01/Java-fundamentation/</loc>
+    <lastmod>2020-05-03</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/02/thread-safe-collection/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/</loc>
