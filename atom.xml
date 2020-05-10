@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-08T23:51:49.000Z</updated>
+  <updated>2020-05-10T05:13:21.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Database ACID</title>
+    <link href="http://yoursite.com/2020/05/09/Database-ACID-0/"/>
+    <id>http://yoursite.com/2020/05/09/Database-ACID-0/</id>
+    <published>2020-05-10T04:58:39.000Z</published>
+    <updated>2020-05-10T05:13:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h1&gt;&lt;p&gt;事务指的是满足ACID特性的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。&lt;/p&gt;
+&lt;h2 id=&quot;ACI
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据库的三范式</title>
+    <link href="http://yoursite.com/2020/05/09/Database-Normalization/"/>
+    <id>http://yoursite.com/2020/05/09/Database-Normalization/</id>
+    <published>2020-05-09T16:07:54.000Z</published>
+    <updated>2020-05-10T04:56:55.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据库的三范式&quot;&gt;&lt;a href=&quot;#数据库的三范式&quot; class=&quot;headerlink&quot; title=&quot;数据库的三范式&quot;&gt;&lt;/a&gt;数据库的三范式&lt;/h1&gt;&lt;h2 id=&quot;第一范式&quot;&gt;&lt;a href=&quot;#第一范式&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java Design Pattern</title>
+    <link href="http://yoursite.com/2020/05/08/Java-Design-Pattern/"/>
+    <id>http://yoursite.com/2020/05/08/Java-Design-Pattern/</id>
+    <published>2020-05-09T04:42:52.000Z</published>
+    <updated>2020-05-09T16:06:33.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#Java设计模式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建型模式：共五种：工厂方法模式，抽象工厂模式，单例模式，建造者模式。&lt;/li&gt;
+&lt;li&gt;结构性模式：适配器模式，代理模式，享元模式。&lt;/li&gt;
+&lt;li&gt;行为型模式：策略模式，观察者模式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈对面向对象的理解</title>
+    <link href="http://yoursite.com/2020/05/08/object-oriented-programming/"/>
+    <id>http://yoursite.com/2020/05/08/object-oriented-programming/</id>
+    <published>2020-05-09T03:45:01.000Z</published>
+    <updated>2020-05-09T04:41:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java面向对象&quot;&gt;&lt;a href=&quot;#Java面向对象&quot; class=&quot;headerlink&quot; title=&quot;Java面向对象&quot;&gt;&lt;/a&gt;Java面向对象&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;继承：继承是从已有类得到继承信息创建新类的过程。继承让变化中的软件系统有了一定的
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Java String Class</title>
@@ -246,13 +334,13 @@
     <link href="http://yoursite.com/2020/05/01/Java-fundamentation/"/>
     <id>http://yoursite.com/2020/05/01/Java-fundamentation/</id>
     <published>2020-05-02T00:33:24.000Z</published>
-    <updated>2020-05-03T04:34:12.000Z</updated>
+    <updated>2020-05-09T01:48:58.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;JAVA基础&quot;&gt;&lt;a href=&quot;#JAVA基础&quot; class=&quot;headerlink&quot; title=&quot;JAVA基础&quot;&gt;&lt;/a&gt;JAVA基础&lt;/h1&gt;&lt;h2 id=&quot;HashMap面试指南&quot;&gt;&lt;a href=&quot;#HashMap面试指南&quot; class=&quot;header
+        &lt;h1 id=&quot;JAVA基础&quot;&gt;&lt;a href=&quot;#JAVA基础&quot; class=&quot;headerlink&quot; title=&quot;JAVA基础&quot;&gt;&lt;/a&gt;JAVA基础&lt;/h1&gt;&lt;h2 id=&quot;抽象类和接口的区别&quot;&gt;&lt;a href=&quot;#抽象类和接口的区别&quot; class=&quot;headerlink
       
     
     </summary>
@@ -339,100 +427,6 @@
     
     
       <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库引擎</title>
-    <link href="http://yoursite.com/2020/04/23/database-engine/"/>
-    <id>http://yoursite.com/2020/04/23/database-engine/</id>
-    <published>2020-04-23T17:09:11.000Z</published>
-    <updated>2020-04-23T18:33:23.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在MySQL中，索引属于存储引擎级别的概念，不同的存储引擎对索引的实现方式是不同的，下面介绍MyISAM和InnoDB两个存储引擎的索引实现方式，&lt;/p&gt;
-&lt;h1 id=&quot;1-MyISAM索引实现&quot;&gt;&lt;a href=&quot;#1-MyISAM索引实现&quot; class=&quot;header
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="-数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库中有哪些索引类型</title>
-    <link href="http://yoursite.com/2020/04/21/database-index-type/"/>
-    <id>http://yoursite.com/2020/04/21/database-index-type/</id>
-    <published>2020-04-22T03:39:59.000Z</published>
-    <updated>2020-04-24T03:42:24.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Mysql索引类型与应用场景&quot;&gt;&lt;a href=&quot;#Mysql索引类型与应用场景&quot; class=&quot;headerlink&quot; title=&quot;Mysql索引类型与应用场景&quot;&gt;&lt;/a&gt;Mysql索引类型与应用场景&lt;/h1&gt;&lt;h2 id=&quot;1-索引的数据结构&quot;&gt;&lt;a hre
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>top k frequent</title>
-    <link href="http://yoursite.com/2020/04/21/top-k-frequent/"/>
-    <id>http://yoursite.com/2020/04/21/top-k-frequent/</id>
-    <published>2020-04-22T03:14:16.000Z</published>
-    <updated>2020-04-22T03:34:10.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;寻找数据流中出现最频繁的k个元素（find top k frequent items in a data stream）,这个问题也叫heavy hitter。&lt;/p&gt;
-&lt;h2 id=&quot;方案一：HashMap-Heap&quot;&gt;&lt;a href=&quot;#方案一：HashMap-Heap
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Huffman</title>
-    <link href="http://yoursite.com/2020/04/21/Huffman/"/>
-    <id>http://yoursite.com/2020/04/21/Huffman/</id>
-    <published>2020-04-22T01:37:35.000Z</published>
-    <updated>2020-04-22T02:56:44.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;霍夫曼编码&quot;&gt;&lt;a href=&quot;#霍夫曼编码&quot; class=&quot;headerlink&quot; title=&quot;霍夫曼编码&quot;&gt;&lt;/a&gt;霍夫曼编码&lt;/h1&gt;&lt;p&gt;霍夫曼编码的目的是根据使用频率最大化节省字符编码的存储空间，同时可以避免二义性（因为前缀都是内节点，不携带关键数据）
-      
-    
-    </summary>
-    
-    
-      <category term="-计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="-数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

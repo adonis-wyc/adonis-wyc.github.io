@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/05/09/Database-ACID-0/</loc>
+    <lastmod>2020-05-10</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/09/Database-Normalization/</loc>
+    <lastmod>2020-05-10</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/08/Java-Design-Pattern/</loc>
+    <lastmod>2020-05-09</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/08/object-oriented-programming/</loc>
+    <lastmod>2020-05-09</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/01/Java-fundamentation/</loc>
+    <lastmod>2020-05-09</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/05/08/Java-String-Class/</loc>
     <lastmod>2020-05-08</lastmod>
   </url>  <url>
@@ -29,9 +44,6 @@
     <lastmod>2020-05-03</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/02/Java-Collection/</loc>
-    <lastmod>2020-05-03</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/05/01/Java-fundamentation/</loc>
     <lastmod>2020-05-03</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/02/thread-safe-collection/</loc>
