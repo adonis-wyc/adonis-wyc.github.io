@@ -18,15 +18,15 @@
   
   
   <title>Java reflection | Hexo</title>
-  <meta name="description" content="Java基础之反射反射的应用 反射可以让开发人员通过外部类的全路径名创建对象，并使用这些类实现一些扩展功能。 反射让开发人员可以枚举出类的全部成员，包括构造函数，成员变量，成员方法。以帮助开发者写出正确的代码。 测试时也可以利用反射API访问类的私有成员，以保证测试代码覆盖率。  反射就是把Java类中的各种成分（包括成员变量，成员方法，构造方法，包等等信息）映射成一个个的Java对象。 如何反射">
+  <meta name="description" content="Java基础之反射反射的定义在程序运行中，动态获取Java类中成分的机制，成分包括（成员变量，成员方法，构造函数，类对象）等等。 反射的应用 反射可以让开发人员通过外部类的全路径名创建对象，并使用这些类实现一些扩展功能。 反射让开发人员可以枚举出类的全部成员，包括构造函数，成员变量，成员方法。以帮助开发者写出正确的代码。 测试时也可以利用反射API访问类的私有成员，以保证测试代码覆盖率。  反射就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java reflection">
 <meta property="og:url" content="http://yoursite.com/2020/05/07/Java-reflection/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java基础之反射反射的应用 反射可以让开发人员通过外部类的全路径名创建对象，并使用这些类实现一些扩展功能。 反射让开发人员可以枚举出类的全部成员，包括构造函数，成员变量，成员方法。以帮助开发者写出正确的代码。 测试时也可以利用反射API访问类的私有成员，以保证测试代码覆盖率。  反射就是把Java类中的各种成分（包括成员变量，成员方法，构造方法，包等等信息）映射成一个个的Java对象。 如何反射">
+<meta property="og:description" content="Java基础之反射反射的定义在程序运行中，动态获取Java类中成分的机制，成分包括（成员变量，成员方法，构造函数，类对象）等等。 反射的应用 反射可以让开发人员通过外部类的全路径名创建对象，并使用这些类实现一些扩展功能。 反射让开发人员可以枚举出类的全部成员，包括构造函数，成员变量，成员方法。以帮助开发者写出正确的代码。 测试时也可以利用反射API访问类的私有成员，以保证测试代码覆盖率。  反射就">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-08T00:03:15.000Z">
-<meta property="article:modified_time" content="2020-05-08T05:48:07.000Z">
+<meta property="article:modified_time" content="2020-05-17T02:22:29.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,51 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/16/Thread-Local/" class="title">Thread Local</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-17T02:36:22.000Z" itemprop="datePublished">2020-05-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/15/Linux-command/" class="title">Linux commnad</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-15T21:35:10.000Z" itemprop="datePublished">2020-05-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/10/database-transaction-isolation-level/" class="title">database transaction isolation level</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-10T18:00:08.000Z" itemprop="datePublished">2020-05-10</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -285,51 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-05-09T16:07:54.000Z" itemprop="datePublished">2020-05-09</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/Java-Design-Pattern/" class="title">Java Design Pattern</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-09T04:42:52.000Z" itemprop="datePublished">2020-05-08</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/object-oriented-programming/" class="title">谈谈对面向对象的理解</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-09T03:45:01.000Z" itemprop="datePublished">2020-05-08</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/Java-String-Class/" class="title">Java String Class</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-08T23:02:11.000Z" itemprop="datePublished">2020-05-08</time>
               </p>
             </div>
           </li>
@@ -384,7 +384,8 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="Java基础之反射"><a href="#Java基础之反射" class="headerlink" title="Java基础之反射"></a>Java基础之反射</h1><h2 id="反射的应用"><a href="#反射的应用" class="headerlink" title="反射的应用"></a>反射的应用</h2><ul>
+        <h1 id="Java基础之反射"><a href="#Java基础之反射" class="headerlink" title="Java基础之反射"></a>Java基础之反射</h1><h2 id="反射的定义"><a href="#反射的定义" class="headerlink" title="反射的定义"></a>反射的定义</h2><p>在程序运行中，动态获取Java类中成分的机制，成分包括（成员变量，成员方法，构造函数，类对象）等等。</p>
+<h2 id="反射的应用"><a href="#反射的应用" class="headerlink" title="反射的应用"></a>反射的应用</h2><ul>
 <li>反射可以让开发人员通过外部类的全路径名创建对象，并使用这些类实现一些扩展功能。</li>
 <li>反射让开发人员可以枚举出类的全部成员，包括构造函数，成员变量，成员方法。以帮助开发者写出正确的代码。</li>
 <li>测试时也可以利用反射API访问类的私有成员，以保证测试代码覆盖率。</li>
@@ -401,6 +402,8 @@
 <h2 id="通过反射获取成员变量"><a href="#通过反射获取成员变量" class="headerlink" title="通过反射获取成员变量"></a>通过反射获取成员变量</h2><p>获取成员变量有两个API：getFields（）和getDeclaredFields（）。区别在于getDeclaredFields用于获取所有声明的字段，包括public, private, protected, defaulted, getFields仅用来获取公有字段。</p>
 <h2 id="获取构造方法"><a href="#获取构造方法" class="headerlink" title="获取构造方法"></a>获取构造方法</h2><p>获取构造方法同样包含了两个API：getConstructors()和getDeclaredConstructors。getConstructors用来获取共有构造方法，getDeclaredConstructors用来获取所有构造方法。</p>
 <h2 id="获取成员方法"><a href="#获取成员方法" class="headerlink" title="获取成员方法"></a>获取成员方法</h2><p>同样包含两个API：getMethods()和getDeclaredMethods()。getMethods()用来获取公有的成员方法，getDeclaredMethods()用来获取所有的成员方法。</p>
+<h2 id="访问私有成员变量和方法"><a href="#访问私有成员变量和方法" class="headerlink" title="访问私有成员变量和方法"></a>访问私有成员变量和方法</h2><p>setAccessible(true)暴力解除限制。</p>
+<h2 id="强制转换类型："><a href="#强制转换类型：" class="headerlink" title="强制转换类型："></a>强制转换类型：</h2><p>class.newInstance()</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/sinat_38259539/article/details/71799078" target="_blank" rel="noopener">Java基础之—反射（非常重要)</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/86293659" target="_blank" rel="noopener">详解面试中常考的 Java 反射机制</a></p>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-10T05:13:21.000Z</updated>
+  <updated>2020-05-17T03:40:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Thread Local</title>
+    <link href="http://yoursite.com/2020/05/16/Thread-Local/"/>
+    <id>http://yoursite.com/2020/05/16/Thread-Local/</id>
+    <published>2020-05-17T02:36:22.000Z</published>
+    <updated>2020-05-17T03:40:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ThreadLocal&quot;&gt;&lt;a href=&quot;#ThreadLocal&quot; class=&quot;headerlink&quot; title=&quot;ThreadLocal&quot;&gt;&lt;/a&gt;ThreadLocal&lt;/h1&gt;&lt;p&gt;##定义：&lt;/p&gt;
+&lt;p&gt;ThreadLocal：让线程访问某个变量
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux commnad</title>
+    <link href="http://yoursite.com/2020/05/15/Linux-command/"/>
+    <id>http://yoursite.com/2020/05/15/Linux-command/</id>
+    <published>2020-05-15T21:35:10.000Z</published>
+    <updated>2020-05-15T21:35:58.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>database transaction isolation level</title>
+    <link href="http://yoursite.com/2020/05/10/database-transaction-isolation-level/"/>
+    <id>http://yoursite.com/2020/05/10/database-transaction-isolation-level/</id>
+    <published>2020-05-10T18:00:08.000Z</published>
+    <updated>2020-05-10T18:03:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;隔离级别&quot;&gt;&lt;a href=&quot;#隔离级别&quot; class=&quot;headerlink&quot; title=&quot;隔离级别&quot;&gt;&lt;/a&gt;隔离级别&lt;/h1&gt;&lt;h2 id=&quot;未提交读&quot;&gt;&lt;a href=&quot;#未提交读&quot; class=&quot;headerlink&quot; title=&quot;未提交读&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Database ACID</title>
     <link href="http://yoursite.com/2020/05/09/Database-ACID-0/"/>
     <id>http://yoursite.com/2020/05/09/Database-ACID-0/</id>
     <published>2020-05-10T04:58:39.000Z</published>
-    <updated>2020-05-10T05:13:21.000Z</updated>
+    <updated>2020-05-10T05:48:03.000Z</updated>
     
     <summary type="html">
     
@@ -169,13 +225,13 @@
     <link href="http://yoursite.com/2020/05/07/Java-reflection/"/>
     <id>http://yoursite.com/2020/05/07/Java-reflection/</id>
     <published>2020-05-08T00:03:15.000Z</published>
-    <updated>2020-05-08T05:48:07.000Z</updated>
+    <updated>2020-05-17T02:22:29.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Java基础之反射&quot;&gt;&lt;a href=&quot;#Java基础之反射&quot; class=&quot;headerlink&quot; title=&quot;Java基础之反射&quot;&gt;&lt;/a&gt;Java基础之反射&lt;/h1&gt;&lt;h2 id=&quot;反射的应用&quot;&gt;&lt;a href=&quot;#反射的应用&quot; class=&quot;header
+        &lt;h1 id=&quot;Java基础之反射&quot;&gt;&lt;a href=&quot;#Java基础之反射&quot; class=&quot;headerlink&quot; title=&quot;Java基础之反射&quot;&gt;&lt;/a&gt;Java基础之反射&lt;/h1&gt;&lt;h2 id=&quot;反射的定义&quot;&gt;&lt;a href=&quot;#反射的定义&quot; class=&quot;header
       
     
     </summary>
@@ -290,7 +346,7 @@
     <link href="http://yoursite.com/2020/05/02/Java-Collection/"/>
     <id>http://yoursite.com/2020/05/02/Java-Collection/</id>
     <published>2020-05-03T01:12:18.000Z</published>
-    <updated>2020-05-03T04:34:19.000Z</updated>
+    <updated>2020-05-17T19:36:49.000Z</updated>
     
     <summary type="html">
     
@@ -334,7 +390,7 @@
     <link href="http://yoursite.com/2020/05/01/Java-fundamentation/"/>
     <id>http://yoursite.com/2020/05/01/Java-fundamentation/</id>
     <published>2020-05-02T00:33:24.000Z</published>
-    <updated>2020-05-09T01:48:58.000Z</updated>
+    <updated>2020-05-18T18:43:14.000Z</updated>
     
     <summary type="html">
     
@@ -367,66 +423,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何对一条SQL语句进行调优</title>
-    <link href="http://yoursite.com/2020/05/01/optimize-sql/"/>
-    <id>http://yoursite.com/2020/05/01/optimize-sql/</id>
-    <published>2020-05-01T17:10:38.000Z</published>
-    <updated>2020-05-01T23:27:22.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;如何对一条SQL语句进行调优&quot;&gt;&lt;a href=&quot;#如何对一条SQL语句进行调优&quot; class=&quot;headerlink&quot; title=&quot;如何对一条SQL语句进行调优&quot;&gt;&lt;/a&gt;如何对一条SQL语句进行调优&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;尽量选择字段长度较小的列&lt;/li
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>四种隔离级别</title>
-    <link href="http://yoursite.com/2020/04/24/Isolation-Level/"/>
-    <id>http://yoursite.com/2020/04/24/Isolation-Level/</id>
-    <published>2020-04-24T16:57:08.000Z</published>
-    <updated>2020-04-24T16:57:49.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据库的四大特性</title>
-    <link href="http://yoursite.com/2020/04/23/database-ACID/"/>
-    <id>http://yoursite.com/2020/04/23/database-ACID/</id>
-    <published>2020-04-24T05:47:20.000Z</published>
-    <updated>2020-04-24T16:52:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;数据库的四大特性&quot;&gt;&lt;a href=&quot;#数据库的四大特性&quot; class=&quot;headerlink&quot; title=&quot;数据库的四大特性&quot;&gt;&lt;/a&gt;数据库的四大特性&lt;/h1&gt;&lt;h2 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   

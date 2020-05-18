@@ -26,7 +26,7 @@
 <meta property="og:description" content="#常见集合框架 Java中常见的集合框架有List，Set，Map：  List：存储一组不唯一，有序的对象。如ArrayList，LinkedList。 Set：不允许重复的集合，HashSet无序，TreeSet有序。 Map：使用键值对存储。两个Key可以引用相同的对象，但Key不能重复。HashMap无序，TreeMap有序。  ArrayList与LinkedList区别？ ArrayL">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-03T01:12:18.000Z">
-<meta property="article:modified_time" content="2020-05-03T04:34:19.000Z">
+<meta property="article:modified_time" content="2020-05-17T19:36:49.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,51 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/16/Thread-Local/" class="title">Thread Local</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-17T02:36:22.000Z" itemprop="datePublished">2020-05-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/15/Linux-command/" class="title">Linux commnad</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-15T21:35:10.000Z" itemprop="datePublished">2020-05-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/10/database-transaction-isolation-level/" class="title">database transaction isolation level</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-10T18:00:08.000Z" itemprop="datePublished">2020-05-10</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -285,51 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-05-09T16:07:54.000Z" itemprop="datePublished">2020-05-09</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/Java-Design-Pattern/" class="title">Java Design Pattern</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-09T04:42:52.000Z" itemprop="datePublished">2020-05-08</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/object-oriented-programming/" class="title">谈谈对面向对象的理解</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-09T03:45:01.000Z" itemprop="datePublished">2020-05-08</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/08/Java-String-Class/" class="title">Java String Class</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-08T23:02:11.000Z" itemprop="datePublished">2020-05-08</time>
               </p>
             </div>
           </li>
@@ -392,10 +392,44 @@
 <li>Map：使用键值对存储。两个Key可以引用相同的对象，但Key不能重复。HashMap无序，TreeMap有序。</li>
 </ul>
 <h1 id="ArrayList与LinkedList区别？"><a href="#ArrayList与LinkedList区别？" class="headerlink" title="ArrayList与LinkedList区别？"></a>ArrayList与LinkedList区别？</h1><ul>
-<li>ArrayList底层数据结构使用Object数组，LinkedList底层使用的是双向链表数据结构</li>
-<li>ArrayList采用数组存储，所以插入和删除元素的时间复杂度受到元素位置的影响。在指定位置插入数据时，时间复杂度为O（n - i）,因为元素i之后的每一个元素都要执行向前／向后移一位的操作。LinkedList采用链表存储，如果要在指定位置i插入和删除元素的话，需要先移动到指定位置再插入或者删除，时间复杂度近似O（n）.</li>
-<li>ArrayList支持高效快速的随机访问，LinkedList不支持高效快速的随机访问</li>
-<li>ArrayList空间浪费主要体现在在list列表结尾会预留一定的容量空间。而LinkedList的空间花费则体现在每一个元素要消耗比ArrayList更多的空间（因为要存放前驱指针，后继指针以及数据）。</li>
+<li><p><strong>ArrayList:</strong></p>
+<ul>
+<li>采用object数组存储</li>
+<li>默认长度是10，扩容是变成1.5倍</li>
+<li>扩容是采用Arrays.copyOf()创建新的数组</li>
+<li>增加和删除操作会造成元素移动，使用System.arraycopy()</li>
+<li>支持随机访问。</li>
+</ul>
+</li>
+<li><p><strong>Vector：</strong></p>
+<ul>
+<li>低层实现是Object数组，与ArrayList不同的是Vector<strong>线程安全</strong>。</li>
+<li>默认长度是10，扩容倍数默认为2，可以通过capacityIncrement参数自定义。</li>
+</ul>
+</li>
+<li><p><strong>LinkedList：</strong></p>
+<ul>
+<li>使用双向链表实现</li>
+<li>不支持随机访问，但插入删除操作不受位置影响。</li>
+</ul>
+</li>
+<li><p><strong>区别：</strong></p>
+<ul>
+<li><p>ArrayList底层数据结构使用Object数组，LinkedList底层使用的是双向链表数据结构</p>
+</li>
+<li><p>ArrayList采用数组存储，所以插入和删除元素需要移动元素向前或向后，效率较低。LinkedList采用链表存储，只需要改变元素指针即可，效率较高.</p>
+</li>
+<li><p>ArrayList支持高效快速的随机访问，LinkedList不支持高效快速的随机访问</p>
+</li>
+<li><p>ArrayList空间浪费主要体现在在list列表结尾会预留一定的容量空间。而LinkedList的空间花费则体现在每一个元素要消耗比ArrayList更多的空间（因为要存放前驱指针，后继指针以及数据）。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Collections.synchronizedList&lt;&gt;:</strong></p>
+<ul>
+<li>可以用此方法实现ArrayList和LinkedList的线程安全。</li>
+</ul>
+</li>
 </ul>
 <h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><ul>
 <li><strong>线程是否安全：</strong>HashMap是非线程安全的，HashTable是线程安全的。</li>
