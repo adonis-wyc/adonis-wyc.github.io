@@ -17,23 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>希尔排序（shell_sort） | Hexo</title>
-  <meta name="description" content="步骤：按一定的增量对数据进行分组，然后对每组进行插入排序，不断减小增量直至增量为1，进行插入排序后整个数据为有序。  123456789101112131415class Solution &amp;#123;    public int[] sortArray(int[] nums) &amp;#123;        for(int gap &#x3D; nums.length&#x2F;2; gap &gt; 0; gap &#x3D;">
+  <title>剑指offer | Hexo</title>
+  <meta name="description" content="二叉树相关：68.1 二叉查找树中两个节点的最低公共祖先思路：公共父节点的值应该：p.val &lt;&#x3D; root.val &lt;&#x3D; q.val: 123456789public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) &amp;#123;    if (root &#x3D;&#x3D; null)        retur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="希尔排序（shell_sort）">
-<meta property="og:url" content="http://yoursite.com/2020/04/17/shell-sort/index.html">
+<meta property="og:title" content="剑指offer">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="步骤：按一定的增量对数据进行分组，然后对每组进行插入排序，不断减小增量直至增量为1，进行插入排序后整个数据为有序。  123456789101112131415class Solution &amp;#123;    public int[] sortArray(int[] nums) &amp;#123;        for(int gap &#x3D; nums.length&#x2F;2; gap &gt; 0; gap &#x3D;">
+<meta property="og:description" content="二叉树相关：68.1 二叉查找树中两个节点的最低公共祖先思路：公共父节点的值应该：p.val &lt;&#x3D; root.val &lt;&#x3D; q.val: 123456789public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) &amp;#123;    if (root &#x3D;&#x3D; null)        retur">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/04/17/shell-sort/01.png">
-<meta property="article:published_time" content="2020-04-17T17:50:37.000Z">
-<meta property="article:modified_time" content="2020-04-18T00:08:59.000Z">
+<meta property="article:published_time" content="2020-06-05T16:05:42.000Z">
+<meta property="article:modified_time" content="2020-06-05T22:11:22.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/17/shell-sort/01.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2020/04/17/shell-sort/index.html">
+  <link rel="canonical" href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -354,21 +352,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二叉树相关："><span class="toc-number">1.</span> <span class="toc-text">二叉树相关：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#68-1-二叉查找树中两个节点的最低公共祖先"><span class="toc-number">1.1.</span> <span class="toc-text">68.1 二叉查找树中两个节点的最低公共祖先</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#68-2-普通二叉树中两个节点的最低公共祖先"><span class="toc-number">1.2.</span> <span class="toc-text">68.2 普通二叉树中两个节点的最低公共祖先</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串相关："><span class="toc-number">2.</span> <span class="toc-text">字符串相关：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#67-把字符串转化为整数"><span class="toc-number">2.1.</span> <span class="toc-text">67. 把字符串转化为整数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-number">3.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#66-构建数组乘积"><span class="toc-number">3.1.</span> <span class="toc-text">66. 构建数组乘积</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#位运算"><span class="toc-number">4.</span> <span class="toc-text">位运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#65-不用加减乘除做加法"><span class="toc-number">4.1.</span> <span class="toc-text">65. 不用加减乘除做加法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#64-求-1-2-3-…-n"><span class="toc-number">4.2.</span> <span class="toc-text">64. 求 1+2+3+…+n</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-shell-sort" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-剑指offer" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      希尔排序（shell_sort）
+      剑指offer
     </h1>
   
 
@@ -376,8 +374,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/04/17/shell-sort/" class="article-date">
-	  <time datetime="2020-04-17T17:50:37.000Z" itemprop="datePublished">2020-04-17</time>
+	<a href="/2020/06/05/%E5%89%91%E6%8C%87offer/" class="article-date">
+	  <time datetime="2020-06-05T16:05:42.000Z" itemprop="datePublished">2020-06-05</time>
 	</a>
 </span>
         
@@ -402,17 +400,32 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/04/17/shell-sort/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/05/%E5%89%91%E6%8C%87offer/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><strong>步骤</strong>：按一定的增量对数据进行分组，然后对每组进行插入排序，不断减小增量直至增量为1，进行插入排序后整个数据为有序。</p>
-<p><img src="/2020/04/17/shell-sort/01.png" alt="01"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArray(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> gap = nums.length/<span class="number">2</span>; gap &gt; <span class="number">0</span>; gap = gap/<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = gap; i &lt; nums.length; i++)&#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">                <span class="keyword">int</span> j;</span><br><span class="line">                <span class="keyword">for</span>(j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &gt; tmp; j = j - gap)&#123;</span><br><span class="line">                    nums[j + gap] = nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">                nums[j + gap] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="二叉树相关："><a href="#二叉树相关：" class="headerlink" title="二叉树相关："></a>二叉树相关：</h1><h2 id="68-1-二叉查找树中两个节点的最低公共祖先"><a href="#68-1-二叉查找树中两个节点的最低公共祖先" class="headerlink" title="68.1 二叉查找树中两个节点的最低公共祖先"></a>68.1 二叉查找树中两个节点的最低公共祖先</h2><p>思路：公共父节点的值应该：p.val &lt;= root.val &lt;= q.val:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    <span class="keyword">if</span> (root.val &gt; p.val &amp;&amp; root.val &gt; q.val)</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.left, p, q);</span><br><span class="line">    <span class="keyword">if</span> (root.val &lt; p.val &amp;&amp; root.val &lt; q.val)</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.right, p, q);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="68-2-普通二叉树中两个节点的最低公共祖先"><a href="#68-2-普通二叉树中两个节点的最低公共祖先" class="headerlink" title="68.2 普通二叉树中两个节点的最低公共祖先"></a>68.2 普通二叉树中两个节点的最低公共祖先</h2><p>思路：采用分治思想。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || root == p || root == q)&#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        TreeNode right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(left != <span class="keyword">null</span> &amp;&amp; right != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(left == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h1 id="字符串相关："><a href="#字符串相关：" class="headerlink" title="字符串相关："></a>字符串相关：</h1><h2 id="67-把字符串转化为整数"><a href="#67-把字符串转化为整数" class="headerlink" title="67. 把字符串转化为整数"></a>67. 把字符串转化为整数</h2><p>先判断正负，用boolean变量记录，然后遍历字符串，在遍历字符串的过程中进行两个判断：</p>
+<ol>
+<li>第一位是否是符号位。</li>
+<li>字符是否为数字。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">StrToInt</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="keyword">null</span> || str.length() == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isNegative = str.charAt(<span class="number">0</span>) == <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = str.charAt(i);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> &amp;&amp; (c == <span class="string">'+'</span> || c == <span class="string">'-'</span>))  <span class="comment">/* 符号判定 */</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>)                <span class="comment">/* 非法输入 */</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        ret = ret * <span class="number">10</span> + (c - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> isNegative ? -ret : ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="66-构建数组乘积"><a href="#66-构建数组乘积" class="headerlink" title="66. 构建数组乘积"></a>66. 构建数组乘积</h2><p>从左到右和从右到左分别累乘。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] multiply(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.length;</span><br><span class="line">        <span class="keyword">int</span>[] B = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, product = <span class="number">1</span>; i &lt; len; i++)&#123;</span><br><span class="line">            B[i] = product;</span><br><span class="line">            product *= A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>, product = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            B[i] *= product;</span><br><span class="line">            product *= A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="65-不用加减乘除做加法"><a href="#65-不用加减乘除做加法" class="headerlink" title="65. 不用加减乘除做加法"></a>65. 不用加减乘除做加法</h2><p>采用位运算，num1 ^ num2代表相加结果，(num1 &amp; num2) &lt;&lt; 1代表进位，当进位为0时计算完成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(num2 == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> num1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Add(num1 ^ num2, (num1 &amp; num2) &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="64-求-1-2-3-…-n"><a href="#64-求-1-2-3-…-n" class="headerlink" title="64. 求 1+2+3+…+n"></a>64. 求 1+2+3+…+n</h2>
       
     </div>
     <div class="article-footer">
@@ -421,7 +434,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2020/04/17/shell-sort/" title="希尔排序（shell_sort）" target="_blank" rel="external">http://yoursite.com/2020/04/17/shell-sort/</a>
+      <a href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/" title="剑指offer" target="_blank" rel="external">http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -467,13 +480,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/04/17/bucket-sort/" title="bucket sort"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/04/17/insertion-sort/" title="insertion_sort"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/06/04/MySQL-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" title="MySQL 主从复制"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

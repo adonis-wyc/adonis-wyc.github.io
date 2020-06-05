@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-05T01:55:58.000Z</updated>
+  <updated>2020-06-05T22:11:22.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>sql 指令</title>
-    <link href="http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/"/>
-    <id>http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/</id>
-    <published>2020-06-05T01:49:24.000Z</published>
-    <updated>2020-06-05T01:55:58.000Z</updated>
+    <title>剑指offer</title>
+    <link href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/"/>
+    <id>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</id>
+    <published>2020-06-05T16:05:42.000Z</published>
+    <updated>2020-06-05T22:11:22.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt;INNER JOIN：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;LEFT JOIN：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;RIGHT JOIN：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;OUTER JOIN：&lt;/strong&gt;&lt;/
+        &lt;h1 id=&quot;二叉树相关：&quot;&gt;&lt;a href=&quot;#二叉树相关：&quot; class=&quot;headerlink&quot; title=&quot;二叉树相关：&quot;&gt;&lt;/a&gt;二叉树相关：&lt;/h1&gt;&lt;h2 id=&quot;68-1-二叉查找树中两个节点的最低公共祖先&quot;&gt;&lt;a href=&quot;#68-1-二叉查找树中两个节点
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 主从复制</title>
+    <link href="http://yoursite.com/2020/06/04/MySQL-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/"/>
+    <id>http://yoursite.com/2020/06/04/MySQL-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</id>
+    <published>2020-06-05T04:24:35.000Z</published>
+    <updated>2020-06-05T07:16:45.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;MySQL主从复制过程：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;binlog记录格式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基于SQL语句的复制：&lt;/strong&gt;将修改数据的sql语句存储到binlog中。&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sql 指令</title>
+    <link href="http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/"/>
+    <id>http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-06-05T01:49:24.000Z</published>
+    <updated>2020-06-05T02:14:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#链接&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;INNER JOIN：&lt;/strong&gt;返回两张表中互相关联的记录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LEFT JOIN：&lt;/strong&gt;返回左表中的所有记录和右边相关联的记录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RIGHT JOIN：&lt;/
       
     
     </summary>
@@ -388,47 +436,6 @@
       
       
         &lt;h1 id=&quot;垃圾回收算法&quot;&gt;&lt;a href=&quot;#垃圾回收算法&quot; class=&quot;headerlink&quot; title=&quot;垃圾回收算法&quot;&gt;&lt;/a&gt;垃圾回收算法&lt;/h1&gt;&lt;h2 id=&quot;1-标记-清除算法&quot;&gt;&lt;a href=&quot;#1-标记-清除算法&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java concurrent II</title>
-    <link href="http://yoursite.com/2020/05/03/Java-concurrent-II/"/>
-    <id>http://yoursite.com/2020/05/03/Java-concurrent-II/</id>
-    <published>2020-05-03T19:32:32.000Z</published>
-    <updated>2020-05-25T04:29:12.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Java并发进阶常见面试题总结&quot;&gt;&lt;a href=&quot;#Java并发进阶常见面试题总结&quot; class=&quot;headerlink&quot; title=&quot;Java并发进阶常见面试题总结&quot;&gt;&lt;/a&gt;Java并发进阶常见面试题总结&lt;/h1&gt;&lt;h1 id=&quot;1-synchronize
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA并发基础</title>
-    <link href="http://yoursite.com/2020/05/03/concurrent/"/>
-    <id>http://yoursite.com/2020/05/03/concurrent/</id>
-    <published>2020-05-03T17:48:05.000Z</published>
-    <updated>2020-05-21T19:07:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;说说并发和并行的区别&quot;&gt;&lt;a href=&quot;#说说并发和并行的区别&quot; class=&quot;headerlink&quot; title=&quot;说说并发和并行的区别&quot;&gt;&lt;/a&gt;说说并发和并行的区别&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;并发：同一时间段内，多个任务都在执行（单位时间内不一定同时执行）
       
     
     </summary>
