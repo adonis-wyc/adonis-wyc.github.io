@@ -26,7 +26,7 @@
 <meta property="og:description" content="Java并发进阶常见面试题总结1. synchronized关键字1.1 说一说自己对于synchronized关键字的理解synshronized关键字解决的是多个线程访问资源的同步性，synchronized关键字可以保证被它修饰的方法或者代码块在任意时刻只有一个线程在执行。 synchronized关键字加到static静态方法和synchronized（class）代码块上都是给Class">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-03T19:32:32.000Z">
-<meta property="article:modified_time" content="2020-05-08T20:03:28.000Z">
+<meta property="article:modified_time" content="2020-05-25T04:29:12.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -218,7 +218,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">-计算机</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">14</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">-计算机</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">19</span></li></ul>
     </div>
   </div>
 
@@ -228,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">-数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">-数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">-数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">-数据结构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -238,7 +238,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">-数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13px;">-数据结构</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+      <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">-数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13px;">-数据结构</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.67px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.33px;">数据结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
     </div>
   </div>
 
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
     </div>
   </div>
 
@@ -263,13 +263,28 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
               </p>
               <p class="item-title">
-                <a href="/2020/05/16/Thread-Local/" class="title">Thread Local</a>
+                <a href="/2020/06/04/sql-%E6%8C%87%E4%BB%A4/" class="title">sql 指令</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-05-17T02:36:22.000Z" itemprop="datePublished">2020-05-16</time>
+                <time datetime="2020-06-05T01:49:24.000Z" itemprop="datePublished">2020-06-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="title">覆盖索引和回表查询</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-04T18:19:42.000Z" itemprop="datePublished">2020-06-04</time>
               </p>
             </div>
           </li>
@@ -281,10 +296,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/05/15/Linux-command/" class="title">Linux commnad</a>
+                <a href="/2020/05/31/database-lock/" class="title">database-lock</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-05-15T21:35:10.000Z" itemprop="datePublished">2020-05-15</time>
+                <time datetime="2020-05-31T22:23:49.000Z" itemprop="datePublished">2020-05-31</time>
               </p>
             </div>
           </li>
@@ -296,10 +311,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/05/10/database-transaction-isolation-level/" class="title">database transaction isolation level</a>
+                <a href="/2020/05/31/InnoDB-vs-Myisam/" class="title">InnoDB vs Myisam</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-05-10T18:00:08.000Z" itemprop="datePublished">2020-05-10</time>
+                <time datetime="2020-05-31T18:03:54.000Z" itemprop="datePublished">2020-05-31</time>
               </p>
             </div>
           </li>
@@ -311,25 +326,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2020/05/09/Database-ACID-0/" class="title">Database ACID</a>
+                <a href="/2020/05/24/spring/" class="title">Spring框架</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-05-10T04:58:39.000Z" itemprop="datePublished">2020-05-09</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2020/05/09/Database-Normalization/" class="title">数据库的三范式</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-05-09T16:07:54.000Z" itemprop="datePublished">2020-05-09</time>
+                <time datetime="2020-05-25T04:43:52.000Z" itemprop="datePublished">2020-05-24</time>
               </p>
             </div>
           </li>
@@ -451,6 +451,88 @@
 <p>一个线程可以对任何一个对象调用wait方法，这样这个线程就会变成wait状态，inactive，等待其他线程在同一个对象上调用notify（）方法，来唤醒这个线程。值得注意的是，在调用wait和notify方法之前，必须要先获得这个对象的锁。</p>
 </li>
 </ol>
+<h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><p>抽象的队列式的同步器，是一个构建锁和同步器的框架。</p>
+<p><strong>原理：</strong>如果被请求的共享资源空闲，则把当前请求线程设置为有效的工作线程，并将共享资源设置为锁定状态。如果请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制。这个机制AQS是用CLH队列锁实现的。即将暂时获取不到锁的线程放入队列中。CLH是虚拟的双向队列，即不存在队列实例，仅存在节点与节点之间的pre与next关系。AQS将每条请求共享资源的线程封装成一个CLH锁队列的一个节点来实现锁的分配。</p>
+<p><strong>AQS属性：</strong>Node head, Node tail, int state(代表当前锁的状态，0代表没有被占用，大于0代表示有线程持有当前锁)，Thread 持有独占锁的线程。</p>
+<p>等待队列中的每个线程被封装为一个Node实例（thread + waitStatus(-1 : 当前node的后继节点对应的线程需要被唤醒) + pre + next）。</p>
+<p><strong>waitStatus属性：</strong>默认为0，当大于0时，表示放弃等待；当等于-1时，表示当前节点的后继节点对应的线程需要被唤醒。当等于-2时，标志着线程在Condition条件上等待的线程唤醒。等于-3时，用于共享锁，标志着下一个调用acquireShared方法的线程应该被允许。</p>
+<p><strong>底层实现和应用</strong></p>
+<p>AQS使用volatile修饰的state变量表示同步状态，通过内置的CLH先进先出队列完成获取资源的线程的排队工作。AQS使用CAS原子操作实现对变量state的修改。</p>
+<p><strong>类别：</strong>共享锁和独占锁。</p>
+<p><strong>AQS提供了模版方法：</strong></p>
+<p>自定义同步器的步骤：</p>
+<ol>
+<li>继承AbstractQueuedSynchronizer并重写制定的方法。包括（tryAcquire()/tryRelease或者tryAcquireShared()/tryReleaseShared，本质是对共享资源state的操作）。</li>
+<li>将组合在自定义的同步器的实现中，并调用重写的模版方法。</li>
+</ol>
+<p><strong>CountDownLatch：</strong></p>
+<p><strong>功能：</strong>让一个线程等待一组线程完成之后才能执行。</p>
+<p><strong>工作原理：</strong>CountDownLatch对象维护一个计数器count，执行一次countDown()，计数器count减1，当count减到0时，await()方法阻塞的当前线程才能运行。</p>
+<p><strong>CyclicBarrier：</strong></p>
+<p><strong>功能：</strong>让一组线程等待至某个状态之后再全部同时执行。</p>
+<p><strong>原理：</strong>初始化CyclicBarrier对象，指定一起运行的线程的数量，在每个子线程中调用await()方法，参与者的数量加一，当参与者数量达到初始化的大小时，所有线程一起执行后面的动作。</p>
+<p><strong>CountDownLatch和CyclicBarrier区别：</strong></p>
+<p>功能上，CountDownLatch是让一个或多个线程等待一组线程执行完毕，CyclicBarrier是允许多个线程相互等待，直到到达某个公共屏障点。</p>
+<p>CountDownLatch的计数器不可以被重置，CyclicBarrier的计数器可以被重置，因此它被称为循环的barrier。</p>
+<p><strong>Semaphore：</strong></p>
+<p>初始化建立N个信号量。调用acquire()获取指定数量的信号量，如果有就给，没有就阻塞。调用release()释放指定数量的信号量。</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p><strong>ThreadPoolExecutor</strong>是线程池类</p>
+<p><strong>线程池的七大参数：</strong></p>
+<p><strong>corePoolSize：</strong>创建线程池之后，线程池中线程数为0，当有任务来之后，就会创建一个线程去执行任务，当线程池中的线程数目达到corePoolSize后，就会把到达的任务防到缓存队列中。核心线程会一直存活，即使没有任务需要执行。</p>
+<p><strong>maximumPoolSize：</strong>线程池的最大线程数，表示线程池中最大能创建多少个线程。</p>
+<p><strong>keepAliveTime：</strong>非核心线程的最大空闲时间。超过线程会被销毁。</p>
+<p><strong>unit：</strong>keepAliveTime的单位。</p>
+<p><strong>workQueue：</strong>任务队列，被提交但尚未被执行的任务。</p>
+<p><strong>threadFactory：</strong>线程工厂，用于创建线程，一般用默认的即可。</p>
+<p><strong>rejectedExecutionHandler：</strong>拒绝策略，当任务太多来不及处理，如何拒绝任务。</p>
+<p><strong>线程池工作过程：</strong></p>
+<ol>
+<li><p>当线程池刚创建时，里面没有线程，任务队列是作为参数传进来的，就算任务队列中有任务，线程池也不会马上执行他们。</p>
+</li>
+<li><p>当调用execute()方法添加一个任务时，线程池会做出如下判断：</p>
+</li>
+<li><p>如果poolSize &lt; corePoolSize，则新增加一个线程处理新的任务。无论是否有空闲的线程都新增一个线程处理新提交的任务。</p>
+</li>
+<li><p>如果poolSize = corePoolSize，新任务会被放入阻塞队列等待。</p>
+</li>
+<li><p>如果阻塞队列的容量达到上限，且这时poolSize &lt; maximumPoolSize，新增线程来处理任务。</p>
+</li>
+<li><p>如果阻塞队列满了，且poolSize = maximumPoolSize，那么线程已经到达极限，会根据拒绝策略拒绝新任务。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>当一个线程完成任务时，他会从队列中取下一个任务来执行。</p>
+</li>
+<li><p>当一个线程空闲时，超过一定时间（keepAliveTime）时，线程池会进行判断，如果当前运行的线程数大于corePoolSize，那么这个线程就会停掉。所以线程池所有任务完成后，它最终会收缩到corePoolSize的大小。</p>
+</li>
+</ol>
+<p><strong>饱和策略：</strong></p>
+<ol>
+<li><p>ThreadPoolExecutor.AbortPolicy：丢弃任务并抛出RejectedExecutionException异常。</p>
+</li>
+<li><p>ThreadPoolExecutor.DiscardPolicy：丢弃新任务，但是不抛出异常。</p>
+</li>
+<li><p>ThreadPoolExecutor.DiscardOldestPolicy：丢弃最老的请求，也就是即将被执行的任务，并尝试再次提交当前任务</p>
+</li>
+<li><p>ThreadPoolExecutor.CallerRunsPolicy：由调用方的线程处理新任务，不用线程池中的线程处理。</p>
+</li>
+</ol>
+<p><strong>阻塞队列：</strong></p>
+<p><strong>workQueue：</strong>一个阻塞队列：一般使用LinkedBlockingQueue和Synchronous。</p>
+<p>workQueue的类型为BlockingQueue<Runnable>，通常去下面三种类型：</Runnable></p>
+<ol>
+<li>ArrayBlockingQueue：基于数组的先进先出队列，此队列创建时必须指定大小。</li>
+<li>LinkedBlockingQueue：基于链表的先进先出队列，如果创建时没有指定大小，则默认为Integer.MAX_VALUE。</li>
+<li>synchronousQueue：这个队列不会保存提交的任务，而是直接创建一个线程来执行新来的任务。</li>
+</ol>
+<h2 id="Executors类实现的几种线程池类型，阿里为什么不让用？"><a href="#Executors类实现的几种线程池类型，阿里为什么不让用？" class="headerlink" title="Executors类实现的几种线程池类型，阿里为什么不让用？"></a>Executors类实现的几种线程池类型，阿里为什么不让用？</h2><ul>
+<li>FixedThreadPool：该方法返回一个固定线程数量的线程池。当新任务提交时，线程池中若有空闲线程，则立即执行。若没有，则新的任务会被暂存在一个任务队列中，等待有线程空闲，再处理在任务队列中的任务。</li>
+<li>SingleThreadExecutor：该方法返回一个只有一个线程的线程池。多余的任务提交时，保存到任务队列，待线程空闲时，按先进先出顺序执行队列中的任务。</li>
+<li>CachedThreadPool：该方法返回一个可以根据实际情况调整线程数量的线程池。线程池中线程的数量不确定，若有空闲的线程，可以优先使用空闲线程。若所有线程都在工作，又有新任务提交，则会创建新的线程执行任务。所有线程执行完任务后都将返回线程池进行复用。</li>
+</ul>
+<p><strong>不用的原因：</strong></p>
+<p>FixedThreadPool和SingleThreadExecutor都使用LinkedBlockingQueue作为阻塞队列，存在等待队列无限长的问题，造成OOM。</p>
+<p>CachedThreadPool使用SynchronousQueue作为阻塞队列，它不会保存任务，新任务提交后直接创建临时线程处理，会造成无限制的创建线程，造成OOM。</p>
 
       
     </div>

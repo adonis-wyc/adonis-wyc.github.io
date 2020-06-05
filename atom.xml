@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-17T03:40:30.000Z</updated>
+  <updated>2020-06-05T01:55:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,142 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sql 指令</title>
+    <link href="http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/"/>
+    <id>http://yoursite.com/2020/06/04/sql-%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-06-05T01:49:24.000Z</published>
+    <updated>2020-06-05T01:55:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;INNER JOIN：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LEFT JOIN：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RIGHT JOIN：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OUTER JOIN：&lt;/strong&gt;&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>覆盖索引和回表查询</title>
+    <link href="http://yoursite.com/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://yoursite.com/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/</id>
+    <published>2020-06-04T18:19:42.000Z</published>
+    <updated>2020-06-04T18:35:44.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;回表查询：&lt;/strong&gt;通过辅助索引查询到符合查询条件的记录的主键值，再到聚簇索引中通过主键来查询，叫做回表查询。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;覆盖索引的概念：&lt;/strong&gt;索引包含所查询的字段，称之为&lt;strong&gt;覆盖索引&lt;/strong&gt;，避
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>database-lock</title>
+    <link href="http://yoursite.com/2020/05/31/database-lock/"/>
+    <id>http://yoursite.com/2020/05/31/database-lock/</id>
+    <published>2020-05-31T22:23:49.000Z</published>
+    <updated>2020-06-01T17:15:23.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;锁机制&quot;&gt;&lt;a href=&quot;#锁机制&quot; class=&quot;headerlink&quot; title=&quot;锁机制&quot;&gt;&lt;/a&gt;锁机制&lt;/h1&gt;&lt;p&gt;三种并发控制机制：乐观锁，悲观锁和MVCC多版本并发控制机制。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;乐观锁：&lt;/stro
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>InnoDB vs Myisam</title>
+    <link href="http://yoursite.com/2020/05/31/InnoDB-vs-Myisam/"/>
+    <id>http://yoursite.com/2020/05/31/InnoDB-vs-Myisam/</id>
+    <published>2020-05-31T18:03:54.000Z</published>
+    <updated>2020-05-31T22:23:33.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Myisam和Innodb的区别&quot;&gt;&lt;a href=&quot;#Myisam和Innodb的区别&quot; class=&quot;headerlink&quot; title=&quot;Myisam和Innodb的区别&quot;&gt;&lt;/a&gt;Myisam和Innodb的区别&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;MyISA
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring框架</title>
+    <link href="http://yoursite.com/2020/05/24/spring/"/>
+    <id>http://yoursite.com/2020/05/24/spring/</id>
+    <published>2020-05-25T04:43:52.000Z</published>
+    <updated>2020-05-28T23:44:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Spring-IOC&quot;&gt;&lt;a href=&quot;#Spring-IOC&quot; class=&quot;headerlink&quot; title=&quot;Spring IOC&quot;&gt;&lt;/a&gt;Spring IOC&lt;/h2&gt;&lt;h2 id=&quot;核心容器的两个接口引发出的问题&quot;&gt;&lt;a href=&quot;#核心容器的两
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java锁机制</title>
+    <link href="http://yoursite.com/2020/05/21/Java-Lock-1/"/>
+    <id>http://yoursite.com/2020/05/21/Java-Lock-1/</id>
+    <published>2020-05-21T19:08:25.000Z</published>
+    <updated>2020-05-23T04:48:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;乐观锁&quot;&gt;&lt;a href=&quot;#乐观锁&quot; class=&quot;headerlink&quot; title=&quot;乐观锁&quot;&gt;&lt;/a&gt;乐观锁&lt;/h2&gt;&lt;p&gt;每次访问数据都认为其他线程不会修改数据，所以直接访问数据，更新的时候再判断在此期间其他线程是否修改数据。&lt;/p&gt;
+&lt;p&gt;&lt;stron
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Thread Local</title>
@@ -245,7 +381,7 @@
     <link href="http://yoursite.com/2020/05/06/garbage-collection/"/>
     <id>http://yoursite.com/2020/05/06/garbage-collection/</id>
     <published>2020-05-06T18:09:52.000Z</published>
-    <updated>2020-05-07T05:09:16.000Z</updated>
+    <updated>2020-05-20T17:57:45.000Z</updated>
     
     <summary type="html">
     
@@ -265,7 +401,7 @@
     <link href="http://yoursite.com/2020/05/03/Java-concurrent-II/"/>
     <id>http://yoursite.com/2020/05/03/Java-concurrent-II/</id>
     <published>2020-05-03T19:32:32.000Z</published>
-    <updated>2020-05-08T20:03:28.000Z</updated>
+    <updated>2020-05-25T04:29:12.000Z</updated>
     
     <summary type="html">
     
@@ -285,7 +421,7 @@
     <link href="http://yoursite.com/2020/05/03/concurrent/"/>
     <id>http://yoursite.com/2020/05/03/concurrent/</id>
     <published>2020-05-03T17:48:05.000Z</published>
-    <updated>2020-05-03T19:26:07.000Z</updated>
+    <updated>2020-05-21T19:07:45.000Z</updated>
     
     <summary type="html">
     
@@ -293,131 +429,6 @@
       
         &lt;h1 id=&quot;说说并发和并行的区别&quot;&gt;&lt;a href=&quot;#说说并发和并行的区别&quot; class=&quot;headerlink&quot; title=&quot;说说并发和并行的区别&quot;&gt;&lt;/a&gt;说说并发和并行的区别&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;并发：同一时间段内，多个任务都在执行（单位时间内不一定同时执行）
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java类加载过程</title>
-    <link href="http://yoursite.com/2020/05/02/Java-class-load-process/"/>
-    <id>http://yoursite.com/2020/05/02/Java-class-load-process/</id>
-    <published>2020-05-03T06:36:28.000Z</published>
-    <updated>2020-05-07T23:56:06.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Java类加载过程&quot;&gt;&lt;a href=&quot;#Java类加载过程&quot; class=&quot;headerlink&quot; title=&quot;Java类加载过程&quot;&gt;&lt;/a&gt;Java类加载过程&lt;/h1&gt;&lt;p&gt;虚拟机加载Class类型的文件主要分为三步：加载，连接，初始化。连接过程又可分为三步
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java_memory_area</title>
-    <link href="http://yoursite.com/2020/05/02/Java-memory-area/"/>
-    <id>http://yoursite.com/2020/05/02/Java-memory-area/</id>
-    <published>2020-05-03T05:32:44.000Z</published>
-    <updated>2020-05-03T06:35:49.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Java内存区域详解&quot;&gt;&lt;a href=&quot;#Java内存区域详解&quot; class=&quot;headerlink&quot; title=&quot;Java内存区域详解&quot;&gt;&lt;/a&gt;Java内存区域详解&lt;/h1&gt;&lt;h2 id=&quot;运行时的数据区域&quot;&gt;&lt;a href=&quot;#运行时的数据区域&quot; cla
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA集合框架</title>
-    <link href="http://yoursite.com/2020/05/02/Java-Collection/"/>
-    <id>http://yoursite.com/2020/05/02/Java-Collection/</id>
-    <published>2020-05-03T01:12:18.000Z</published>
-    <updated>2020-05-17T19:36:49.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;#常见集合框架&lt;/p&gt;
-&lt;p&gt;Java中常见的集合框架有List，Set，Map：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;List：存储一组不唯一，有序的对象。如ArrayList，LinkedList。&lt;/li&gt;
-&lt;li&gt;Set：不允许重复的集合，HashSet无序，TreeSet有
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>线程安全的集合对象</title>
-    <link href="http://yoursite.com/2020/05/02/thread-safe-collection/"/>
-    <id>http://yoursite.com/2020/05/02/thread-safe-collection/</id>
-    <published>2020-05-02T18:28:02.000Z</published>
-    <updated>2020-05-02T23:36:18.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;线程安全&quot;&gt;&lt;a href=&quot;#线程安全&quot; class=&quot;headerlink&quot; title=&quot;线程安全&quot;&gt;&lt;/a&gt;线程安全&lt;/h1&gt;&lt;p&gt;线程安全就是多线程访问时，采用加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问，直到该线程读取完，其
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java fundamentation</title>
-    <link href="http://yoursite.com/2020/05/01/Java-fundamentation/"/>
-    <id>http://yoursite.com/2020/05/01/Java-fundamentation/</id>
-    <published>2020-05-02T00:33:24.000Z</published>
-    <updated>2020-05-18T18:43:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;JAVA基础&quot;&gt;&lt;a href=&quot;#JAVA基础&quot; class=&quot;headerlink&quot; title=&quot;JAVA基础&quot;&gt;&lt;/a&gt;JAVA基础&lt;/h1&gt;&lt;h2 id=&quot;抽象类和接口的区别&quot;&gt;&lt;a href=&quot;#抽象类和接口的区别&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>cluster index VS non cluster index</title>
-    <link href="http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/"/>
-    <id>http://yoursite.com/2020/05/01/cluster-index-VS-non-cluster-index/</id>
-    <published>2020-05-02T00:20:00.000Z</published>
-    <updated>2020-05-02T00:31:55.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;聚集索引和非聚集索引的区别&quot;&gt;&lt;a href=&quot;#聚集索引和非聚集索引的区别&quot; class=&quot;headerlink&quot; title=&quot;聚集索引和非聚集索引的区别&quot;&gt;&lt;/a&gt;聚集索引和非聚集索引的区别&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;聚集索引表记录的排列顺序与索引的排列顺序
       
     
     </summary>
