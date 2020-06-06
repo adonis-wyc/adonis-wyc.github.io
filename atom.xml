@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-05T22:11:22.000Z</updated>
+  <updated>2020-06-06T05:08:09.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>剑指offer</title>
-    <link href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/"/>
-    <id>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</id>
-    <published>2020-06-05T16:05:42.000Z</published>
-    <updated>2020-06-05T22:11:22.000Z</updated>
+    <title>redis</title>
+    <link href="http://yoursite.com/2020/06/05/redis/"/>
+    <id>http://yoursite.com/2020/06/05/redis/</id>
+    <published>2020-06-06T04:00:57.000Z</published>
+    <updated>2020-06-06T05:08:09.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;二叉树相关：&quot;&gt;&lt;a href=&quot;#二叉树相关：&quot; class=&quot;headerlink&quot; title=&quot;二叉树相关：&quot;&gt;&lt;/a&gt;二叉树相关：&lt;/h1&gt;&lt;h2 id=&quot;68-1-二叉查找树中两个节点的最低公共祖先&quot;&gt;&lt;a href=&quot;#68-1-二叉查找树中两个节点
+        &lt;h1 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot; title=&quot;一. 概述&quot;&gt;&lt;/a&gt;一. 概述&lt;/h1&gt;&lt;p&gt;Redis是速度非常快的&lt;strong&gt;非关系型&lt;/strong&gt;、&lt;strong&gt;内存&lt;/strong&gt;、&lt;stron
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指offer</title>
+    <link href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/"/>
+    <id>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</id>
+    <published>2020-06-05T16:05:42.000Z</published>
+    <updated>2020-06-06T03:54:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;动态规划：&quot;&gt;&lt;a href=&quot;#动态规划：&quot; class=&quot;headerlink&quot; title=&quot;动态规划：&quot;&gt;&lt;/a&gt;动态规划：&lt;/h1&gt;&lt;h2 id=&quot;63-股票的最大的利润&quot;&gt;&lt;a href=&quot;#63-股票的最大的利润&quot; class=&quot;headerlink
       
     
     </summary>
@@ -416,26 +440,6 @@
       
       
         &lt;h1 id=&quot;Java基础之反射&quot;&gt;&lt;a href=&quot;#Java基础之反射&quot; class=&quot;headerlink&quot; title=&quot;Java基础之反射&quot;&gt;&lt;/a&gt;Java基础之反射&lt;/h1&gt;&lt;h2 id=&quot;反射的定义&quot;&gt;&lt;a href=&quot;#反射的定义&quot; class=&quot;header
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>garbage collection</title>
-    <link href="http://yoursite.com/2020/05/06/garbage-collection/"/>
-    <id>http://yoursite.com/2020/05/06/garbage-collection/</id>
-    <published>2020-05-06T18:09:52.000Z</published>
-    <updated>2020-05-20T17:57:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;垃圾回收算法&quot;&gt;&lt;a href=&quot;#垃圾回收算法&quot; class=&quot;headerlink&quot; title=&quot;垃圾回收算法&quot;&gt;&lt;/a&gt;垃圾回收算法&lt;/h1&gt;&lt;h2 id=&quot;1-标记-清除算法&quot;&gt;&lt;a href=&quot;#1-标记-清除算法&quot; class=&quot;headerlink
       
     
     </summary>
