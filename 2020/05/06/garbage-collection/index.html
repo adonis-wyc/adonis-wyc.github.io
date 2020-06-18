@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/05/06/garbage-collection/1.png">
 <meta property="og:image" content="http://yoursite.com/2020/05/06/garbage-collection/2.png">
 <meta property="article:published_time" content="2020-05-06T18:09:52.000Z">
-<meta property="article:modified_time" content="2020-05-20T17:57:45.000Z">
+<meta property="article:modified_time" content="2020-06-15T10:41:56.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/05/06/garbage-collection/1.png">
@@ -250,7 +250,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
     </div>
   </div>
 
@@ -262,6 +262,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/17/spring%E6%A1%86%E6%9E%B6/" class="title">spring框架</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-18T05:45:37.000Z" itemprop="datePublished">2020-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/17/%E5%88%86%E5%B8%83%E5%BC%8F/" class="title">分布式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-18T05:08:14.000Z" itemprop="datePublished">2020-06-17</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -303,36 +333,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-06-05T04:24:35.000Z" itemprop="datePublished">2020-06-04</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/04/sql-%E6%8C%87%E4%BB%A4/" class="title">sql 指令</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-05T01:49:24.000Z" itemprop="datePublished">2020-06-04</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="title">覆盖索引和回表查询</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-04T18:19:42.000Z" itemprop="datePublished">2020-06-04</time>
               </p>
             </div>
           </li>
@@ -415,23 +415,23 @@
 <p>CMS收集器HotSpot虚拟机第一款真正意义上的并发收集器，它第一次实现了让垃圾回收线程与用户线程（基本上）同时工作。</p>
 <p>CMS收集器是一种“标记-清除”算法实现的，它的运作工程相比于前面几种垃圾收集器来说更加复杂一些。整个过程分为四个步骤：</p>
 <ul>
-<li>初始标记：暂停所有的其他线程，并记录下直接与root相连的对象，速度很快。</li>
-<li>并发标记：同时开启GC和用户线程，用一个闭包结构去记录可达对象。但在这个阶段结束，这个闭包结构并不能保证包含所有可达对象。因为用户线程可能会不断更新引用域，所以GC线程无法保证可达性分析的实时性。所以这个算法里会跟踪记录这些发生引用更新的地方。</li>
-<li>重新标记：重新标记阶段是为了修正并发标记期间因为用户程序继续运行而导致标记产生变动那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段的时间稍长，远远比并发标记阶段时间短。</li>
-<li>并发清除：开启用户线程，同时GC线程开始对标记的区域做清扫。</li>
+<li><strong>初始标记</strong>：<strong>暂停</strong>所有的其他线程，并记录下直接与<strong>root相连</strong>的对象，<strong>速度很快</strong>。</li>
+<li><strong>并发标记</strong>：<strong>可达性分析过程</strong>。同时开启GC和用户线程，用一个闭包结构去记录可达对象。但在这个阶段结束，这个闭包结构并不能保证包含所有可达对象。因为用户线程可能会不断更新引用域，所以GC线程无法保证可达性分析的实时性。所以这个算法里会跟踪记录这些发生引用更新的地方。</li>
+<li><strong>重新标记</strong>：重新标记阶段是为了修正并发标记期间因为用户程序继续运行而导致标记产生变动那一部分对象的标记记录，这个阶段的停顿时间一般会比初始标记阶段的时间稍长，远远比并发标记阶段时间短。</li>
+<li><strong>并发清除</strong>：开启用户线程，同时GC线程开始对标记的区域做清扫。</li>
 </ul>
 <p><img src="/2020/05/06/garbage-collection/1.png" alt="1"></p>
 <p>从它的名字可以看出它是一款优秀的垃圾收集器，主要优点：并发收集，低停顿。但是它有下面三个明显的缺点：</p>
 <ul>
-<li>对CPU资源敏感；</li>
-<li>无法处理浮动垃圾；</li>
+<li>低停顿时间是以牺牲吞吐量为代价，导致CPU利用率不够高；</li>
+<li>无法处理浮动垃圾，浮动垃圾是指并发清除阶段产生的垃圾，如果预留空间不够，将临时启用serial old代替CMS；</li>
 <li>它使用的回收算法-“标记-清除”算法会导致收集结束时会有大量空间碎片的产生。</li>
 </ul>
 <h2 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h2><p><strong>优点：低停顿，高吞吐。</strong></p>
 <p><strong>建立可预测的停顿时间模型（使用户指定垃圾回收时间）；将堆分成多个大小相同的region，宏观上采用标记整理，微观上采用复制算法；</strong></p>
 <p><strong>初始标记，并发标记，最终标记，筛选回收。</strong></p>
 <p><strong>筛选回收是根据各个region的回收价值和停顿时间成本进行排序，然后根据用户所期望的GC停顿时间制定回收计划并回收。</strong></p>
-<p>G1（Garbage-First）是一款面向服务器的垃圾收集器，主要针对配备多颗处理器以及大容量内存的机器，已极高概率满足GC停顿时间要求的同时，还具备高吞吐量性能特征。</p>
+<p>G1（Garbage-First）是一款面向<strong>服务器</strong>的垃圾收集器，主要针对配备多颗处理器以及大容量内存的机器，已极高概率满足GC停顿时间要求的同时，还具备高吞吐量性能特征。</p>
 <p>此垃圾收集器不需要和别人配合，自己处理新生代和老年代。在JDK9中G1变为Server模式默认的垃圾收集器。它的发明就是为了替代CMS。</p>
 <p>G1（Garbage-First）从整体来看是基于标记-整理算法，从局部来看是基于复制算法。相对于CMS它的优点是首先它能建立可预测的停顿时间模型，能在一个规定的时间段内制定垃圾收集的时间不超过限制的毫秒数，并且将Java堆分为多个大小相等的独立区域，它的清理区间不再是整个新生代或者老年代，而是以区域为划分，不会产生空间碎片。</p>
 <p>G1会维护一个优先列表，根据跟踪各个region回收所能产生的空间大小和时间来标定优先级，优先回收优先级最大的region。这就等于每次的回收目标更加精确话，提高回收的效率，G1的收集步骤可分为：</p>

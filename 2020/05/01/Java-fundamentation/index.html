@@ -18,15 +18,15 @@
   
   
   <title>Java fundamentation | Hexo</title>
-  <meta name="description" content="JAVA基础抽象类和接口的区别不同：  抽象类中可以定义构造器，接口中不能定义构造器 抽象类可以有抽象方法和具体方法，接口中的方法全部都是抽象方法 抽象类中的成员可以是private, 默认，protected， public，接口中的成员全都是public 抽象类中可以定义成员变量，接口中定义的成员变量实际上都是常量 抽象类中可以有静态方法，接口中不能有静态方法 一个类只能继承一个抽象类，一个类">
+  <meta name="description" content="JAVA基础String，StringBuffer，StringBuilder区别##可变性： String类中使用final关键字修饰字符数组来保存字符串，所以String对象是不可变的。而StringBuilder与StringBuffer都继承自AbstractStringBuilder类，没有用final关键字修饰，所以这两种对象都是可变的。 线程安全性String中的对象是不可变的，可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java fundamentation">
 <meta property="og:url" content="http://yoursite.com/2020/05/01/Java-fundamentation/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JAVA基础抽象类和接口的区别不同：  抽象类中可以定义构造器，接口中不能定义构造器 抽象类可以有抽象方法和具体方法，接口中的方法全部都是抽象方法 抽象类中的成员可以是private, 默认，protected， public，接口中的成员全都是public 抽象类中可以定义成员变量，接口中定义的成员变量实际上都是常量 抽象类中可以有静态方法，接口中不能有静态方法 一个类只能继承一个抽象类，一个类">
+<meta property="og:description" content="JAVA基础String，StringBuffer，StringBuilder区别##可变性： String类中使用final关键字修饰字符数组来保存字符串，所以String对象是不可变的。而StringBuilder与StringBuffer都继承自AbstractStringBuilder类，没有用final关键字修饰，所以这两种对象都是可变的。 线程安全性String中的对象是不可变的，可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-02T00:33:24.000Z">
-<meta property="article:modified_time" content="2020-05-19T23:25:35.000Z">
+<meta property="article:modified_time" content="2020-06-12T23:04:14.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">18</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/17/spring%E6%A1%86%E6%9E%B6/" class="title">spring框架</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-18T05:45:37.000Z" itemprop="datePublished">2020-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/06/17/%E5%88%86%E5%B8%83%E5%BC%8F/" class="title">分布式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-06-18T05:08:14.000Z" itemprop="datePublished">2020-06-17</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -300,36 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-06-05T04:24:35.000Z" itemprop="datePublished">2020-06-04</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/04/sql-%E6%8C%87%E4%BB%A4/" class="title">sql 指令</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-05T01:49:24.000Z" itemprop="datePublished">2020-06-04</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="title">覆盖索引和回表查询</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-04T18:19:42.000Z" itemprop="datePublished">2020-06-04</time>
               </p>
             </div>
           </li>
@@ -384,7 +384,36 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="JAVA基础"><a href="#JAVA基础" class="headerlink" title="JAVA基础"></a>JAVA基础</h1><h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><p>不同：</p>
+        <h1 id="JAVA基础"><a href="#JAVA基础" class="headerlink" title="JAVA基础"></a>JAVA基础</h1><h2 id="String，StringBuffer，StringBuilder区别"><a href="#String，StringBuffer，StringBuilder区别" class="headerlink" title="String，StringBuffer，StringBuilder区别"></a>String，StringBuffer，StringBuilder区别</h2><p>##可变性：</p>
+<p>String类中使用final关键字修饰字符数组来保存字符串，所以String对象是不可变的。而StringBuilder与StringBuffer都继承自AbstractStringBuilder类，没有用final关键字修饰，所以这两种对象都是可变的。</p>
+<h2 id="线程安全性"><a href="#线程安全性" class="headerlink" title="线程安全性"></a>线程安全性</h2><p>String中的对象是不可变的，可以理解为常量，线程安全。</p>
+<p>StringBuffer对方法加了同步锁，所以是线程安全的。</p>
+<p>StringBuilder没有对方法进行加同步锁，所以是非线程安全的。</p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>每次对String类型进行改变时，都会生成一个新的对象，然后将指针指向新的String对象。</p>
+<p>StringBuffer每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并改变对象引用。</p>
+<p>相同情况下使用StringBuilder比使用StringBuffer仅能获得10%-15%左右的性能提升，但却要冒多线程不安全的风险。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>操作少量数据：适合用String。</p>
+<p>单线程操作字符串缓冲区下操作大量数据：适用StringBuilder。</p>
+<p>多线程操作字符串缓冲区下操作大量数据：适用StringBuffer。</p>
+<h1 id="为什么String是不可变类，有什么好处"><a href="#为什么String是不可变类，有什么好处" class="headerlink" title="为什么String是不可变类，有什么好处"></a>为什么String是不可变类，有什么好处</h1><ol>
+<li>字符串常量池的需要：字符串常量池是Java堆内存中一个特殊的存储区域，当创建一个String对象时，假设此字符串值已经存在于常量池中，则不会创建一个新的对象，而是引用已经存在的对象。假如字符串对象允许改变，那么将导致各种逻辑错误，比如改变一个对象会影响到另一个独立对象</li>
+<li>允许String对象缓存HashCode：Java中String对象的哈希码被频繁地使用，比如在HashMap等容器中。字符串的不变性保证了哈希码的唯一性，不必每次都去计算新的哈希码，因此可以放心的进行缓存。</li>
+<li>安全性：String被许多类当作参数，例如网络链接地址URL，文件路径Path，还有反射机制所需要的参数等，假设String不是固定不变的，将会引起各种安全隐患。</li>
+</ol>
+<p>#面向对象特性：</p>
+<p><strong>继承：</strong>从<strong>已有类</strong>得到<strong>继承信息</strong>创建<strong>新类</strong>的过程。</p>
+<p><strong>封装：</strong>把<strong>数据</strong>和<strong>操作数据</strong>的方法绑定起来，对数据的访问只能通过已定义的接口。</p>
+<p><strong>多态：</strong>允许<strong>不同子类型</strong>的对象对<strong>同一消息</strong>作出不同的响应。<strong>实现方法：</strong>Overload和Override，接口，抽象类。</p>
+<p><strong>抽象：</strong>抽象是将一类对象的共同特征总结出来构造类的过程 。</p>
+<p><strong>与C++区别：</strong></p>
+<ul>
+<li>Java 是<strong>面向对象语言</strong>，所有的对象都继承自 java.lang.Object，C++即支持<strong>面向对象</strong>也支持<strong>面向过程</strong>。</li>
+<li>Java 通过<strong>虚拟机</strong>从而实现<strong>跨平台</strong>特性，但是 C++ 依赖于<strong>特定的平台</strong>。</li>
+<li>Java 没有<strong>指针</strong>，它的引用可以理解为安全指针，而 C++ 具有和 C 一样的指针。</li>
+<li>Java 支持<strong>自动垃圾回收</strong>，而 C++ 需要<strong>手动回收</strong>。</li>
+<li>Java 不支持<strong>多重继承</strong>，只能通过实现多个接口来达到相同目的，而 C++ 支持<strong>多重继承</strong>。</li>
+</ul>
+<h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><p>不同：</p>
 <ol>
 <li>抽象类中可以定义构造器，接口中不能定义构造器</li>
 <li>抽象类可以有抽象方法和具体方法，接口中的方法全部都是抽象方法</li>
@@ -453,6 +482,60 @@
 <li>无法保证遍历时是最新数据。</li>
 </ul>
 </li>
+</ul>
+<p>#常见集合框架</p>
+<p>Java中常见的集合框架有List，Set，Map：</p>
+<ul>
+<li><strong>List：</strong>存储一组不唯一，有序的对象。如ArrayList，LinkedList。</li>
+<li><strong>Set：</strong>不允许重复的集合，HashSet无序，TreeSet有序。</li>
+<li><strong>Map：</strong>使用键值对存储。两个Key可以引用相同的对象，但Key不能重复。HashMap无序，TreeMap有序。</li>
+</ul>
+<h1 id="ArrayList与LinkedList区别？"><a href="#ArrayList与LinkedList区别？" class="headerlink" title="ArrayList与LinkedList区别？"></a>ArrayList与LinkedList区别？</h1><ul>
+<li><p><strong>ArrayList:</strong></p>
+<ul>
+<li>采用object数组存储</li>
+<li>默认长度是10，扩容是变成1.5倍</li>
+<li>扩容是采用Arrays.copyOf()创建新的数组</li>
+<li>增加和删除操作会造成元素移动，使用System.arraycopy()</li>
+<li>支持随机访问。</li>
+</ul>
+</li>
+<li><p><strong>Vector：</strong></p>
+<ul>
+<li>低层实现是Object数组，与ArrayList不同的是Vector<strong>线程安全</strong>。</li>
+<li>默认长度是10，扩容倍数默认为2，可以通过capacityIncrement参数自定义。</li>
+</ul>
+</li>
+<li><p><strong>LinkedList：</strong></p>
+<ul>
+<li>使用双向链表实现</li>
+<li>不支持随机访问，但插入删除操作不受位置影响。</li>
+</ul>
+</li>
+<li><p><strong>区别：</strong></p>
+<ul>
+<li><p>ArrayList底层数据结构使用Object数组，LinkedList底层使用的是双向链表数据结构</p>
+</li>
+<li><p>ArrayList采用数组存储，所以插入和删除元素需要移动元素向前或向后，效率较低。LinkedList采用链表存储，只需要改变元素指针即可，效率较高.</p>
+</li>
+<li><p>ArrayList支持高效快速的随机访问，LinkedList不支持高效快速的随机访问</p>
+</li>
+<li><p>ArrayList空间浪费主要体现在在list列表结尾会预留一定的容量空间。而LinkedList的空间花费则体现在每一个元素要消耗比ArrayList更多的空间（因为要存放前驱指针，后继指针以及数据）。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Collections.synchronizedList&lt;&gt;:</strong></p>
+<ul>
+<li>可以用此方法实现ArrayList和LinkedList的线程安全。</li>
+</ul>
+</li>
+</ul>
+<h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><ul>
+<li><strong>线程是否安全：</strong>HashMap是非线程安全的，HashTable是线程安全的。</li>
+<li><strong>效率：</strong>因为线程安全的问题，HashMap要比HashTable效率高一点。</li>
+<li><strong>对Null key和Null value的支持：</strong>HashMap中，null可以作为主键，这样的键只有一个，可以有一个或多个键所对应的值为null。</li>
+<li><strong>初始容量和每次扩充容量大小的不同：</strong>创建时如果不指定容量初始值，HashTable默认的初始大小为11，之后每次扩充，容量变为原来的2n + 1。HashMap默认的初始化大小为16，之后每次扩充，容量变为原来的2倍。创建时如果给定了容量初始值，HashTable会直接用你给定的大小，而HashMap会将其扩充为2的幂次方大小。</li>
+<li><strong>底层数据结构：</strong>HashMap在解决哈希冲突时有了较大的变化，当链表长度大于8时，将链表转化为红黑树，以减少搜索时间。</li>
 </ul>
 <h2 id="HashMap面试指南"><a href="#HashMap面试指南" class="headerlink" title="HashMap面试指南"></a>HashMap面试指南</h2><p>###看过HashMap源码嘛，知道原理吗？</p>
 <p>HashMap底层是数组+链表+红黑树。首先是table数组，数组中存放的是链表，链表的每一个节点以键值对的形式存在。在JDK1.8之后，当链表的长度超过阈值，默认为8，为加快检索速度，将链表转化为红黑树。</p>
