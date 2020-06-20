@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/2020/06/17/spring%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-06-18</lastmod>
+    <lastmod>2020-06-20</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/05/24/spring/</loc>
+    <lastmod>2020-06-19</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/06/04/%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E5%92%8C%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2/</loc>
     <lastmod>2020-06-18</lastmod>
@@ -57,9 +60,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2020/05/31/InnoDB-vs-Myisam/</loc>
     <lastmod>2020-05-31</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/05/24/spring/</loc>
-    <lastmod>2020-05-28</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/21/Java-Lock-1/</loc>
     <lastmod>2020-05-23</lastmod>
