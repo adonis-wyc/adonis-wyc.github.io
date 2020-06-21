@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/05/09/Database-ACID-0/1.png">
 <meta property="og:image" content="http://yoursite.com/2020/05/09/Database-ACID-0/2.png">
 <meta property="article:published_time" content="2020-05-10T04:58:39.000Z">
-<meta property="article:modified_time" content="2020-06-17T20:18:24.000Z">
+<meta property="article:modified_time" content="2020-06-21T05:19:14.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/05/09/Database-ACID-0/1.png">
@@ -521,6 +521,36 @@
 <h1 id="联合索引"><a href="#联合索引" class="headerlink" title="联合索引"></a>联合索引</h1><p><strong>如何存储：</strong>索引列全部出现在B+书中，首先按照第一列（最左前缀）进行排序，如果相等，则按照第二列进行排序，依次递推。</p>
 <p><strong>如何查找：</strong>先按照第一列进行查找，再按照第二列进行查找，依次递推。</p>
 <p>存在非等号和等号混合判断条件时，在建立索引时，把等号条件的列前置。范围列可以用到索引，但范围列后面的列无法用到索引。</p>
+<h2 id="Mysql主从复制"><a href="#Mysql主从复制" class="headerlink" title="Mysql主从复制"></a>Mysql主从复制</h2><p><strong>MySQL主从复制过程：</strong></p>
+<ol>
+<li>当从节点连接主节点时，主节点会创建一个log dump线程，用于发送bin-log的内容。（在读取bin-log中的操作时，此线程会对主节点上的bin-log加锁，当读取完成，锁会被释放）。</li>
+<li>从节点执行”start slave”命令之后，从节点会创建一个I/O线程用来连接主节点，请求主节点中更新的bin-log。从节点I/O线程接收到主节点线程发来的更新后，保存在本地relay-log中。</li>
+<li>从节点SQL线程：SQL线程负责读取relay log中的内容，解析成具体的操作并执行，保证主从数据的一致性。</li>
+</ol>
+<p><strong>Mysql主从复制的用途：</strong></p>
+<ol>
+<li>读写分离，提高数据库的并发能力。</li>
+<li>实时备灾，用于故障切换。</li>
+</ol>
+<p><strong>binlog记录格式：</strong></p>
+<ul>
+<li><strong>基于SQL语句的复制：</strong>将修改数据的sql语句存储到binlog中。</li>
+<li><strong>基于行的复制：</strong>将SQL语句分解为基于行更改的语句并记录在binlog中，只记录哪条数据被修改了，修改成什么样。</li>
+<li><strong>混合方式：</strong>两种方式都有。</li>
+</ul>
+<p><strong>复制的异步，半同步，同步模式区别：</strong></p>
+<ul>
+<li><strong>异步模式：</strong>事务首先在主库上提交，然后再复制给从库上应用。</li>
+<li><strong>半同步模式(Semisynchronous Replication)：</strong>保证事务已经至少传递给一个备库再进行提交。</li>
+<li><strong>全同步模式：</strong>保证事务在主库和从库全部执行完并提交。</li>
+</ul>
+<p><strong>读写分离会出现的问题：</strong>在从库上会读到过期状态的结果，也就是“过期读”。</p>
+<p><strong>解决方案</strong>：是对于必须要拿到最新结果的请求，强制将其发到主库上。还可以采用sleep方案，主库更新后，读从库之前先sleep一下。</p>
+<p><strong>MySQL主从复制存在的问题</strong></p>
+<ol>
+<li>主机宕机后，数据可能丢失。<strong>解决方案</strong>采用半同步复制来解决。</li>
+<li>从库只有一个sql 线程，复制可能延时。<strong>解决方案</strong>采用并行复制。</li>
+</ol>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="[http://itindex.net/detail/55421-mysql-sql-%E8%AF%AD%E5%8F%A5](http://itindex.net/detail/55421-mysql-sql-语句)">MYSQL查询SQL语句性能优化方法</a></p>
 <p><a href="https://blog.csdn.net/baidu_37107022/article/details/77278381" target="_blank" rel="noopener">浅谈sql中的in与not in,exists与not exists的区别以及性能分析</a></p>
 
