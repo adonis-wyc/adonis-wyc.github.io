@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</loc>
-    <lastmod>2020-07-01</lastmod>
+    <loc>http://yoursite.com/2020/05/03/Java-concurrent-II/</loc>
+    <lastmod>2020-07-04</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/07/03/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2020-07-04</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/06/30/%E7%AE%80%E5%8E%86/</loc>
+    <lastmod>2020-07-03</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/06/17/spring%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2020-07-02</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</loc>
     <lastmod>2020-07-01</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/15/Linux-command/</loc>
@@ -19,9 +28,6 @@
     <loc>http://yoursite.com/2020/06/04/MySQL-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/</loc>
     <lastmod>2020-06-21</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2020/06/17/spring%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-06-20</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2020/05/24/spring/</loc>
     <lastmod>2020-06-19</lastmod>
   </url>  <url>
@@ -30,9 +36,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2020/06/17/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2020-06-18</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/05/03/Java-concurrent-II/</loc>
-    <lastmod>2020-06-16</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/06/garbage-collection/</loc>
     <lastmod>2020-06-15</lastmod>

@@ -26,7 +26,7 @@
 <meta property="og:description" content="Spring IOC控制反转：指创建对象控制权的转移，原本创建对象的时机由自己把握，而现在这种权利转换到spring IOC容器中，spring根据配置文件或者注解创建实例和管理实例之间的依赖关系。 Spring依赖注入 使用构造函数提供。 使用set方法提供。  使用注解提供。  Spring如何解决循环依赖 构造器的循环依赖，无法解决只能抛出异常。 setter注入构成的循环依赖可以解决。使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-18T05:45:37.000Z">
-<meta property="article:modified_time" content="2020-06-20T21:59:15.000Z">
+<meta property="article:modified_time" content="2020-07-02T21:44:06.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/03/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="title">java设计模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-03T18:02:24.000Z" itemprop="datePublished">2020-07-03</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -315,21 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-06-06T04:00:57.000Z" itemprop="datePublished">2020-06-05</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/05/%E5%89%91%E6%8C%87offer/" class="title">剑指offer</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-05T16:05:42.000Z" itemprop="datePublished">2020-06-05</time>
               </p>
             </div>
           </li>
@@ -429,11 +429,11 @@
 <p>​    死亡：当对象长时间不用且没有别的引用时，有Java垃圾回收器回收。</p>
 <h2 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h2><p>把程序重复的代码抽取出来，在需要执行的时候，使用动态代理技术，在不修改源码的基础上，对已有的方法进行增强。</p>
 <h2 id="Spring-AOP术语"><a href="#Spring-AOP术语" class="headerlink" title="Spring AOP术语"></a>Spring AOP术语</h2><ol>
-<li>连接点（JoinPoint）：Spring允许通知的地方，spring只支持方法连接点，和方法有关的前前后后都是连接点。</li>
+<li><strong>连接点</strong>（JoinPoint）：Spring允许通知的地方，spring只支持方法连接点，和方法有关的前前后后都是连接点。</li>
 <li>切入点（Pointcut ）：在连接点中选取几个点作为切入点，真正的放入通知。</li>
 <li>通知（Advice）：你想要的功能，也就是上面说的安全，事务，日志。<ol>
-<li>前置通知（Before advice）：</li>
-<li>正常返回通知（After returning advice）:</li>
+<li>前置通知（Before advice）：在连接点前面执行。</li>
+<li>正常返回通知（After returning advice）:在连接点正常执行完成后执行。</li>
 <li>异常返回通知（After throwing advice）：在连接点抛出异常后执行。</li>
 <li>返回通知（After（finally）advice）：在连接点执行完成后执行，不管是正常执行完成，还是抛出异常，都会执行返回通知中的内容。</li>
 <li>环绕通知（Around advice）：环绕通知围绕在连接点前后，比如一个方法调用的前后，可以手动控制增强代码何时执行。</li>
@@ -507,6 +507,10 @@
 <li><strong>DispatcherServlet</strong>根据<strong>View</strong>进行<strong>渲染视图</strong>。</li>
 <li><strong>DispatcherServlet</strong>响应<strong>用户</strong>。</li>
 </ol>
+<h2 id="JDBC和ORM的区别"><a href="#JDBC和ORM的区别" class="headerlink" title="JDBC和ORM的区别"></a>JDBC和ORM的区别</h2><ol>
+<li>需要手动连接数据库，处理底层事务。</li>
+<li>需要编写SQL语句，工作量比较大。</li>
+</ol>
 <h2 id="Hibernate和MyBatis的区别"><a href="#Hibernate和MyBatis的区别" class="headerlink" title="Hibernate和MyBatis的区别"></a>Hibernate和MyBatis的区别</h2><ol>
 <li>Hibernate拥有完整的Bean对象和数据库的映射结构，MyBatis仅有基本的字段映射，需要写一些特定的sql语句，降低了数据库的可移植性。</li>
 <li>Hibernate拥有完整的日志系统，Mybatis则欠缺一些。</li>
@@ -519,7 +523,7 @@
 <p><strong>各自特点：</strong></p>
 <p>#{}用于防止sql注入。</p>
 <p>${}用于传入表名，字段名。</p>
-<p>sql注入就是指把用户输入的数据拼接到sql语句后面作为sql语句的一部分执行。</p>
+<p>sql注入就是指把<strong>用户输入的数据</strong>拼接到sql语句后面作为sql语句的一部分执行。</p>
 
       
     </div>
