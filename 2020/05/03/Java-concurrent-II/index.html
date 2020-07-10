@@ -26,7 +26,7 @@
 <meta property="og:description" content="Java并发进阶常见面试题总结说说并发和并行的区别 并发：同一时间段内，多个任务都在执行（单位时间内不一定同时执行）。 并行：单位时间内，多个任务同时执行。  线程安全和非线程安全 线程安全：一个类在单线程环境下能够正常运行，并且在多线程环境下，使用方不做特别处理也能正常运行，我们就称是线程安全的。 非线程安全：一个类在单线程环境下正常运行，在多线程环境下无法正常运行，这个类就是非线程安全的。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-03T19:32:32.000Z">
-<meta property="article:modified_time" content="2020-07-04T05:20:19.000Z">
+<meta property="article:modified_time" content="2020-07-05T18:20:12.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
     </div>
   </div>
 
@@ -259,6 +259,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/07/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="title">大数据与系统设计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-08T06:29:16.000Z" itemprop="datePublished">2020-07-07</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -315,21 +330,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-06-18T05:08:14.000Z" itemprop="datePublished">2020-06-17</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/06/05/redis/" class="title">redis</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-06-06T04:00:57.000Z" itemprop="datePublished">2020-06-05</time>
               </p>
             </div>
           </li>
@@ -397,6 +397,11 @@
 <li>从计算机底层来讲：线程的切换和调度成本远远小于进程。在单核CPU时代，多线程主要是为了提高CPU和IO设备的综合利用率；在多核CPU时代，<strong>多线程主要是为了提高CPU利用率</strong>，让多个CPU核心被利用到。</li>
 <li>从互联网发展趋势来讲，现在的系统要求高并发量，利用好多线程机制可以大大<strong>提高系统整体的并发能</strong>以及性能。</li>
 </ul>
+<h2 id="创建线程的三种方式"><a href="#创建线程的三种方式" class="headerlink" title="创建线程的三种方式"></a>创建线程的三种方式</h2><ul>
+<li>继承Thread类创建线程类，调用start方法启用该线程。无法继承别的线程，但写起来比较方便。</li>
+<li>实现Runnable接口创建线程类，调用start方法启用该线程。接口可以继承别的线程，但写起来比较麻烦。</li>
+<li>创建callable接口的实现类，并实现call()方法。创建Callable实现类的实例，使用FutureTask类来包装Callable对象。使用FutureTask对象作为Thread对象的参数创建并启动新线程。调用FutureTask对象的get（）方法获得子线程执行结束后的返回值。</li>
+</ul>
 <h2 id="线程状态，start-run-wait-notify-yeild-sleep-join等方法的作用以及区别"><a href="#线程状态，start-run-wait-notify-yeild-sleep-join等方法的作用以及区别" class="headerlink" title="线程状态，start,run,wait,notify,yeild,sleep,join等方法的作用以及区别"></a>线程状态，start,run,wait,notify,yeild,sleep,join等方法的作用以及区别</h2><p><strong>A.start()</strong>是<strong>启动</strong>一个新线程，进入<strong>就绪状态</strong>，start方法只能被调用一次。</p>
 <p><strong>run()</strong>方法，就绪状态的线程获取cpu之后调用的，线程进入运行状态，如果手动调用，相当于执行一个普通的方法。</p>
 <p><strong>wait()/notify()</strong>方法：线程调用wait()方法，<strong>释放</strong>对象的锁，进入该对象的<strong>等待队列</strong>，其他线程调用notify/notifyAll()方法唤醒<strong>等待队列</strong>中的线程，线程进入<strong>锁池</strong>，等待获取<strong>对象锁</strong>，获取之后进入<strong>就绪状态</strong>。</p>
@@ -460,42 +465,6 @@
 <p><strong>底层实现：</strong>volatile修饰的变量会在<strong>汇编阶段</strong>多出一条<strong>lock前缀</strong>指令，导致<strong>当前处理器缓存的数据</strong>立刻写回到<strong>主内存</strong>中，且让其他修改该数据的处理器的缓存<strong>失效</strong>。是synchronized的轻量级实现，只能保证可见性，无法保证原子性。</p>
 <h2 id="3-可重入锁和非可重入锁的区别"><a href="#3-可重入锁和非可重入锁的区别" class="headerlink" title="3. 可重入锁和非可重入锁的区别"></a>3. 可重入锁和非可重入锁的区别</h2><h3 id="不可重入锁："><a href="#不可重入锁：" class="headerlink" title="不可重入锁："></a>不可重入锁：</h3><p>当前线程执行某个方法已经获取了该锁，那么在方法中尝试再次获取锁时，就会获取不到被阻塞。</p>
 <h3 id="可重入锁："><a href="#可重入锁：" class="headerlink" title="可重入锁："></a>可重入锁：</h3><p>当前线程获取对象锁之后，该线程可以再次获取本对象上的锁，而其他线程是不可以的。可重入锁的意义在于防止死锁。</p>
-<h2 id="4-线程池"><a href="#4-线程池" class="headerlink" title="4. 线程池"></a>4. 线程池</h2><p>线程池就是通过创建一定数量的线程，让他们时刻就绪等待新任务的到达，任务执行结束之后再重新回来继续待命。</p>
-<h4 id="4-1-线程池的好处"><a href="#4-1-线程池的好处" class="headerlink" title="4.1 线程池的好处"></a>4.1 线程池的好处</h4><ol>
-<li>降低资源消耗：通过重复利用已经创建的线程降低线程创建和销毁造成的消耗。</li>
-<li>提高响应速度：当任务到达时，任务可以不需要等待线程创建就能立即执行。</li>
-<li>提高线程的可管理性：无限制的创建线程会消耗系统资源，还会降低系统稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
-</ol>
-<h4 id="4-2-ThreadPoolExecutor构造函数重要参数分析"><a href="#4-2-ThreadPoolExecutor构造函数重要参数分析" class="headerlink" title="4.2 ThreadPoolExecutor构造函数重要参数分析"></a>4.2 ThreadPoolExecutor构造函数重要参数分析</h4><ul>
-<li><p>corePoolSize：定义了最小可以同时运行的线程数量。</p>
-</li>
-<li><p>maximumPoolSize：队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。</p>
-</li>
-<li><p>workQueue：当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。</p>
-</li>
-<li><p>keepAliveTime：当线程池中的线程数量大于corePoolSize的时候，如果这时候没有新的任务提交，核心线程外的线程不会立即销毁，而是等待，知道等待时间超过了keepAliveTime才会被回收。</p>
-</li>
-<li><p>unit：KeepAliveTime参数的时间单位。</p>
-</li>
-<li><p>threadFactory：executor创建线程的时候会用到。</p>
-</li>
-<li><p>handler：饱和策略。</p>
-</li>
-</ul>
-<h4 id="4-3-ThreadPoolExecutor饱和策略："><a href="#4-3-ThreadPoolExecutor饱和策略：" class="headerlink" title="4.3 ThreadPoolExecutor饱和策略："></a>4.3 ThreadPoolExecutor饱和策略：</h4><p>如果同时运行的线程数量达到最大线程数并且队列已经被放满了任务时，ThreadPoolExecutor定义了一些策略：</p>
-<ul>
-<li>ThreadPoolExecutor.AbortPolicy: 抛出RejectedExecutionException来拒绝新任务的处理。</li>
-<li>ThreadPoolExecutor.CallerRunsPolicy:调用执行自己的线程运行任务。</li>
-<li>TreadPoolExecutor.DiscardPolicy: 不处理新任务，直接丢掉。</li>
-<li>ThreadPoolExecutor.DiscardOldestPolicy ：此策略将丢弃最早的未处理的任务请求。</li>
-</ul>
-<h4 id="4-4-Java中有哪些常用的线程池"><a href="#4-4-Java中有哪些常用的线程池" class="headerlink" title="4.4 Java中有哪些常用的线程池"></a>4.4 Java中有哪些常用的线程池</h4><p>Java通过Executors提供四种线程池，分别为：</p>
-<ul>
-<li>newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</li>
-<li>newFixedThreadPool创建一个定长线程池，可控制线程的最大并发数，超出的线程会在队列中等待。</li>
-<li>newScheduledThreadPool创建一个定长线程池，支持定时及周期性任务执行。</li>
-<li>newSingleThreadExecutor创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序执行。</li>
-</ul>
 <h2 id="Java中多线程怎么通信"><a href="#Java中多线程怎么通信" class="headerlink" title="Java中多线程怎么通信"></a>Java中多线程怎么通信</h2><ol>
 <li><p>共享变量：线程间可以通过在<strong>共享对象</strong>的<strong>变量</strong>里设置<strong>信号值</strong>来<strong>发送信号</strong>。比如线程A在一个synchronized的语句块中设置一个boolean的成员变量hasDataToProcess为true，线程B在synChronized语句块中读取hasDataToProcess，如果是true就执行代码，否则就等待。这样就实现了线程A对线程B的通知。</p>
 </li>
@@ -504,7 +473,7 @@
 </li>
 </ol>
 <h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><p>抽象的队列式的同步器，是一个<strong>构建锁和同步器的框架</strong>。</p>
-<p><strong>原理：</strong>如果被请求的共享资源空闲，则把当前请求线程设置为有效的工作线程，并将共享资源设置为锁定状态。如果请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制。这个机制AQS是用CLH队列锁实现的。即将暂时获取不到锁的线程放入队列中。CLH是虚拟的双向队列，即不存在队列实例，仅存在节点与节点之间的pre与next关系。AQS将每条请求共享资源的线程封装成一个CLH锁队列的一个节点来实现锁的分配。</p>
+<p><strong>原理：</strong>如果被请求的共享资源空闲，则把当前请求线程设置为有效的工作线程，并将共享资源设置为锁定状态。如果请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制。这个机制AQS是用CLH队列锁实现的。即将暂时获取不到锁的线程放入队列中。CLH是虚拟的双向队列，即不存在队列实例，仅存在节点与节点之间的pre与next关系。<strong>AQS将每条请求共享资源的线程封装成一个CLH锁队列的一个节点来实现锁的分配。</strong></p>
 <p><strong>AQS属性：</strong>Node head, Node tail, int <strong>state</strong>(代表当前锁的状态，0代表没有被占用，大于0代表示有线程持有当前锁)，Thread 持有独占锁的线程。</p>
 <p>等待队列中的每个线程被封装为一个Node实例（thread + waitStatus(-1 : 当前node的后继节点对应的线程需要被唤醒) + pre + next）。</p>
 <p><strong>waitStatus属性：</strong>默认为0，当大于0时，表示放弃等待；当等于<strong>-1</strong>时，表示<strong>当前节点</strong>的<strong>后继节点</strong>对应的<strong>线程</strong>需要被<strong>唤醒</strong>。当等于<strong>-2</strong>时，标志着线程在<strong>Condition</strong>条件上等待的线程唤醒。等于<strong>-3</strong>时，用于<strong>共享锁</strong>，标志着下一个调用<strong>acquireShared方法</strong>的<strong>线程</strong>应该被允许。</p>
@@ -616,6 +585,9 @@
 <h3 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h3><p>当锁是偏向锁的时候，被另外的线程所访问，偏向锁，就会升级为轻量级锁，其他线程会通过自旋的形式尝试获取锁，不会阻塞。</p>
 <p><strong>加锁过程：</strong>JVM在当前线程的栈帧中<strong>创建</strong>用于存储锁记录的空间，叫做<strong>LockRecord</strong>，然后把<strong>Mark Word拷贝</strong>到<strong>LockRecord</strong>中，同时生成一个叫<strong>owener的指针</strong>指向那个<strong>加锁的对象</strong>。同时，虚拟机将使用<strong>CAS操作</strong>尝试将<strong>对象的Mark Word</strong>更新为指向那个<strong>Lock Record</strong>的<strong>指针</strong>。如果更新成功了，那么该线程就拥有了该对象的锁。如果更新失败，JVM会首先检查对象的Mark Word是否指向当前线程的栈帧，如果是就说明当前线程已经拥有个这个对象的锁，可以直接进入同步块继续执行，否则说明多个线程竞争锁，升级为重量级锁。</p>
 <h3 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h3><p>升级为重量级锁时，锁标志的值为“10”，此时<strong>Mark Word</strong>中存储着指向<strong>重量级锁</strong>的指针，此时<strong>等待锁</strong>的线程都会进入<strong>阻塞状态</strong>。</p>
+<p><strong>交替打印ABC</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ABC_SYN</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">        <span class="keyword">public</span> String name;</span><br><span class="line">        <span class="keyword">public</span> Object prev;</span><br><span class="line">        <span class="keyword">public</span> Object cur;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String name, Object prev, Object cur)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">            <span class="keyword">this</span>.prev = prev;</span><br><span class="line">            <span class="keyword">this</span>.cur = cur;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">while</span>(count &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">synchronized</span>(prev)&#123;</span><br><span class="line">                    <span class="keyword">synchronized</span>(cur)&#123;</span><br><span class="line">                        System.out.println(name);</span><br><span class="line">                        count--;</span><br><span class="line">                        cur.notifyAll();;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">try</span>&#123;</span><br><span class="line">                        <span class="keyword">if</span>(count == <span class="number">0</span>)&#123;</span><br><span class="line">                            prev.notifyAll();</span><br><span class="line">                        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            prev.wait();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">catch</span>(InterruptedException e)&#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException</span>&#123;</span><br><span class="line">        Object a = <span class="keyword">new</span> Object();</span><br><span class="line">        Object b = <span class="keyword">new</span> Object();</span><br><span class="line">        Object c = <span class="keyword">new</span> Object();</span><br><span class="line">        Thread A = <span class="keyword">new</span> MyThread(<span class="string">"A"</span>, c, a);</span><br><span class="line">        Thread B = <span class="keyword">new</span> MyThread(<span class="string">"B"</span>, a, b);</span><br><span class="line">        Thread C = <span class="keyword">new</span> MyThread(<span class="string">"C"</span>, b, c);</span><br><span class="line"></span><br><span class="line">        A.start();</span><br><span class="line">        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">        B.start();</span><br><span class="line">        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">        C.start();</span><br><span class="line">        Thread.sleep(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
