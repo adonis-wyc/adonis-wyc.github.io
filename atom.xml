@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-18T07:31:12.000Z</updated>
+  <updated>2020-07-24T05:50:55.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>字节场景题</title>
+    <link href="http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/</id>
+    <published>2020-07-24T04:26:36.000Z</published>
+    <updated>2020-07-24T05:50:55.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分&quot;&gt;&lt;a href=&quot;#设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分&quot; class=&quot;headerlink&quot; title=&quot;设计一个微信发红包的API，不能有人
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>字节跳动算法</title>
     <link href="http://yoursite.com/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/</id>
     <published>2020-07-17T17:45:05.000Z</published>
-    <updated>2020-07-18T07:31:12.000Z</updated>
+    <updated>2020-07-23T23:13:36.000Z</updated>
     
     <summary type="html">
     
       
       
         &lt;p&gt;[toc]&lt;/p&gt;
-&lt;h2 id=&quot;148-排序链表&quot;&gt;&lt;a href=&quot;#148-排序链表&quot; class=&quot;headerlink&quot; title=&quot;148. 排序链表&quot;&gt;&lt;/a&gt;148. 排序链表&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;ta
+&lt;h2 id=&quot;逆序生成偶数的平方&quot;&gt;&lt;a href=&quot;#逆序生成偶数的平方&quot; class=&quot;headerlink&quot; title=&quot;逆序生成偶数的平方&quot;&gt;&lt;/a&gt;逆序生成偶数的平方&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;
       
     
     </summary>
     
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
   </entry>
@@ -163,7 +185,7 @@
     <link href="http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/"/>
     <id>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</id>
     <published>2020-06-05T16:05:42.000Z</published>
-    <updated>2020-07-18T07:21:36.000Z</updated>
+    <updated>2020-07-23T22:51:35.000Z</updated>
     
     <summary type="html">
     
@@ -313,30 +335,6 @@
   </entry>
   
   <entry>
-    <title>Spring框架</title>
-    <link href="http://yoursite.com/2020/05/24/spring/"/>
-    <id>http://yoursite.com/2020/05/24/spring/</id>
-    <published>2020-05-25T04:43:52.000Z</published>
-    <updated>2020-07-19T23:35:05.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Spring-IOC&quot;&gt;&lt;a href=&quot;#Spring-IOC&quot; class=&quot;headerlink&quot; title=&quot;Spring IOC&quot;&gt;&lt;/a&gt;Spring IOC&lt;/h2&gt;&lt;h2 id=&quot;核心容器的两个接口引发出的问题&quot;&gt;&lt;a href=&quot;#核心容器的两
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据结构</title>
     <link href="http://yoursite.com/2020/05/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     <id>http://yoursite.com/2020/05/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
@@ -361,6 +359,30 @@
     
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring框架</title>
+    <link href="http://yoursite.com/2020/05/24/spring/"/>
+    <id>http://yoursite.com/2020/05/24/spring/</id>
+    <published>2020-05-25T04:43:52.000Z</published>
+    <updated>2020-07-19T23:35:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Spring-IOC&quot;&gt;&lt;a href=&quot;#Spring-IOC&quot; class=&quot;headerlink&quot; title=&quot;Spring IOC&quot;&gt;&lt;/a&gt;Spring IOC&lt;/h2&gt;&lt;h2 id=&quot;核心容器的两个接口引发出的问题&quot;&gt;&lt;a href=&quot;#核心容器的两
+      
+    
+    </summary>
+    
+    
+      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="Spring" scheme="http://yoursite.com/tags/Spring/"/>
     
   </entry>
   
@@ -478,30 +500,6 @@
       
         &lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h1&gt;&lt;p&gt;事务指的是满足ACID特性的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。&lt;/p&gt;
 &lt;h2 id=&quot;ACI
-      
-    
-    </summary>
-    
-    
-      <category term="计算机" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库的三范式</title>
-    <link href="http://yoursite.com/2020/05/09/Database-Normalization/"/>
-    <id>http://yoursite.com/2020/05/09/Database-Normalization/</id>
-    <published>2020-05-09T16:07:54.000Z</published>
-    <updated>2020-07-20T00:03:38.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;数据库的三范式&quot;&gt;&lt;a href=&quot;#数据库的三范式&quot; class=&quot;headerlink&quot; title=&quot;数据库的三范式&quot;&gt;&lt;/a&gt;数据库的三范式&lt;/h1&gt;&lt;h2 id=&quot;第一范式&quot;&gt;&lt;a href=&quot;#第一范式&quot; class=&quot;headerlink&quot; titl
       
     
     </summary>
