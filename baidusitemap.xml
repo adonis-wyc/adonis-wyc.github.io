@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</loc>
+    <lastmod>2020-07-25</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-07-25</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/05/03/Java-concurrent-II/</loc>
     <lastmod>2020-07-25</lastmod>
   </url>  <url>
@@ -15,12 +21,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/</loc>
     <lastmod>2020-07-24</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2020-07-23</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/06/05/%E5%89%91%E6%8C%87offer/</loc>
-    <lastmod>2020-07-23</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/05/03/concurrent/</loc>
     <lastmod>2020-07-20</lastmod>
