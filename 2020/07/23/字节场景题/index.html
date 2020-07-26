@@ -18,17 +18,19 @@
   
   
   <title>字节场景题 | Hexo</title>
-  <meta name="description" content="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分传入的参数有总钱数，分的份数，随机分还是等分。 首先判断钱数能不能分那么多份（直接用总钱数&gt;&#x3D; 0.01 * 份数判断）。然后根据分发策略，选择随机分还是等分。随机分的话就给0.01到总钱数 - (总份数 - 1) * 0.01的随机数，然后把剩余钱数全分给最后一个用户。等分的话就判断是否能除开，有余数就将余数加到最后">
+  <meta name="description" content="海盗分硬币半数或半数以上的人的同意 4号     5号 100     0 3号        4号       5号 99         0         1 2号        3号       4号        5号 99         0         1         0 1号        2号        3号       4号        5号 98">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字节场景题">
 <meta property="og:url" content="http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分传入的参数有总钱数，分的份数，随机分还是等分。 首先判断钱数能不能分那么多份（直接用总钱数&gt;&#x3D; 0.01 * 份数判断）。然后根据分发策略，选择随机分还是等分。随机分的话就给0.01到总钱数 - (总份数 - 1) * 0.01的随机数，然后把剩余钱数全分给最后一个用户。等分的话就判断是否能除开，有余数就将余数加到最后">
+<meta property="og:description" content="海盗分硬币半数或半数以上的人的同意 4号     5号 100     0 3号        4号       5号 99         0         1 2号        3号       4号        5号 99         0         1         0 1号        2号        3号       4号        5号 98">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/1.png">
 <meta property="article:published_time" content="2020-07-24T04:26:36.000Z">
-<meta property="article:modified_time" content="2020-07-24T05:50:55.000Z">
+<meta property="article:modified_time" content="2020-07-26T05:02:08.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/index.html">
   
@@ -384,7 +386,20 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分"><a href="#设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分" class="headerlink" title="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分"></a>设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分</h2><p><strong>传入的参数</strong>有总钱数，分的份数，随机分还是等分。</p>
+        <h2 id="海盗分硬币"><a href="#海盗分硬币" class="headerlink" title="海盗分硬币"></a>海盗分硬币</h2><p><strong>半数或半数以上的人的同意</strong></p>
+<pre><code>4号     5号
+100     0
+3号        4号       5号
+99         0         1
+2号        3号       4号        5号
+99         0         1         0
+1号        2号        3号       4号        5号
+98         0         1         0           1</code></pre><p><strong>半数以上的人同意</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span>号     <span class="number">5</span>号</span><br><span class="line"><span class="number">0</span>       <span class="number">100</span></span><br><span class="line"><span class="number">3</span>号        <span class="number">4</span>号       <span class="number">5</span>号 </span><br><span class="line"><span class="number">100</span>         <span class="number">0</span>        <span class="number">0</span></span><br><span class="line"><span class="number">2</span>号        <span class="number">3</span>号       <span class="number">4</span>号        <span class="number">5</span>号</span><br><span class="line"><span class="number">98</span>         <span class="number">0</span>         <span class="number">1</span>         <span class="number">1</span></span><br><span class="line"><span class="number">1</span>号        <span class="number">2</span>号        <span class="number">3</span>号       <span class="number">4</span>号        <span class="number">5</span>号</span><br><span class="line"><span class="number">97</span>         <span class="number">0</span>         <span class="number">1</span>         <span class="number">2</span>           <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分"><a href="#设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分" class="headerlink" title="设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分"></a>设计一个微信发红包的API，不能有人领到的红包里面没有钱，红包数值精确到分</h2><p><strong>传入的参数</strong>有总钱数，分的份数，随机分还是等分。</p>
 <p>首先判断钱数能不能分那么多份（直接用总钱数&gt;= 0.01 * 份数判断）。然后根据分发策略，选择随机分还是等分。随机分的话就给0.01到总钱数 - (总份数 - 1) * 0.01的随机数，然后把剩余钱数全分给最后一个用户。等分的话就判断是否能除开，有余数就将余数加到最后一份里面。</p>
 <h2 id="需求：谁关注了我，我关注了谁，谁与我互相关注。表该如何设计，索引怎么建立。查询语句怎么写。"><a href="#需求：谁关注了我，我关注了谁，谁与我互相关注。表该如何设计，索引怎么建立。查询语句怎么写。" class="headerlink" title="需求：谁关注了我，我关注了谁，谁与我互相关注。表该如何设计，索引怎么建立。查询语句怎么写。"></a>需求：谁关注了我，我关注了谁，谁与我互相关注。表该如何设计，索引怎么建立。查询语句怎么写。</h2><p>粉丝关注列表使用四列，主键id，userid，fansid，是否互相关注。查询起来方便，空间换时间。主键有主键索引，剩下的字段不适合建索引，因为字段重复太多。</p>
 <h2 id="分布式多个机器生成id，如何保证不重复"><a href="#分布式多个机器生成id，如何保证不重复" class="headerlink" title="分布式多个机器生成id，如何保证不重复"></a>分布式多个机器生成id，如何保证不重复</h2><p>因为redis是单线程的，可以用来生成全局唯一ID。此外可以使用redis集群来获取更高的吞吐量。加入一个集群有5台redis，可以初始化每台redis的值分别是1，2，3，4，5，步长都是5.</p>
@@ -397,6 +412,7 @@
 <h2 id="扫码登录是如何实现的"><a href="#扫码登录是如何实现的" class="headerlink" title="扫码登录是如何实现的"></a>扫码登录是如何实现的</h2><p>首先用户打开网页，向服务器请求登陆二维码，浏览器服务器收到请求产生一个随机字符串，并将随机字符串作为key存入redis服务器，存储成功后调用API将随机字符串生成二维码返回给网页，浏览器得到二维码展示给用户，并以二维码中包含的字符串为参数每隔一秒请求一次服务器。</p>
 <p>用户使用手机扫描二维码得到随机字符串，将随机字符串以及用户的信息一起发给手机服务器，手机服务器收到请求去redis服务器中将用户的信心作为value存入key为随机字符串的键值对中。</p>
 <p>浏览器不断以随机字符串为参数请求浏览器服务器，浏览器服务器在redis服务器中得到用户的id，通过查询用户表，将用户密码查出，内部调用登陆的方法，生成用户的token，并返回给浏览器，浏览器获得用户的token，登录成功。</p>
+<h2 id="设计停车场"><a href="#设计停车场" class="headerlink" title="设计停车场"></a>设计停车场</h2><p><img src="/2020/07/23/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/1.png" alt></p>
 
       
     </div>
