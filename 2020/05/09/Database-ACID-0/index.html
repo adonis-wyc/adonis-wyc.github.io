@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/05/09/Database-ACID-0/1.png">
 <meta property="og:image" content="http://yoursite.com/2020/05/09/Database-ACID-0/2.png">
 <meta property="article:published_time" content="2020-05-10T04:58:39.000Z">
-<meta property="article:modified_time" content="2020-07-20T00:01:07.000Z">
+<meta property="article:modified_time" content="2020-07-31T07:09:12.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -425,7 +425,19 @@
 <h2 id="可串行化"><a href="#可串行化" class="headerlink" title="可串行化"></a>可串行化</h2><p>强制事务串行执行，这样多个事务互不干扰，不会出现并发一致性问题。</p>
 <h1 id="数据库的三范式"><a href="#数据库的三范式" class="headerlink" title="数据库的三范式"></a>数据库的三范式</h1><h2 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h2><p>第一范式的目标是确保每列的原子性：如果每列都是不可再分的最小数据单元，则满足第一范式（1NF）</p>
 <h2 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h2><p>首先满足第一范式，并且表中非主键列不存在对主键的部分依赖。所谓部分依赖含义是非主键列必须完全依赖于主键，而不能依赖主键的一部分。</p>
+<p><strong>可能会存在的问题：</strong></p>
+<ul>
+<li>数据冗余。</li>
+<li>删除异常。</li>
+<li>插入异常。</li>
+<li>更新异常。</li>
+</ul>
 <h2 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h2><p>满足第二范式，消除传递依赖，即任何非主属性不依赖于其他非主属性。</p>
+<p><strong>可能会存在的问题：</strong></p>
+<ul>
+<li>数据冗余。</li>
+<li>更新异常。</li>
+</ul>
 <h1 id="锁机制"><a href="#锁机制" class="headerlink" title="锁机制"></a>锁机制</h1><p>三种并发控制机制：乐观锁，悲观锁和MVCC多版本并发控制机制。</p>
 <ul>
 <li><p><strong>乐观锁：</strong>在访问数据之前，默认不会有其它事务对数据进行修改，所以先访问数据，但在更新的时候会判断在此期间其它事务有没有修改数据。</p>
