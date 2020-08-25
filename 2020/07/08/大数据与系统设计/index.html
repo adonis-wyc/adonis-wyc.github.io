@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>大数据与系统设计 | Hexo</title>
+  <meta name="description" content="100亿黑名单URL，每个64B,判断一个URL是否在黑名单中采用布隆过滤器，不需要存储数据即可完成查找工作。 2GB内存在20亿整数中找到出现次数最多的数把20亿个数映射到不同的文件中，例如：数值0至2亿之间的存放在文件1中，数值在2亿到4亿之间的存放在文件2中，int型整数大概有42亿个不同的数，所以映射到21个文件中去。统计每个文件中出现次数最多的数，然后再从这些数中选出最多的数。如果二十亿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据与系统设计">
+<meta property="og:url" content="http://yoursite.com/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="100亿黑名单URL，每个64B,判断一个URL是否在黑名单中采用布隆过滤器，不需要存储数据即可完成查找工作。 2GB内存在20亿整数中找到出现次数最多的数把20亿个数映射到不同的文件中，例如：数值0至2亿之间的存放在文件1中，数值在2亿到4亿之间的存放在文件2中，int型整数大概有42亿个不同的数，所以映射到21个文件中去。统计每个文件中出现次数最多的数，然后再从这些数中选出最多的数。如果二十亿">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-08T06:29:16.000Z">
+<meta property="article:modified_time" content="2020-07-20T00:37:12.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="大数据与系统设计">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="images/wu.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/wu.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">王禹臣</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Seattle, United States</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">53</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91/" rel="tag">Java并发</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">Java设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux%E6%8C%87%E4%BB%A4/" rel="tag">Linux指令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" rel="tag">场景题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="tag">大数据与系统设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 13.67px;">Java基础</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91/" style="font-size: 13.5px;">Java并发</a> <a href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.17px;">Java设计模式</a> <a href="/tags/Linux%E6%8C%87%E4%BB%A4/" style="font-size: 13px;">Linux指令</a> <a href="/tags/Spring/" style="font-size: 13.17px;">Spring</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" style="font-size: 13px;">场景题</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" style="font-size: 13px;">大数据与系统设计</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13.83px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 13px;">简历</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/24/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/" class="title">字节场景题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-24T04:26:36.000Z" itemprop="datePublished">2020-07-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/" class="title">字节跳动算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-17T02:45:05.000Z" itemprop="datePublished">2020-07-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="title">大数据与系统设计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-08T06:29:16.000Z" itemprop="datePublished">2020-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/04/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="title">Java设计模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-03T18:02:24.000Z" itemprop="datePublished">2020-07-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/01/%E7%AE%80%E5%8E%86/" class="title">简历</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-01T06:59:17.000Z" itemprop="datePublished">2020-07-01</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#100亿黑名单URL，每个64B-判断一个URL是否在黑名单中"><span class="toc-number">1.</span> <span class="toc-text">100亿黑名单URL，每个64B,判断一个URL是否在黑名单中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2GB内存在20亿整数中找到出现次数最多的数"><span class="toc-number">2.</span> <span class="toc-text">2GB内存在20亿整数中找到出现次数最多的数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#40亿个非负整数中找到没有出现过的数"><span class="toc-number">3.</span> <span class="toc-text">40亿个非负整数中找到没有出现过的数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？"><span class="toc-number">4.</span> <span class="toc-text">40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找到100亿个URL中重复的URL"><span class="toc-number">5.</span> <span class="toc-text">找到100亿个URL中重复的URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海量搜索词汇，找到最热TOP100词汇的方法"><span class="toc-number">6.</span> <span class="toc-text">海量搜索词汇，找到最热TOP100词汇的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#40亿个非负整数中找出出现两次的数和中位数"><span class="toc-number">7.</span> <span class="toc-text">40亿个非负整数中找出出现两次的数和中位数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何将一个长URL转换为一个短URL？"><span class="toc-number">8.</span> <span class="toc-text">如何将一个长URL转换为一个短URL？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何设计一个高并发系统"><span class="toc-number">9.</span> <span class="toc-text">如何设计一个高并发系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CAP理论和base定理"><span class="toc-number">10.</span> <span class="toc-text">CAP理论和base定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示网站的用户在线数的解决思路"><span class="toc-number">11.</span> <span class="toc-text">显示网站的用户在线数的解决思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka"><span class="toc-number">12.</span> <span class="toc-text">Kafka</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念："><span class="toc-number">12.1.</span> <span class="toc-text">概念：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生产者与消费者："><span class="toc-number">12.1.1.</span> <span class="toc-text">生产者与消费者：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主题："><span class="toc-number">12.1.2.</span> <span class="toc-text">主题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Broker"><span class="toc-number">12.1.3.</span> <span class="toc-text">Broker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分区"><span class="toc-number">12.1.4.</span> <span class="toc-text">分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Replica"><span class="toc-number">12.1.5.</span> <span class="toc-text">Replica</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何保证Kafka中消息消费的顺序"><span class="toc-number">12.1.6.</span> <span class="toc-text">如何保证Kafka中消息消费的顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何保证消息不丢失"><span class="toc-number">12.1.7.</span> <span class="toc-text">如何保证消息不丢失</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-大数据与系统设计" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      大数据与系统设计
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="article-date">
+	  <time datetime="2020-07-08T06:29:16.000Z" itemprop="datePublished">2020-07-08</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="tag">大数据与系统设计</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="100亿黑名单URL，每个64B-判断一个URL是否在黑名单中"><a href="#100亿黑名单URL，每个64B-判断一个URL是否在黑名单中" class="headerlink" title="100亿黑名单URL，每个64B,判断一个URL是否在黑名单中"></a>100亿黑名单URL，每个64B,判断一个URL是否在黑名单中</h2><p>采用布隆过滤器，不需要存储数据即可完成查找工作。</p>
+<h2 id="2GB内存在20亿整数中找到出现次数最多的数"><a href="#2GB内存在20亿整数中找到出现次数最多的数" class="headerlink" title="2GB内存在20亿整数中找到出现次数最多的数"></a>2GB内存在20亿整数中找到出现次数最多的数</h2><p>把20亿个数映射到不同的文件中，例如：数值0至2亿之间的存放在文件1中，数值在2亿到4亿之间的存放在文件2中，int型整数大概有42亿个不同的数，所以映射到21个文件中去。统计每个文件中出现次数最多的数，然后再从这些数中选出最多的数。<strong>如果二十亿个数的数值比较集中，就会映射到一个文件中：</strong>解决办法是把每个数先做哈希函数映射，根据哈希值存到对应的文件中，使这些数尽可能均匀分布。</p>
+<h2 id="40亿个非负整数中找到没有出现过的数"><a href="#40亿个非负整数中找到没有出现过的数" class="headerlink" title="40亿个非负整数中找到没有出现过的数"></a>40亿个非负整数中找到没有出现过的数</h2><p>用bitMap解决，申请一个长度为2的32次方的bit数组，每一位是0或者1，然后遍历40亿个数，如果这个数出现过，就把对应位置标志为1，然后遍历bitMap就把没出现过的数找出来了。</p>
+<h2 id="40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？"><a href="#40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？" class="headerlink" title="40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？"></a>40亿个非负整数中找到一个没有出现的数，内存只有10MB怎么办？</h2><p>把数据分成64个区间，建立长度为64的整形数组，表示每个区间上的个数，遍历40亿个数, 遍历同时更新每个区间的数字总数。遍历完成找到计数小于区间长度的区间。然后建立一个区间长度的bitMap，遍历40亿个数，只统计在此区间的数，对在此区间的数标识为1，遍历完成值为0的数就是没出现的数。</p>
+<h2 id="找到100亿个URL中重复的URL"><a href="#找到100亿个URL中重复的URL" class="headerlink" title="找到100亿个URL中重复的URL"></a>找到100亿个URL中重复的URL</h2><p>将100亿个URL的大文件运用哈希函数拆分成100个小文件，根据哈希函数的性质，相同的URL肯定在同一个文件中，分别统计每个文件中是否有重复的URL。</p>
+<h2 id="海量搜索词汇，找到最热TOP100词汇的方法"><a href="#海量搜索词汇，找到最热TOP100词汇的方法" class="headerlink" title="海量搜索词汇，找到最热TOP100词汇的方法"></a>海量搜索词汇，找到最热TOP100词汇的方法</h2><p>先用哈希函数把每台机器的分流文件拆成更小的文件处理，在处理每一个小文件时，哈希表统计每种词以及词频。用大小为100的小根堆选出每个小文件的top100，将小根堆里的词按照词频排序，就得到了每个小文件的排序后的top100。不同文件的top100利用外排序找到整个数据量的top100.</p>
+<h2 id="40亿个非负整数中找出出现两次的数和中位数"><a href="#40亿个非负整数中找出出现两次的数和中位数" class="headerlink" title="40亿个非负整数中找出出现两次的数和中位数"></a>40亿个非负整数中找出出现两次的数和中位数</h2><p>建立一个长度为2的31次方减1再乘2的位数组。遇到数字num，用2*num和2*num + 1表示数字出现的次数，出现一次设置为01，出现两次设置为10，出现三次及以上设置为11，遍历位数组，找到出现了两次的数字。</p>
+<p><strong>如果只使用10MB内存，如何找到40亿个整数的中位数？</strong></p>
+<p>采用分区间方式处理，每个区间长度为2M，占用内存为8MB，共分成2148个区间（分区原则是让区间占用内存大小小于10MB），遍历40亿非负整数，建立数组统计各区间的整数总数，得出中位数在哪个区间以及这个区间的第几个数，然后遍历40亿非负整数，只统计在之前得出区间的词频，得出中位数。</p>
+<h2 id="如何将一个长URL转换为一个短URL？"><a href="#如何将一个长URL转换为一个短URL？" class="headerlink" title="如何将一个长URL转换为一个短URL？"></a>如何将一个长URL转换为一个短URL？</h2><p>通过发号策略，对每一个过来的长地址，递增发号，再将这个值转化成62进制，将短链接服务器域名与62进制值进行字符串链接，即为短的URL，存储短链接到长连接的映射关系，浏览器访问短链接，获取长连接URL，进行302重定向。小型系统直接用MySQL的自增索引，大型系统可以用分布式key-value系统做发号器。</p>
+<h2 id="如何设计一个高并发系统"><a href="#如何设计一个高并发系统" class="headerlink" title="如何设计一个高并发系统"></a>如何设计一个高并发系统</h2><p><strong>系统拆分：</strong>将一个系统拆分成多个子系统，然后每个系统连接一个数据库。</p>
+<p><strong>缓存：</strong>读请求的时候大量走缓存。</p>
+<p><strong>消息队列：</strong>用消息队列实现异步写，提高并发性。</p>
+<p><strong>分库分表：</strong>将数据库拆分为多个数据库，将一个表拆分为多个表。</p>
+<p><strong>读写分离：</strong>使用主从架构，主库写入，从库读取。</p>
+<h2 id="CAP理论和base定理"><a href="#CAP理论和base定理" class="headerlink" title="CAP理论和base定理"></a>CAP理论和base定理</h2><p><strong>CAP理论：</strong></p>
+<p>一致性：指数据在多个副本之间能够保持一致的特性。</p>
+<p>可用性：指系统提供的服务一直处于可用的状态</p>
+<p>分区容错性：分布式系统在遇到任何网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务。</p>
+<p><strong>BASE理论：</strong></p>
+<p>BASE定理是基本可用，软状态，最终一致性三个短语的缩写。BASE理论是对CAP中一致性和可用性权衡的结果。核心思想是即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式使系统达到最终一致性。</p>
+<p><strong>基本可用：</strong>指分布式系统出现故障的时候，保证核心可用，允许损失部分可用性。</p>
+<p><strong>软状态：</strong>允许系统不同节点的数据副本之间进行同步的过程存在时间延迟。</p>
+<p><strong>最终一致性：</strong>系统中所有的数据副本，经过一段时间的同步后，最终能达到一致的状态。</p>
+<h2 id="显示网站的用户在线数的解决思路"><a href="#显示网站的用户在线数的解决思路" class="headerlink" title="显示网站的用户在线数的解决思路"></a>显示网站的用户在线数的解决思路</h2><p>每当一个用户上线时，就执行ZADD命令，将这个用户以及它的在线时间添加到指定的有序集合中，通过ZSCORE命令检查指定的用户ID在有序集合中是否有关联值，通过ZCARD命令知道有多少用户在线。</p>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><h4 id="生产者与消费者："><a href="#生产者与消费者：" class="headerlink" title="生产者与消费者："></a>生产者与消费者：</h4><p>生产者负责把需要处理的消息发送到消息队列中。消费者负责从消息队列中拉取待处理的消息，然后进行处理。</p>
+<h4 id="主题："><a href="#主题：" class="headerlink" title="主题："></a>主题：</h4><p>一个主题，对应一个队列。生产者将消息发送到设定好的主题中，消费者负责从特定的主题拉取消息，然后进行处理。</p>
+<h4 id="Broker"><a href="#Broker" class="headerlink" title="Broker"></a>Broker</h4><p>Broker相当于Kafka的服务端，可以理解为队列存在的地方，生产者把消息发送到Broker中，消费者从Broker中获取信息。</p>
+<h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>把一个主题分成很多份。</p>
+<h4 id="Replica"><a href="#Replica" class="headerlink" title="Replica"></a>Replica</h4><p>把每一个分区都备份几份。</p>
+<h4 id="如何保证Kafka中消息消费的顺序"><a href="#如何保证Kafka中消息消费的顺序" class="headerlink" title="如何保证Kafka中消息消费的顺序"></a>如何保证Kafka中消息消费的顺序</h4><ol>
+<li>一个主题只对应一个分区。</li>
+<li>发送消息时将指定的key发送到指定的partition。</li>
+</ol>
+<p>####如何提高比较好的并发能力</p>
+<p>给特定的Topic指定多个Partition，各个Partition可以分布在不同的Broker上。</p>
+<h4 id="如何保证消息不丢失"><a href="#如何保证消息不丢失" class="headerlink" title="如何保证消息不丢失"></a>如何保证消息不丢失</h4><p>给每个partition指定对应的replica数。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" title="大数据与系统设计" target="_blank" rel="external">http://yoursite.com/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/wu.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">王禹臣</span><small class="ml-1x">Developer</small></a></h3>
+        <div>Exploring world.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/" title="字节跳动算法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/07/04/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="Java设计模式"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

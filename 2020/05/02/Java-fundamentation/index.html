@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Java fundamentation | Hexo</title>
+  <meta name="description" content="JAVA基础JAVA基本数据类型byte：数据类型是8位，有符号的，以二进制补码表示的整数。 short：数据类型是16位，有符号的，以二进制补码表示的整数。 int：数据类型是32位，有符号的，以二进制补码表示的整数。 long：数据类型是64位，有符号的以二进制补码表示的整数。 float：数据类型是单精度，32位的浮点数。 double：数据类型是双精度，64位的浮点数。 boolean：数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java fundamentation">
+<meta property="og:url" content="http://yoursite.com/2020/05/02/Java-fundamentation/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JAVA基础JAVA基本数据类型byte：数据类型是8位，有符号的，以二进制补码表示的整数。 short：数据类型是16位，有符号的，以二进制补码表示的整数。 int：数据类型是32位，有符号的，以二进制补码表示的整数。 long：数据类型是64位，有符号的以二进制补码表示的整数。 float：数据类型是单精度，32位的浮点数。 double：数据类型是双精度，64位的浮点数。 boolean：数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-02T00:33:24.000Z">
+<meta property="article:modified_time" content="2020-08-02T02:49:50.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/05/02/Java-fundamentation/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="images/wu.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/wu.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">王禹臣</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Seattle, United States</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">53</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91/" rel="tag">Java并发</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">Java设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux%E6%8C%87%E4%BB%A4/" rel="tag">Linux指令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" rel="tag">场景题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="tag">大数据与系统设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 13.67px;">Java基础</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91/" style="font-size: 13.5px;">Java并发</a> <a href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.17px;">Java设计模式</a> <a href="/tags/Linux%E6%8C%87%E4%BB%A4/" style="font-size: 13px;">Linux指令</a> <a href="/tags/Spring/" style="font-size: 13.17px;">Spring</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" style="font-size: 13px;">场景题</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" style="font-size: 13px;">大数据与系统设计</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13.83px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 13px;">简历</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/24/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/" class="title">字节场景题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-24T04:26:36.000Z" itemprop="datePublished">2020-07-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/" class="title">字节跳动算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-17T02:45:05.000Z" itemprop="datePublished">2020-07-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="title">大数据与系统设计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-08T06:29:16.000Z" itemprop="datePublished">2020-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/04/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="title">Java设计模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-03T18:02:24.000Z" itemprop="datePublished">2020-07-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/01/%E7%AE%80%E5%8E%86/" class="title">简历</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-01T06:59:17.000Z" itemprop="datePublished">2020-07-01</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JAVA基础"><span class="toc-number">1.</span> <span class="toc-text">JAVA基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA基本数据类型"><span class="toc-number">1.1.</span> <span class="toc-text">JAVA基本数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本数据类型和包装类"><span class="toc-number">1.2.</span> <span class="toc-text">基本数据类型和包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String，StringBuffer，StringBuilder区别"><span class="toc-number">1.3.</span> <span class="toc-text">String，StringBuffer，StringBuilder区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程安全性"><span class="toc-number">1.4.</span> <span class="toc-text">线程安全性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能"><span class="toc-number">1.5.</span> <span class="toc-text">性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么String是不可变类，有什么好处"><span class="toc-number">2.</span> <span class="toc-text">为什么String是不可变类，有什么好处</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类和接口的区别"><span class="toc-number">2.1.</span> <span class="toc-text">抽象类和接口的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型和泛型擦除"><span class="toc-number">2.2.</span> <span class="toc-text">泛型和泛型擦除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java异常体系："><span class="toc-number">2.3.</span> <span class="toc-text">Java异常体系：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java内存泄漏："><span class="toc-number">2.4.</span> <span class="toc-text">Java内存泄漏：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static和final关键字："><span class="toc-number">2.5.</span> <span class="toc-text">static和final关键字：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化和反序列化"><span class="toc-number">2.6.</span> <span class="toc-text">序列化和反序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fail-fast和fail-safe："><span class="toc-number">2.7.</span> <span class="toc-text">fail-fast和fail-safe：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ArrayList与LinkedList区别？"><span class="toc-number">3.</span> <span class="toc-text">ArrayList与LinkedList区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HashMap和HashTable的区别"><span class="toc-number">4.</span> <span class="toc-text">HashMap和HashTable的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap面试指南"><span class="toc-number">4.1.</span> <span class="toc-text">HashMap面试指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么用数组-链表？"><span class="toc-number">4.1.1.</span> <span class="toc-text">为什么用数组+链表？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用LinkedList代替数组结构可以么"><span class="toc-number">4.1.2.</span> <span class="toc-text">用LinkedList代替数组结构可以么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap在什么条件下扩容？"><span class="toc-number">4.1.3.</span> <span class="toc-text">HashMap在什么条件下扩容？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么扩容是2的次幂"><span class="toc-number">4.1.4.</span> <span class="toc-text">为什么扩容是2的次幂?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash值为什么将HashCode的高十六位与低十六位进行异或操作？"><span class="toc-number">4.1.5.</span> <span class="toc-text">Hash值为什么将HashCode的高十六位与低十六位进行异或操作？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#讲讲HashMap的put过程？"><span class="toc-number">4.1.6.</span> <span class="toc-text">讲讲HashMap的put过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#讲讲HashMap的get过程？"><span class="toc-number">4.1.7.</span> <span class="toc-text">讲讲HashMap的get过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6"><span class="toc-number">4.1.8.</span> <span class="toc-text">链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap多线程put操作导致死循环问题"><span class="toc-number">4.1.9.</span> <span class="toc-text">HashMap多线程put操作导致死循环问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConcurrentHashMap："><span class="toc-number">4.1.10.</span> <span class="toc-text">ConcurrentHashMap：</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Java-fundamentation" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java fundamentation
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/05/02/Java-fundamentation/" class="article-date">
+	  <time datetime="2020-05-02T00:33:24.000Z" itemprop="datePublished">2020-05-02</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/05/02/Java-fundamentation/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="JAVA基础"><a href="#JAVA基础" class="headerlink" title="JAVA基础"></a>JAVA基础</h1><h2 id="JAVA基本数据类型"><a href="#JAVA基本数据类型" class="headerlink" title="JAVA基本数据类型"></a>JAVA基本数据类型</h2><p><strong>byte：</strong>数据类型是8位，有符号的，以二进制补码表示的整数。</p>
+<p><strong>short：</strong>数据类型是16位，有符号的，以二进制补码表示的整数。</p>
+<p><strong>int：</strong>数据类型是32位，有符号的，以二进制补码表示的整数。</p>
+<p><strong>long：</strong>数据类型是64位，有符号的以二进制补码表示的整数。</p>
+<p><strong>float：</strong>数据类型是单精度，32位的浮点数。</p>
+<p><strong>double：</strong>数据类型是双精度，64位的浮点数。</p>
+<p><strong>boolean：</strong>数据类型表示一位的信息。只有两个取值：true和false。</p>
+<p><strong>char：</strong>16位的字符。</p>
+<h2 id="基本数据类型和包装类"><a href="#基本数据类型和包装类" class="headerlink" title="基本数据类型和包装类"></a>基本数据类型和包装类</h2><p><strong>装箱：</strong>自动将基本数据类型转换为包装器类型，调用包装器的valueOf方法实现。</p>
+<p><strong>拆箱：</strong>自动将包装器类型转换为基本数据类型，拆箱通过调用包装器的xxxValue方法实现的。</p>
+<h2 id="String，StringBuffer，StringBuilder区别"><a href="#String，StringBuffer，StringBuilder区别" class="headerlink" title="String，StringBuffer，StringBuilder区别"></a>String，StringBuffer，StringBuilder区别</h2><p>##可变性：</p>
+<p>String类中使用<strong>final关键字</strong>修饰<strong>字符数组</strong>来保存字符串，所以String对象是不可变的。而<strong>StringBuilder</strong>与<strong>StringBuffer</strong>都继承自<strong>AbstractStringBuilder类</strong>，没有用final关键字修饰，所以这两种对象都是可变的。</p>
+<h2 id="线程安全性"><a href="#线程安全性" class="headerlink" title="线程安全性"></a>线程安全性</h2><p>String中的对象是不可变的，可以理解为常量，线程安全。</p>
+<p>StringBuffer对方法加了同步锁，所以是线程安全的。</p>
+<p>StringBuilder没有对方法进行加同步锁，所以是非线程安全的。</p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>每次对String类型进行改变时，都会生成一个新的对象，然后将指针指向新的String对象。</p>
+<p>StringBuffer每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并改变对象引用。</p>
+<p>相同情况下使用StringBuilder比使用StringBuffer仅能获得10%-15%左右的性能提升，但却要冒多线程不安全的风险。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>操作少量数据：适合用String。</p>
+<p>单线程操作字符串缓冲区下操作大量数据：适用StringBuilder。</p>
+<p>多线程操作字符串缓冲区下操作大量数据：适用StringBuffer。</p>
+<h1 id="为什么String是不可变类，有什么好处"><a href="#为什么String是不可变类，有什么好处" class="headerlink" title="为什么String是不可变类，有什么好处"></a>为什么String是不可变类，有什么好处</h1><ol>
+<li>字符串常量池的需要：字符串常量池是Java堆内存中一个特殊的存储区域，当创建一个String对象时，假设此字符串值已经存在于常量池中，则不会创建一个新的对象，而是引用已经存在的对象。假如字符串对象允许改变，那么将导致各种逻辑错误，比如改变一个对象会影响到另一个独立对象</li>
+<li>允许String对象缓存HashCode：Java中String对象的哈希码被频繁地使用，比如在HashMap等容器中。字符串的不变性保证了哈希码的唯一性，不必每次都去计算新的哈希码，因此可以放心的进行缓存。</li>
+<li>安全性：String被许多类当作参数，例如网络链接地址URL，文件路径Path，还有反射机制所需要的参数等，假设String不是固定不变的，将会引起各种安全隐患。</li>
+</ol>
+<p>#面向对象特性：</p>
+<p><strong>继承：</strong>从<strong>已有类</strong>得到<strong>继承信息</strong>创建<strong>新类</strong>的过程。</p>
+<p><strong>封装：</strong>把<strong>数据</strong>和<strong>操作数据</strong>的方法绑定起来，对数据的访问只能通过已定义的接口。</p>
+<p><strong>多态：</strong>允许<strong>不同子类型</strong>的对象对<strong>同一消息</strong>作出不同的响应。<strong>实现方法：</strong>Overload和Override，接口，抽象类。</p>
+<p><strong>抽象：</strong>抽象是将一类对象的共同特征总结出来构造类的过程 。</p>
+<p><strong>与C++区别：</strong></p>
+<ul>
+<li>Java 是<strong>面向对象语言</strong>，所有的对象都继承自 java.lang.Object，C++即支持<strong>面向对象</strong>也支持<strong>面向过程</strong>。</li>
+<li>Java 通过<strong>虚拟机</strong>从而实现<strong>跨平台</strong>特性，但是 C++ 依赖于<strong>特定的平台</strong>。</li>
+<li>Java 没有<strong>指针</strong>，它的引用可以理解为安全指针，而 C++ 具有和 C 一样的指针。</li>
+<li>Java 支持<strong>自动垃圾回收</strong>，而 C++ 需要<strong>手动回收</strong>。</li>
+<li>Java 不支持<strong>多重继承</strong>，只能通过实现多个接口来达到相同目的，而 C++ 支持<strong>多重继承</strong>。</li>
+</ul>
+<h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><p>不同：</p>
+<ol>
+<li>抽象类中可以定义构造器，接口中不能定义构造器</li>
+<li>抽象类可以有抽象方法和具体方法，接口中的方法全部都是抽象方法</li>
+<li>抽象类中的成员可以是private, 默认，protected， public，接口中的成员全都是public</li>
+<li>抽象类中可以定义成员变量，接口中定义的成员变量实际上都是常量</li>
+<li>抽象类中可以有静态方法，接口中不能有静态方法</li>
+<li>一个类只能继承一个抽象类，一个类可以实现多个接口</li>
+<li>有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法</li>
+</ol>
+<p>相同：</p>
+<ol>
+<li>都不能被实例化。</li>
+<li>可以将抽象类和接口类型作为引用类型。</li>
+<li>一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要被声明为抽象对象。</li>
+</ol>
+<h2 id="泛型和泛型擦除"><a href="#泛型和泛型擦除" class="headerlink" title="泛型和泛型擦除"></a>泛型和泛型擦除</h2><ul>
+<li>泛型：泛型即参数化类型，创建集合时指定集合元素的类型，该集合只能保存其指定类型的元素，避免使用强制类型转换。</li>
+<li>泛型擦除：泛型类型信息在编译时被擦除。主要过程如下：将所有泛型参数用最顶级的父类型替换，移除所有参数类型。list中加入无继承关系的对象时，可以利用反射绕过编译器调用add方法。</li>
+</ul>
+<h2 id="Java异常体系："><a href="#Java异常体系：" class="headerlink" title="Java异常体系："></a>Java异常体系：</h2><p>以Throwable作为所有异常的超类，将异常划分为两类：Error和Exception。</p>
+<ul>
+<li>Error（错误）：表示程序无法处理的错误，一般是程序运行时JVM出现问题。例如：StackOverflowError，OutOfMemoryError。</li>
+<li>Exception（异常）：程序本身可以可以捕获并处理的异常。分为运行时异常和编译时异常。<ul>
+<li>运行时异常：RuntimeException及其子类，如NullPointerException, ArrayIndexOutBoundException, ArithmeticException。</li>
+<li>编译时异常：编译时出现的异常，必须进行处理，否则便已不通过，例如：IOException，ClassNotFoundException，InterruptedException。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Java内存泄漏："><a href="#Java内存泄漏：" class="headerlink" title="Java内存泄漏："></a>Java内存泄漏：</h2><p>长生命周期的对象持有短生命周期对象的引用，而导致短生命周期的对象不能被垃圾回收。例如集合持有引用，单例对象持有引用。</p>
+<h2 id="static和final关键字："><a href="#static和final关键字：" class="headerlink" title="static和final关键字："></a>static和final关键字：</h2><ul>
+<li><strong>static:</strong><ul>
+<li>修饰成员变量：在类被初次加载时初始化，在内存中只存在一个副本，存在于方法区，被所有对象共享。</li>
+<li>修饰成员方法：不依赖对象实例就可以被调用，静态方法不可以访问类中的非静态方法和变量。</li>
+<li>修饰代码块：在类加载时执行一次，适用于只进行一次的初始化操作。</li>
+<li>修饰内部类：不需要通过外部类的对象建立；不可以访问外部类的非静态成员和方法。</li>
+</ul>
+</li>
+<li><strong>final：</strong><ul>
+<li><strong>修饰变量：</strong>修饰变量表示常量。</li>
+<li><strong>修饰对象：</strong>表示赋值后引用不可修改。</li>
+<li><strong>修饰方法：</strong>表示方法不可以被重写</li>
+<li><strong>修饰类：</strong>表示类不可以被继承。还可以通过修饰父类的构造函数为private来禁止继承。</li>
+</ul>
+</li>
+</ul>
+<h2 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h2><ul>
+<li><strong>序列化：</strong>将对象转化成字节序列，以便在网络中传输或保存到本地。</li>
+<li><strong>反序列化：</strong>把字节序列恢复成java对象的过程。以便在网络中获读取文件的时候，根据字节流的信息，通过反序列化重建对象。</li>
+<li><strong>反序列化失败的场景：</strong><ul>
+<li>没有添加serialVersionUID</li>
+<li>继承了一个实现了序列化接口的父类，并且与父类有重复的属性，则在反序列化的过程中会导致重复的属性数据丢失。</li>
+</ul>
+</li>
+</ul>
+<h2 id="fail-fast和fail-safe："><a href="#fail-fast和fail-safe：" class="headerlink" title="fail-fast和fail-safe："></a>fail-fast和fail-safe：</h2><ul>
+<li><p><strong>Fail-fast：</strong>List中维护一个modCount变量，add，remove，clear等涉及了改变list元素个数的方法都会导致modCount改变。如果判断出modCount != expectedModCount，则抛出ConcurrentModificationException异常。</p>
+<p><strong>解决办法：</strong></p>
+<ol>
+<li>Collections.synchronizedList或者给每个访问操作加入synchronized关键字，但有可能阻塞遍历操作。</li>
+<li>CopyOnWriteArrayList来代替ArrayList。具体方法是任何对list的结构有改变的操作，都会先复制现有的数据，然后在复制的数据上作修改，修改完毕之后直接改变原有数据的引用即可。代价就是产生大量的对象，同时copy操作也是有损耗的。</li>
+</ol>
+</li>
+<li><p><strong>fail-safe：</strong>在遍历时不是直接在集合内访问，而是拷贝原有集合内容，在拷贝的集合上进行遍历。</p>
+<p><strong>问题：</strong></p>
+<ul>
+<li>需要复制集合，开销大</li>
+<li>无法保证遍历时是最新数据。</li>
+</ul>
+</li>
+</ul>
+<p>#常见集合框架</p>
+<p>Java中常见的集合框架有List，Set，Map：</p>
+<ul>
+<li><strong>List：</strong>存储一组不唯一，有序的对象。如ArrayList，LinkedList。</li>
+<li><strong>Set：</strong>不允许重复的集合，HashSet无序，TreeSet有序。</li>
+<li><strong>Map：</strong>使用键值对存储。两个Key可以引用相同的对象，但Key不能重复。HashMap无序，TreeMap有序。</li>
+</ul>
+<h1 id="ArrayList与LinkedList区别？"><a href="#ArrayList与LinkedList区别？" class="headerlink" title="ArrayList与LinkedList区别？"></a>ArrayList与LinkedList区别？</h1><ul>
+<li><p><strong>ArrayList:</strong></p>
+<ul>
+<li>采用object数组存储</li>
+<li>默认长度是10，扩容是变成1.5倍</li>
+<li>扩容是采用Arrays.copyOf()创建新的数组</li>
+<li>增加和删除操作会造成元素移动，使用System.arraycopy()</li>
+<li>支持随机访问。</li>
+</ul>
+</li>
+<li><p><strong>Vector：</strong></p>
+<ul>
+<li>低层实现是Object数组，与ArrayList不同的是Vector<strong>线程安全</strong>。</li>
+<li>默认长度是10，扩容倍数默认为2，可以通过capacityIncrement参数自定义。</li>
+</ul>
+</li>
+<li><p><strong>LinkedList：</strong></p>
+<ul>
+<li>使用双向链表实现</li>
+<li>不支持随机访问，但插入删除操作不受位置影响。</li>
+</ul>
+</li>
+<li><p><strong>区别：</strong></p>
+<ul>
+<li><p>ArrayList底层数据结构使用Object数组，LinkedList底层使用的是双向链表数据结构</p>
+</li>
+<li><p>ArrayList采用数组存储，所以插入和删除元素需要移动元素向前或向后，效率较低。LinkedList采用链表存储，只需要改变元素指针即可，效率较高.</p>
+</li>
+<li><p>ArrayList支持高效快速的随机访问，LinkedList不支持高效快速的随机访问</p>
+</li>
+<li><p>ArrayList空间浪费主要体现在在list列表结尾会预留一定的容量空间。而LinkedList的空间花费则体现在每一个元素要消耗比ArrayList更多的空间（因为要存放前驱指针，后继指针以及数据）。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Collections.synchronizedList&lt;&gt;:</strong></p>
+<ul>
+<li>可以用此方法实现ArrayList和LinkedList的线程安全。</li>
+</ul>
+</li>
+</ul>
+<h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><ul>
+<li><strong>线程是否安全：</strong>HashMap是非线程安全的，HashTable是线程安全的。</li>
+<li><strong>效率：</strong>因为线程安全的问题，HashMap要比HashTable效率高一点。</li>
+<li><strong>对Null key和Null value的支持：</strong>HashMap中，null可以作为主键，这样的键只有一个，可以有一个或多个键所对应的值为null。</li>
+<li><strong>初始容量和每次扩充容量大小的不同：</strong>创建时如果不指定容量初始值，HashTable默认的初始大小为11，之后每次扩充，容量变为原来的2n + 1。HashMap默认的初始化大小为16，之后每次扩充，容量变为原来的2倍。创建时如果给定了容量初始值，HashTable会直接用你给定的大小，而HashMap会将其扩充为2的幂次方大小。</li>
+<li><strong>底层数据结构：</strong>HashMap在解决哈希冲突时有了较大的变化，当链表长度大于8时，将链表转化为红黑树，以减少搜索时间。</li>
+</ul>
+<h2 id="HashMap面试指南"><a href="#HashMap面试指南" class="headerlink" title="HashMap面试指南"></a>HashMap面试指南</h2><p>###看过HashMap源码嘛，知道原理吗？</p>
+<p>HashMap底层是数组+链表+红黑树。首先是table数组，数组中存放的是链表，链表的每一个节点以键值对的形式存在。在JDK1.8之后，当链表的长度超过阈值，默认为8，为加快检索速度，将链表转化为红黑树。</p>
+<h3 id="为什么用数组-链表？"><a href="#为什么用数组-链表？" class="headerlink" title="为什么用数组+链表？"></a>为什么用数组+链表？</h3><ul>
+<li>数组是用来确定桶的位置，利用元素的key的hash值对数组长度取模得到。</li>
+<li>链表是用来解决hash冲突问题，当出现hash值一样的情形，就在数组对应位置形成一条链表。</li>
+</ul>
+<h3 id="用LinkedList代替数组结构可以么"><a href="#用LinkedList代替数组结构可以么" class="headerlink" title="用LinkedList代替数组结构可以么?"></a>用LinkedList代替数组结构可以么?</h3><p>是可行的，但是用数组的效率最高。在HashMap中，定位桶的位置是利用元素的key的哈希值对数组长度取模得到。得到桶的位置，数组的查找效率比LinkedList高。采用基本的数组结构，扩容机制可以自己定义，HashMap中数组扩容刚好是2的次幂，在做取模运算时候效率高。而ArrayList的扩容机制是1.5倍扩容。</p>
+<h3 id="HashMap在什么条件下扩容？"><a href="#HashMap在什么条件下扩容？" class="headerlink" title="HashMap在什么条件下扩容？"></a>HashMap在什么条件下扩容？</h3><p>默认负载因子为0.75，初始容量为16，如果bucket数量超过了load factor * current capacity, 就要扩容。load factor为0.75，current capacity为当前数组大小。</p>
+<h3 id="为什么扩容是2的次幂"><a href="#为什么扩容是2的次幂" class="headerlink" title="为什么扩容是2的次幂?"></a>为什么扩容是2的次幂?</h3><p>HashMap再分配数据到对应链表时，进行取模运算，但是这种运算不如位运算快，所以在源码中做了优化，将hash%length取模改成hash&amp;(length - 1), 2的n次方-1的二进制实际上就是n个1，保证hash值与（length - 1）做与运算的时候，每一位都能&amp;1，保证了不同位置不会发生碰撞。</p>
+<h3 id="Hash值为什么将HashCode的高十六位与低十六位进行异或操作？"><a href="#Hash值为什么将HashCode的高十六位与低十六位进行异或操作？" class="headerlink" title="Hash值为什么将HashCode的高十六位与低十六位进行异或操作？"></a>Hash值为什么将HashCode的高十六位与低十六位进行异或操作？</h3><p>减小hash值的碰撞几率。</p>
+<h3 id="讲讲HashMap的put过程？"><a href="#讲讲HashMap的put过程？" class="headerlink" title="讲讲HashMap的put过程？"></a>讲讲HashMap的put过程？</h3><p>对key的hashcode做hash运算得到index，如果没碰撞直接放到bucket里；如果碰撞了，以链表形式存在bucket后；如果碰撞导致链表过长，就把链表转化成红黑树，如果节点已经存在就替换之前的value，如果bucket满了就要扩容。</p>
+<h3 id="讲讲HashMap的get过程？"><a href="#讲讲HashMap的get过程？" class="headerlink" title="讲讲HashMap的get过程？"></a>讲讲HashMap的get过程？</h3><p>对key的hashcode做hash运算，现将hashcode右移十六位，异或，取余找到在数组中的位置，然后在链表或红黑树中搜索。</p>
+<h3 id="链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6"><a href="#链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6" class="headerlink" title="链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6"></a>链表转化为红黑树的阈值为8，红黑树转化为链表的阈值为6</h3><p>根据概率统计8作为阈值，选择6是为了作为缓冲，避免在链表和红黑树之间的频繁转换。</p>
+<h3 id="HashMap多线程put操作导致死循环问题"><a href="#HashMap多线程put操作导致死循环问题" class="headerlink" title="HashMap多线程put操作导致死循环问题"></a>HashMap多线程put操作导致死循环问题</h3><ul>
+<li>多线程同时对一个数据操作时可能会覆盖修改，造成数据丢失。</li>
+<li>扩容时链表节点采用头插入法插入新的哈希数组有可能会产生循环链表，造成死循环。当JDK1.8扩容时，将原节点用尾插法将节点插入到新的hashmap中。</li>
+</ul>
+<h3 id="ConcurrentHashMap："><a href="#ConcurrentHashMap：" class="headerlink" title="ConcurrentHashMap："></a>ConcurrentHashMap：</h3><ul>
+<li><p>JDK 1.7: 将整个数组分割成多个segment，并且每一段数据配一把锁。当一个线程占用锁访问一段数据时，其他段的数据依然可以被其他线程所访问。Segment实现了ReentrantLock，所以Segment是一种可重入锁。Segment数量是由concurrentcyLevel决定的，默认是16，也是2的N次方。在ConcurrentHashMap中定位元素需要经过两次hash，第一次先定位到Segment，第二次对应到相应的bucket。</p>
+</li>
+<li><p>JDK 1.8: 采用数组+链表／红黑树的数据结构。并发控制采用CAS+synchronized。put操作时，判断hash值所对应的bucket是否为null，如果为null，采用CAS写入，否则synchronized加锁写入，当链表长度超过8时，将链表转化为红黑树。synchronized只锁定链表或红黑树的首节点，只要不发生hash冲突，就不会产生竞争，提升效率。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/05/02/Java-fundamentation/" title="Java fundamentation" target="_blank" rel="external">http://yoursite.com/2020/05/02/Java-fundamentation/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/wu.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">王禹臣</span><small class="ml-1x">Developer</small></a></h3>
+        <div>Exploring world.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/05/03/thread-safe-collection/" title="线程安全的集合对象"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/05/02/cluster-index-VS-non-cluster-index/" title="cluster index VS non cluster index"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

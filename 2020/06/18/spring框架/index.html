@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>spring框架（面试版） | Hexo</title>
+  <meta name="description" content="Spring IOC控制反转：指创建对象控制权的转移，原本创建对象的时机由自己把握，而现在这种权利转换到spring IOC容器中，spring根据配置文件或者注解创建实例和管理实例之间的依赖关系。 核心容器的两个接口： ApplicationContext:创建对象采用的是立即加载的方式，适用于单例对象。 BeanFactory:创建对象是采用懒加载的方式，是和多例对象。 Spring依赖注入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring框架（面试版）">
+<meta property="og:url" content="http://yoursite.com/2020/06/18/spring%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spring IOC控制反转：指创建对象控制权的转移，原本创建对象的时机由自己把握，而现在这种权利转换到spring IOC容器中，spring根据配置文件或者注解创建实例和管理实例之间的依赖关系。 核心容器的两个接口： ApplicationContext:创建对象采用的是立即加载的方式，适用于单例对象。 BeanFactory:创建对象是采用懒加载的方式，是和多例对象。 Spring依赖注入">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-18T05:45:37.000Z">
+<meta property="article:modified_time" content="2020-08-02T21:31:22.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2020/06/18/spring%E6%A1%86%E6%9E%B6/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="images/wu.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/wu.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">王禹臣</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Seattle, United States</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%8B%E7%BB%8D/">介绍</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><span class="category-list-count">53</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%B9%B6%E5%8F%91/" rel="tag">Java并发</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">Java设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux%E6%8C%87%E4%BB%A4/" rel="tag">Linux指令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" rel="tag">场景题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" rel="tag">大数据与系统设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 13.67px;">Java基础</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91/" style="font-size: 13.5px;">Java并发</a> <a href="/tags/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.17px;">Java设计模式</a> <a href="/tags/Linux%E6%8C%87%E4%BB%A4/" style="font-size: 13px;">Linux指令</a> <a href="/tags/Spring/" style="font-size: 13.17px;">Spring</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 13px;">入门</a> <a href="/tags/%E5%9C%BA%E6%99%AF%E9%A2%98/" style="font-size: 13px;">场景题</a> <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" style="font-size: 13px;">大数据与系统设计</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13.83px;">排序</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 13.5px;">数据结构</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 13px;">简历</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">计算机网络</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">17</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/24/%E5%AD%97%E8%8A%82%E5%9C%BA%E6%99%AF%E9%A2%98/" class="title">字节场景题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-24T04:26:36.000Z" itemprop="datePublished">2020-07-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AE%97%E6%B3%95/" class="title">字节跳动算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-17T02:45:05.000Z" itemprop="datePublished">2020-07-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="title">大数据与系统设计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-08T06:29:16.000Z" itemprop="datePublished">2020-07-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/04/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="title">Java设计模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-03T18:02:24.000Z" itemprop="datePublished">2020-07-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/01/%E7%AE%80%E5%8E%86/" class="title">简历</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-01T06:59:17.000Z" itemprop="datePublished">2020-07-01</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-IOC"><span class="toc-number">1.</span> <span class="toc-text">Spring IOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring依赖注入"><span class="toc-number">2.</span> <span class="toc-text">Spring依赖注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring如何解决循环依赖"><span class="toc-number">3.</span> <span class="toc-text">Spring如何解决循环依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring的bean初始化过程"><span class="toc-number">4.</span> <span class="toc-text">Spring的bean初始化过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring如何实现懒加载"><span class="toc-number">5.</span> <span class="toc-text">Spring如何实现懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring中bean的作用范围"><span class="toc-number">6.</span> <span class="toc-text">Spring中bean的作用范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring中bean对象的生命周期"><span class="toc-number">7.</span> <span class="toc-text">Spring中bean对象的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-AOP"><span class="toc-number">8.</span> <span class="toc-text">Spring AOP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-AOP术语"><span class="toc-number">9.</span> <span class="toc-text">Spring AOP术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring事务隔离级别"><span class="toc-number">10.</span> <span class="toc-text">Spring事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring事务传播机制"><span class="toc-number">11.</span> <span class="toc-text">Spring事务传播机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring如何通过注解实现事务功能"><span class="toc-number">12.</span> <span class="toc-text">Spring如何通过注解实现事务功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring常用注解"><span class="toc-number">13.</span> <span class="toc-text">Spring常用注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-MVC"><span class="toc-number">14.</span> <span class="toc-text">Spring MVC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC和ORM的区别"><span class="toc-number">15.</span> <span class="toc-text">JDBC和ORM的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate和MyBatis的区别"><span class="toc-number">16.</span> <span class="toc-text">Hibernate和MyBatis的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis如何防止sql注入"><span class="toc-number">17.</span> <span class="toc-text">mybatis如何防止sql注入</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-spring框架" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      spring框架（面试版）
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/18/spring%E6%A1%86%E6%9E%B6/" class="article-date">
+	  <time datetime="2020-06-18T05:45:37.000Z" itemprop="datePublished">2020-06-18</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Spring/" rel="tag">Spring</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/18/spring%E6%A1%86%E6%9E%B6/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="Spring-IOC"><a href="#Spring-IOC" class="headerlink" title="Spring IOC"></a>Spring IOC</h2><p>控制反转：指创建对象控制权的转移，原本创建对象的时机由自己把握，而现在这种权利转换到spring IOC容器中，spring根据配置文件或者注解创建实例和管理实例之间的依赖关系。</p>
+<p><strong>核心容器的两个接口：</strong></p>
+<p><strong>ApplicationContext:</strong>创建对象采用的是立即加载的方式，适用于单例对象。</p>
+<p><strong>BeanFactory:</strong>创建对象是采用懒加载的方式，是和多例对象。</p>
+<h2 id="Spring依赖注入"><a href="#Spring依赖注入" class="headerlink" title="Spring依赖注入"></a>Spring依赖注入</h2><ol>
+<li>使用构造函数提供。</li>
+<li>使用set方法提供。 </li>
+<li>使用注解提供。</li>
+</ol>
+<h2 id="Spring如何解决循环依赖"><a href="#Spring如何解决循环依赖" class="headerlink" title="Spring如何解决循环依赖"></a>Spring如何解决循环依赖</h2><ol>
+<li>构造器的循环依赖，无法解决只能抛出异常。</li>
+<li>setter注入构成的循环依赖可以解决。使用三级缓存</li>
+<li>prototype作用域的bean的循环依赖无法解决。</li>
+</ol>
+<p>使用三级缓存：</p>
+<ol>
+<li>第一级缓存singletonObjects，存放装配好的单例对象。</li>
+<li>第二级缓存earlySingletonObjects，存放没有完全装配好的单例对象。</li>
+<li>第三级缓存singletonFacgtories，存放要被装配的对象。</li>
+</ol>
+<p>详解：beanA先进行初始化，将自己提前曝光到singletonFactories，发现了对beanB的依赖，进行beanB的初始化过程，在beanB中发现了对beanA的依赖，在singletonFactories中可以获得A的引用，完成装配后将自己放入一级缓存，此后beanA完成了初始化。</p>
+<h2 id="Spring的bean初始化过程"><a href="#Spring的bean初始化过程" class="headerlink" title="Spring的bean初始化过程"></a>Spring的bean初始化过程</h2><ol>
+<li><p><strong>createBeanInstance：</strong>调用对象的构造方法实例化对象。</p>
+</li>
+<li><p><strong>populateBean：</strong>对bean的依赖属性进行填充。</p>
+</li>
+<li><p><strong>initalizeBean：</strong>调用spring xml中的init方法。</p>
+</li>
+</ol>
+<h2 id="Spring如何实现懒加载"><a href="#Spring如何实现懒加载" class="headerlink" title="Spring如何实现懒加载"></a>Spring如何实现懒加载</h2><p>设置default-lazy–init = “true”,实现懒加载，beanFactory接口是懒加载。</p>
+<h2 id="Spring中bean的作用范围"><a href="#Spring中bean的作用范围" class="headerlink" title="Spring中bean的作用范围"></a>Spring中bean的作用范围</h2><p>  作用：用于指定bean的作用范围。</p>
+<p>​    取值：</p>
+<p>​        singleton（单例）：整个IOC容器中只有一个bean实例。</p>
+<p>​        prototype（多例）：每次从容器中请求bean，都会产生一个新的bean实例。</p>
+<p>​        request（作用于web应用的请求范围）：每次http请求，都会创建一个新的bean。</p>
+<p>​        session（作用于web应用的会话范围）：同一个http session共享一个bean，不同的session使用不同的bean。</p>
+<p>​        global-session（作用于集群环境的全局会话范围，当不是集群环境时，它就是session）：同一个全局session共享一个bean。</p>
+<h2 id="Spring中bean对象的生命周期"><a href="#Spring中bean对象的生命周期" class="headerlink" title="Spring中bean对象的生命周期"></a>Spring中bean对象的生命周期</h2><p>单例对象：</p>
+<p>​    出生：当容器创建时对象出生。</p>
+<p>​    活着：只要容器还在，对象一直活着。</p>
+<p>​    死亡：容器销毁，对象死亡。</p>
+<p>​    <strong>总结</strong>：单例对象的生命周期和容器相同。</p>
+<p>多例对象：</p>
+<p>​    出生：当我们使用对象时spring框架为我们创建。</p>
+<p>​    活着：对象在使用过程中就一直活着。</p>
+<p>​    死亡：当对象长时间不用且没有别的引用时，有Java垃圾回收器回收。</p>
+<h2 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h2><p>把程序重复的代码抽取出来，在需要执行的时候，使用动态代理技术，在不修改源码的基础上，对已有的方法进行增强。</p>
+<h2 id="Spring-AOP术语"><a href="#Spring-AOP术语" class="headerlink" title="Spring AOP术语"></a>Spring AOP术语</h2><ol>
+<li><strong>连接点</strong>（JoinPoint）：Spring允许通知的地方，spring只支持方法连接点，和方法有关的前前后后都是连接点。</li>
+<li>切入点（Pointcut ）：在连接点中选取几个点作为切入点，真正的放入通知。</li>
+<li>通知（Advice）：你想要的功能，也就是上面说的安全，事务，日志。<ol>
+<li>前置通知（Before advice）：在连接点前面执行。</li>
+<li>正常返回通知（After returning advice）:在连接点正常执行完成后执行。</li>
+<li>异常返回通知（After throwing advice）：在连接点抛出异常后执行。</li>
+<li>返回通知（After（finally）advice）：在连接点执行完成后执行，不管是正常执行完成，还是抛出异常，都会执行返回通知中的内容。</li>
+<li>环绕通知（Around advice）：环绕通知围绕在连接点前后，比如一个方法调用的前后，可以手动控制增强代码何时执行。</li>
+</ol>
+</li>
+<li>切面（Aspect）：切面是通知和切入点的结合。</li>
+<li>引入（introduction）：允许我们向现有的类添加新方法属性。</li>
+<li>目标（target）：代理的目标对象。</li>
+<li>织入（weaving）：把增强应用到目标对象来创建新的代理对象的过程。</li>
+<li>代理（Proxy）：一个类被AOP织入增强后，就会产生一个结果代理类。</li>
+</ol>
+<p><strong>动态代理的实现：</strong></p>
+<p>基于接口的动态代理：</p>
+<p>涉及的类：JDK提供的Proxy类。</p>
+<p>基于子类的动态代理：</p>
+<p>涉及的类：第三方cglib库的enhancer类。</p>
+<h2 id="Spring事务隔离级别"><a href="#Spring事务隔离级别" class="headerlink" title="Spring事务隔离级别"></a>Spring事务隔离级别</h2><ol>
+<li><p>ISOLATION_<strong>READ</strong>_<strong>UNCOMMITTED</strong>: 读未提交。</p>
+</li>
+<li><p>ISOLATION_<strong>READ</strong>_<strong>COMMITTED</strong>: 读已提交 。</p>
+</li>
+<li><p>ISOLATION_<strong>REPEATABLE</strong>_<strong>READ</strong> ：可重复读。</p>
+</li>
+<li><p>ISOLATION_<strong>SERIALIZABLE</strong>: 串行化 。</p>
+</li>
+</ol>
+<p>默认隔离级别为后端数据库的默认隔离级别。Mysql使用可重复读。Oracle采用读已提交。</p>
+<h2 id="Spring事务传播机制"><a href="#Spring事务传播机制" class="headerlink" title="Spring事务传播机制"></a>Spring事务传播机制</h2><p>当一个事务方法被另一个事务方法调用时，这个事务方法应该如何进行。</p>
+<p>PROPAGATION_<strong>REQUIRED</strong>:当前存在事务就加入事务，没有就创建。 </p>
+<p>PROPAGATION_<strong>SUPPORTS</strong>: 当前存在事务就加入事务，没有就以非事务的方式继续运行。 </p>
+<h2 id="Spring如何通过注解实现事务功能"><a href="#Spring如何通过注解实现事务功能" class="headerlink" title="Spring如何通过注解实现事务功能"></a>Spring如何通过注解实现事务功能</h2><ol>
+<li>在配置文件中配置事务管理器。</li>
+<li>在配置文件中开启对注解事务的支持。</li>
+<li>在需要事务支持的地方使用@Tansactional注解。</li>
+</ol>
+<h2 id="Spring常用注解"><a href="#Spring常用注解" class="headerlink" title="Spring常用注解"></a>Spring常用注解</h2><p><strong>用于创建对象：</strong></p>
+<p><strong>@component</strong>：</p>
+<p>​    作用：用于把当前对象存入spring容器中</p>
+<p>​    属性：value：用于指定bean的id。当我们不写时，他的默认值是当前类名，且首字母改小写。</p>
+<p><strong>@Controller</strong>:一般用在表现层。</p>
+<p><strong>@Service</strong>:一本用在业务层。</p>
+<p><strong>@Repository</strong>:一般用在持久层。</p>
+<p>以上三个注解它们的作用和属性与Component是一模一样的，他们三个是spring框架为我们提供明确的三层使用的注释，使我们的三层对象更加清晰。</p>
+<p> <strong>用于注入数据：</strong></p>
+<p><strong>@Autowired</strong>：</p>
+<p>​    作用：自动按照类型注入。只要容器中有唯一一个bean对象类型和要注入的变量类型匹配，就可以注入成功。</p>
+<p>​                如果ioc容器中没有任何bean的类型和要注入的变量类型匹配，则报错。</p>
+<p>​                如果ioc容器中有多个类型匹配时，要注入的变量名称要和bean对象的key保持一致。</p>
+<p>​    出现位置：可以是变量上，也可以是方法上。</p>
+<p>​    细节：</p>
+<p>​                在使用注解注入时，set方法就不是必须的了。</p>
+<p><strong>@Qualifer</strong>：</p>
+<p>作用：在按照类中注入的基础之上再按照名称注入。它在给类成员注入时不能单独使用(要和autowired组合在一起)。但在给方法参数注入时可以。</p>
+<p>属性：用于指定注入bean的id。</p>
+<p><strong>@Resourse</strong>：</p>
+<p>作用：直接按照bean的id注入，它可以独立使用。</p>
+<p>属性：name用于指定bean的id。</p>
+<p>以上三个注入都只能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现。另外，集合类型的注入只能通过XML实现。</p>
+<p> <strong>@Value</strong></p>
+<p>作用：用于注入基本类型和String类型的数据。</p>
+<p>属性：value用于指定数据的值。它可以使用spring中的SpEL（也就是spring的el表达式）SpEL的写法，${表达式}</p>
+<p>@Bean</p>
+<p>作用：用于把当前方法的返回值作为bean对象存入spring的ioc容器中</p>
+<p>属性：</p>
+<p>​    name：用于指定bean的id。当不写时，默认值是当前方法名称。</p>
+<p>细节：</p>
+<p> 当我们使用注解配置方法时，如果方法有参数，spring框架回去容器中查找有没有可用的bean对象。查找的方式和Autowired注解的作用是一样的。</p>
+<h2 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h2><ol>
+<li>用户发送请求至前端控制器<strong>DispatcherServlet</strong>。</li>
+<li><strong>DispatcherServlet</strong>收到请求调用<strong>HandlerMapping</strong>找到<strong>具体的处理器</strong>并返回给<strong>DispatcherServlet</strong>。</li>
+<li><strong>DispatcherServlet</strong>调用<strong>HandlerAdapter</strong>，经过适配调用具体的<strong>Controller</strong>。</li>
+<li><strong>Controller</strong>执行完饭回<strong>ModelAndView</strong>。</li>
+<li><strong>HandlerAdapter</strong>将controller执行结果<strong>ModelAndView</strong>返回给<strong>DispatcherServlet</strong>。</li>
+<li><strong>DispatcherServlet</strong>将<strong>ModelAndView</strong>传给<strong>ViewReslover</strong>。</li>
+<li><strong>ViewReslover</strong>解析后返回具体<strong>View</strong>。</li>
+<li><strong>DispatcherServlet</strong>根据<strong>View</strong>进行<strong>渲染视图</strong>。</li>
+<li><strong>DispatcherServlet</strong>响应<strong>用户</strong>。</li>
+</ol>
+<h2 id="JDBC和ORM的区别"><a href="#JDBC和ORM的区别" class="headerlink" title="JDBC和ORM的区别"></a>JDBC和ORM的区别</h2><ol>
+<li>需要手动连接数据库，处理底层事务。</li>
+<li>需要编写SQL语句，工作量比较大。</li>
+</ol>
+<h2 id="Hibernate和MyBatis的区别"><a href="#Hibernate和MyBatis的区别" class="headerlink" title="Hibernate和MyBatis的区别"></a>Hibernate和MyBatis的区别</h2><ol>
+<li>Hibernate拥有完整的Bean对象和数据库的映射结构，MyBatis仅有基本的字段映射，需要写一些特定的sql语句，降低了数据库的可移植性。</li>
+<li>Hibernate拥有完整的日志系统，Mybatis则欠缺一些。</li>
+<li>Hibernate的配置比MyBatis复杂，，Mybatis使用简单，上手较快，但后期但是要关心很多技术细节。</li>
+<li>Hibernate中的sql自动生成，MyBatis的sql都是写在XML里，优化更方便。</li>
+</ol>
+<h2 id="mybatis如何防止sql注入"><a href="#mybatis如何防止sql注入" class="headerlink" title="mybatis如何防止sql注入"></a>mybatis如何防止sql注入</h2><p>首先了解#{}和*{}的区别。</p>
+<p>#{}:  对于传入的参数，在预处理阶段会使用？代替，待真正查询的时候才会代入参数。</p>
+<p>${}: 简单替换。</p>
+<p><strong>各自特点：</strong></p>
+<p>#{}用于防止sql注入。</p>
+<p>${}用于传入表名，字段名。</p>
+<p>sql注入就是指把<strong>用户输入的数据</strong>拼接到sql语句后面作为sql语句的一部分执行。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2020/06/18/spring%E6%A1%86%E6%9E%B6/" title="spring框架（面试版）" target="_blank" rel="external">http://yoursite.com/2020/06/18/spring%E6%A1%86%E6%9E%B6/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/wu.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">王禹臣</span><small class="ml-1x">Developer</small></a></h3>
+        <div>Exploring world.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/07/01/%E7%AE%80%E5%8E%86/" title="简历"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/06/06/redis/" title="redis"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/adonis-wyc" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
